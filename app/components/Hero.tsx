@@ -29,7 +29,7 @@ export default function Hero() {
             <h1 className="mb-8 leading-tight">
               <div className="text-6xl md:text-8xl font-bold text-[#083254] drop-shadow-lg hover:drop-shadow-2xl transition-all duration-500 hover:scale-105">
                 The{" "}
-                <span className="text-gray-800 font-extrabold bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+                <span className="font-extrabold bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 bg-clip-text text-transparent">
                   Finance
                 </span>
               </div>

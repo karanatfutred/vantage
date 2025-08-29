@@ -27,19 +27,19 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-8">
               <Link
                 href="/about"
-                className="text-[#083254] px-6 py-3 text-base font-medium transition-all duration-200 hover:text-[#06203f] hover:underline decoration-2 underline-offset-4"
+                className="text-[#083254] px-6 py-3 text-lg font-medium transition-all duration-200 hover:text-[#06203f] hover:underline decoration-2 underline-offset-4"
               >
                 About Us
               </Link>
               <Link
                 href="/fellowships"
-                className="text-[#083254] px-6 py-3 text-base font-medium transition-all duration-200 hover:text-[#06203f] hover:underline decoration-2 underline-offset-4"
+                className="text-[#083254] px-6 py-3 text-lg font-medium transition-all duration-200 hover:text-[#06203f] hover:underline decoration-2 underline-offset-4"
               >
                 Fellowships
               </Link>
               <Link
                 href="#"
-                className="text-[#083254] px-6 py-3 text-base font-medium transition-all duration-200 hover:text-[#06203f] hover:underline decoration-2 underline-offset-4"
+                className="text-[#083254] px-6 py-3 text-lg font-medium transition-all duration-200 hover:text-[#06203f] hover:underline decoration-2 underline-offset-4"
                 onClick={(e) => e.preventDefault()}
               >
                 PGP ( Coming Soon )
