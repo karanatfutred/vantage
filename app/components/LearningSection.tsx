@@ -35,10 +35,13 @@ export default function LearningSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Learning Beyond the Classroom
-          </h2>
-          <p className="text-lg text-gray-600">
+          <div className="bg-[#083254] px-8 py-4 inline-block">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Learning Beyond the Classroom
+            </h2>
+          </div>
+
+          <p className="text-lg text-gray-600 mt-4">
             Built to deliver real outcomes.
           </p>
         </div>

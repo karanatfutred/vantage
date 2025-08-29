@@ -29,10 +29,13 @@ export default function ProjectsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 line-through">
-            Projects
-          </h2>
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          <div className="bg-[#083254] px-8 py-4 inline-block">
+            <h2 className="text-3xl md:text-4xl font-bold text-white line-through">
+              Projects
+            </h2>
+          </div>
+
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 mt-4">
             <span className="bg-[#083254] text-white px-3 py-1 rounded">
               Real Mandates
             </span>

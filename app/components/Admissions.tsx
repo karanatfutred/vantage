@@ -6,9 +6,11 @@ export default function Admissions() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Admissions Open
-          </h2>
+          <div className="bg-[#083254] px-8 py-4 inline-block">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Admissions Open
+            </h2>
+          </div>
         </div>
 
         {/* Course Card */}

@@ -49,7 +49,7 @@ export default function Navbar() {
 
           {/* Apply Now Button */}
           <div className="hidden md:block">
-            <button className="bg-yellow-600 text-white px-8 py-3 rounded-md text-base font-semibold hover:bg-yellow-700 transition-colors duration-200">
+            <button className="bg-yellow-500 text-white px-8 py-3 rounded-md text-base font-semibold hover:bg-yellow-600 transition-colors duration-200">
               Apply Now
             </button>
           </div>

@@ -52,7 +52,7 @@ export default function Hero() {
                       <span key={itemIndex} className="inline-block">
                         {item.trim()}
                         {itemIndex < text.split("|").length - 1 && (
-                          <span className="mx-4 text-gray-400"></span>
+                          <span className="mx-4 text-gray-400">|</span>
                         )}
                       </span>
                     ))}
@@ -65,7 +65,7 @@ export default function Hero() {
             <div className="mb-8">
               <a
                 href="#programs"
-                className="inline-block px-8 py-4 bg-[#083254] text-white font-semibold rounded-xl shadow-lg hover:bg-[#06203f] hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg cursor-pointer border-0"
+                className="inline-block px-12 py-3 bg-[#083254] text-white font-semibold rounded-md shadow-lg hover:bg-[#06203f] hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg cursor-pointer border-0"
               >
                 Learn More
               </a>
@@ -91,10 +91,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Background accent - moved to bottom */}
-      {/* made chnages here to check git push/pull */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/50 to-transparent"></div>
     </section>
   );
 }
