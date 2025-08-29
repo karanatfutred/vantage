@@ -7,16 +7,15 @@ export default function Founders() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Founders
-            </h2>
+            <div className="bg-[#083254] px-8 py-4 inline-block">
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                Our Founders
+              </h2>
+            </div>
           </div>
 
           {/* Founders Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            {/* Vertical Divider */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 transform -translate-x-1/2"></div>
-
             {/* Founder 1 - Syed Raza */}
             <div className="relative">
               <div className="flex items-start space-x-6">
