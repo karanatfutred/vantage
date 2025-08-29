@@ -1,26 +1,218 @@
+/* Sofia Pro Font Family */
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro UltraLight Az.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro UltraLight Italic Az.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro ExtraLight Az.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro ExtraLight Italic Az.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Light Az.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Light Italic Az.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Regular Az.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Regular Italic Az.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Medium Az.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Medium Italic Az.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Semi Bold Az.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Semi Bold Italic Az.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Bold Az.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Bold Italic Az.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Black Az.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Black Italic Az.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #083254;
+  --foreground: #ffffff;
+  --brand-primary: #083254;
+  --brand-hover: #0a4a7a;
+  --font-primary: "Sofia Pro", sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-primary);
+  --font-mono: var(--font-primary);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #083254;
+    --foreground: #ffffff;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Brand color utilities */
+.bg-brand {
+  background-color: #083254;
+}
+
+.bg-brand-hover {
+  background-color: #0a4a7a;
+}
+
+.text-brand {
+  color: #083254;
+}
+
+.border-brand {
+  border-color: #083254;
+}
+
+/* Sofia Pro font utilities */
+.font-ultralight {
+  font-family: var(--font-primary);
+  font-weight: 200;
+}
+
+.font-extralight {
+  font-family: var(--font-primary);
+  font-weight: 300;
+}
+
+.font-light {
+  font-family: var(--font-primary);
+  font-weight: 400;
+}
+
+.font-regular {
+  font-family: var(--font-primary);
+  font-weight: 500;
+}
+
+.font-medium {
+  font-family: var(--font-primary);
+  font-weight: 600;
+}
+
+.font-semibold {
+  font-family: var(--font-primary);
+  font-weight: 700;
+}
+
+.font-bold {
+  font-family: var(--font-primary);
+  font-weight: 800;
+}
+
+.font-black {
+  font-family: var(--font-primary);
+  font-weight: 900;
 }
