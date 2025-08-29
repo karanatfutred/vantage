@@ -27,19 +27,19 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-8">
               <Link
                 href="/about"
-                className="text-gray-700 px-6 py-3 text-base font-medium transition-all duration-200 hover:text-gray-900 hover:underline decoration-2 underline-offset-4"
+                className="text-[#083254] px-6 py-3 text-base font-medium transition-all duration-200 hover:text-[#06203f] hover:underline decoration-2 underline-offset-4"
               >
                 About Us
               </Link>
               <Link
                 href="/fellowships"
-                className="text-gray-700 px-6 py-3 text-base font-medium transition-all duration-200 hover:text-gray-900 hover:underline decoration-2 underline-offset-4"
+                className="text-[#083254] px-6 py-3 text-base font-medium transition-all duration-200 hover:text-[#06203f] hover:underline decoration-2 underline-offset-4"
               >
                 Fellowships
               </Link>
               <Link
                 href="#"
-                className="text-gray-700 px-6 py-3 text-base font-medium transition-all duration-200 hover:text-gray-900 hover:underline decoration-2 underline-offset-4"
+                className="text-[#083254] px-6 py-3 text-base font-medium transition-all duration-200 hover:text-[#06203f] hover:underline decoration-2 underline-offset-4"
                 onClick={(e) => e.preventDefault()}
               >
                 PGP ( Coming Soon )
@@ -56,7 +56,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button className="text-gray-700 hover:text-gray-900 p-2">
+            <button className="text-[#083254] hover:text-[#06203f] p-2">
               <svg
                 className="h-6 w-6"
                 fill="none"
