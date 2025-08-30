@@ -29,7 +29,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Main heading */}
-        <h1 className="mb-2 leading-tight">
+        <h1 className="mb-8 leading-tight">
           <div
             className="text-6xl md:text-8xl font-bold text-white drop-shadow-lg hover:drop-shadow-xl transition-all duration-500 hover:scale-105"
             style={{ fontFamily: "Trajan Pro Regular, serif" }}
@@ -40,7 +40,7 @@ export default function Hero() {
         </h1>
 
         {/* New Description */}
-        <p className="text-base md:text-lg text-white mb-6 font-light max-w-4xl mx-auto">
+        <p className="text-lg md:text-xl lg:text-2xl text-white mb-3 font-light max-w-4xl mx-auto">
           Taught by the leaders who shaped trillion-dollar finance
         </p>
 
@@ -57,7 +57,7 @@ export default function Hero() {
         </div>
 
         {/* CTA Button */}
-        <div className="mt-8 mb-5">
+        {/* <div className="mt-8 mb-5">
           <a
             href="#programs"
             className="group relative inline-flex items-center justify-center px-8 py-3 bg-white text-black font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-lg cursor-pointer border border-white/30 overflow-hidden hover:bg-gray-50 hover:scale-105"
@@ -79,10 +79,10 @@ export default function Hero() {
               </svg>
             </span>
           </a>
-        </div>
+        </div> */}
 
         {/* Image Grid - 3 Different Sizes */}
-        <div className="flex justify-center pb-10 mt-16">
+        <div className="flex justify-center pb-10 mt-24">
           <div className="flex gap-6 items-center">
             {/* Pattern: Small | Medium | Small | Large | Small | Medium | Small (7 images, large truly centered) */}
 
