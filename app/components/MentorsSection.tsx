@@ -1,70 +1,63 @@
-"use client";
-
-import Image from "next/image";
-import { useRef } from "react";
+'use client';
+import React, { useRef, useEffect } from 'react';
 
 export default function MentorsSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Add CSS to hide scrollbar
-  if (typeof document !== "undefined") {
-    const style = document.createElement("style");
-    style.textContent = `
-      .mentors-scroll::-webkit-scrollbar {
-        display: none;
-      }
-      .mentors-scroll {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
   const mentors = [
     {
       name: "Adam Ergin",
-      title: "Head of Risk, Quant & Governance, 7FiftyTwo",
-      description: "Former recruiter for global banks and investment firms",
-      image: "/assets/adam-ergin.jpg",
+      title: "Head of Risk, Quant & Governance",
+      company: "7FiftyTwo",
+      description: "Former recruiter for global banks and investment firms with deep expertise in risk management and quantitative analysis."
     },
     {
       name: "Rakesh Kripalani",
-      title: "Director, Banking & Credit, Barclays, India",
-      description: "Deep insight into lending, credit decision-making",
-      image: "/assets/rakesh-kripalani.png",
+      title: "Director, Banking & Credit",
+      company: "Barclays India",
+      description: "Deep insight into lending, credit decision-making, and regulatory compliance across emerging markets."
     },
     {
       name: "Satya Bansal",
-      title: "Founder & CEO, Blue Ashva Capital",
-      description: "Former CEO of Barclays Private Bank (India)",
-      image: "/assets/satya-bansal.png",
+      title: "Founder & CEO",
+      company: "Blue Ashva Capital",
+      description: "Former CEO of Barclays Private Bank (India) with extensive experience in wealth management and private banking."
     },
     {
       name: "Sandeep Das",
-      title: "MD & CEO, Centrum Wealth",
-      description: "Ex-Barclays, ANZ, Standard Chartered",
-      image: "/assets/sandeep-das.png",
+      title: "MD & CEO",
+      company: "Centrum Wealth",
+      description: "Ex-Barclays, ANZ, Standard Chartered executive with global banking and wealth management experience."
     },
     {
       name: "Lisa Francis",
-      title: "Managing Director, Lloyds Bank, UK",
-      description: "Former CEO, Barclays Private Bank",
-      image: "/assets/lisa-francis.png",
-    },
+      title: "Managing Director",
+      company: "Lloyds Bank UK",
+      description: "Former CEO, Barclays Private Bank with expertise in international banking and client relationship management."
+    }
   ];
 
-  const scrollLeft = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -400, behavior: "smooth" });
-    }
-  };
+  // Auto-scroll functionality
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
 
-  const scrollRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 400, behavior: "smooth" });
-    }
-  };
+    const cardWidth = 256; // w-64 = 256px
+    const gap = 24; // gap-6 = 24px
+    const totalWidth = (cardWidth + gap) * mentors.length;
+    let scrollPosition = 0;
+
+    const autoScroll = () => {
+      scrollPosition += 1;
+      if (scrollPosition >= totalWidth) {
+        scrollPosition = 0;
+      }
+      scrollContainer.scrollLeft = scrollPosition;
+    };
+
+    const interval = setInterval(autoScroll, 20);
+    return () => clearInterval(interval);
+  }, [mentors.length]);
 
   return (
     <section className="py-24 bg-white">
@@ -73,83 +66,41 @@ export default function MentorsSection() {
         <div className="mb-16">
           <div className="bg-[#083254] px-8 py-4 inline-block">
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Meet your Mentors
+              Meet Your Mentors
             </h2>
           </div>
         </div>
 
-        {/* Navigation and Mentors Container */}
-        <div className="relative">
-          {/* Left Arrow */}
-          <button
-            onClick={scrollLeft}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
-          >
-            <svg
-              className="w-6 h-6 text-gray-600 group-hover:text-[#083254] transition-colors duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
-          {/* Right Arrow */}
-          <button
-            onClick={scrollRight}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
-          >
-            <svg
-              className="w-6 h-6 text-gray-600 group-hover:text-[#083254] transition-colors duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-
-          {/* Scrollable Container */}
+        {/* Auto-scrolling Mentor Cards */}
+        <div className="overflow-hidden">
           <div
             ref={scrollContainerRef}
-            className="flex gap-4 overflow-x-auto pb-8 px-16 mentors-scroll"
+            className="flex gap-6 overflow-x-auto pb-8 scrollbar-hide"
           >
-            {mentors.map((mentor, index) => (
-              <div key={index} className="flex-shrink-0 w-68">
-                <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  {/* Mentor Image */}
+            {mentors.concat(mentors).map((mentor, index) => (
+              <div key={index} className="flex-shrink-0 w-64">
+                <div className="bg-white rounded-xl p-6 border border-gray-300 shadow-md h-[480px]">
+                  {/* Profile Image with Radial Gradient */}
                   <div className="flex justify-center mb-6">
-                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-100">
-                      <Image
-                        src={mentor.image}
+                    <div className="w-full h-48 rounded-t-xl relative overflow-hidden">
+                      <img 
+                        src="assets/manish.png" 
                         alt={mentor.name}
-                        width={128}
-                        height={128}
                         className="w-full h-full object-cover"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#083254]/70 via-[#083254]/30 to-white/20"></div>
                     </div>
                   </div>
 
                   {/* Mentor Info */}
-                  <div className="text-center">
+                  <div className="text-center flex flex-col justify-between h-full">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
                       {mentor.name}
                     </h3>
                     <p className="text-[#083254] font-semibold text-sm mb-3">
                       {mentor.title}
                     </p>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
                       {mentor.description}
                     </p>
                   </div>
@@ -159,6 +110,17 @@ export default function MentorsSection() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 }
