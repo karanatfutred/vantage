@@ -1,8 +1,42 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
 export default function LearningSection() {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const tabs = [
+    {
+      id: 0,
+      title: "Live Mandates",
+      content:
+        "Apply learning to real challenges from top global institutions, designing solutions with the potential for adoption.",
+      image: "/assets/live-mandate.jpg",
+    },
+    {
+      id: 1,
+      title: "Industry Internships",
+      content:
+        "Domestic and international internships at leading institutions, consulting firms, and ventures in high-growth roles",
+      image: "/assets/industry-internships.jpg",
+    },
+    {
+      id: 2,
+      title: "Launch a Business",
+      content:
+        "From concept to MVP to revenue, students build real businesses and pitch them to investors.",
+      image: "/assets/launch-a-business.jpg",
+    },
+    {
+      id: 3,
+      title: "Startup Fund",
+      content:
+        "Promising student ventures receive up to $200,000 in investment, with mentorship and infrastructure support",
+      image: "/assets/startup-fund.jpg",
+    },
+  ];
+
   const cards = [
     {
       title: "Live Mandates",
@@ -30,6 +64,10 @@ export default function LearningSection() {
     },
   ];
 
+  const handleTabClick = (tabId: number) => {
+    setActiveTab(tabId);
+  };
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,42 +78,84 @@ export default function LearningSection() {
               Learning Beyond the Classroom
             </h2>
           </div>
-
-          <p className="text-lg text-gray-600 mt-4">
-            Built to deliver real outcomes.
-          </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="flex gap-6 w-full">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex-1"
-            >
-              {/* Decoration Image - Full Upper Section */}
-              <div className="w-full h-48 relative overflow-hidden">
-                <Image
-                  src={card.decorationImage}
-                  alt={card.title}
-                  width={400}
-                  height={192}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Card Content */}
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-tight">
-                  {card.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed text-base">
-                  {card.description}
-                </p>
-              </div>
+        {/* Full Width Banner with Tabs */}
+        <div className="w-full h-[600px] mb-16 relative overflow-hidden rounded-lg">
+          {/* Background Images with Opacity Transitions */}
+          {tabs.map((tab, index) => (
+            <div key={tab.id} className="absolute inset-0">
+              <Image
+                src={tab.image}
+                alt={tab.title}
+                fill
+                className={`object-cover transition-all duration-700 ease-in-out ${
+                  activeTab === tab.id
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-105"
+                }`}
+                priority={index === 0}
+                sizes="100vw"
+                quality={90}
+                onError={(e) => {
+                  console.error(`Error loading image: ${tab.image}`, e);
+                }}
+              />
             </div>
           ))}
+
+          {/* Black Gradient Overlay for Text Visibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/65 z-10 transition-opacity duration-700" />
+
+          {/* Content Overlay */}
+          <div className="absolute inset-0 z-20">
+            {/* Tab Content with Smooth Transitions */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div
+                key={activeTab}
+                className="text-4xl text-white/90 max-w-4xl leading-relaxed text-center transition-all duration-700 ease-in-out transform"
+                style={{
+                  animation: "fadeInUp 0.7s ease-out",
+                }}
+              >
+                {tabs[activeTab].content}
+              </div>
+            </div>
+
+            {/* Tabs */}
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="flex gap-2 justify-center">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => handleTabClick(tab.id)}
+                    className={`px-6 py-3 font-semibold transition-all duration-500 ease-in-out text-white border-b-2 ${
+                      activeTab === tab.id
+                        ? "text-white border-white transform scale-105"
+                        : "text-white/60 border-white/30 hover:text-white/80 hover:border-white/50 hover:scale-105"
+                    }`}
+                  >
+                    {tab.title}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
+
+        {/* Custom CSS for smooth animations */}
+        <style jsx>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
       </div>
     </section>
   );
