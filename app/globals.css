@@ -7,6 +7,15 @@
   font-display: swap;
 }
 
+/* Trajan Pro Font Family */
+@font-face {
+  font-family: "Trajan Pro Regular";
+  src: url("/fonts/Trajan Pro Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "Sofia Pro";
   src: url("/fonts/Sofia Pro UltraLight Italic Az.otf") format("opentype");
@@ -130,50 +139,63 @@
 @import "tailwindcss";
 
 :root {
-  --background: #083254;
-  --foreground: #ffffff;
-  --brand-primary: #083254;
-  --brand-hover: #0a4a7a;
+  --color-primary: #1e4d2b;
+  --color-secondary: #0a2342;
+  --color-accent: #b0b3b8;
   --font-primary: "Sofia Pro", sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
   --font-sans: var(--font-primary);
   --font-mono: var(--font-primary);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #083254;
-    --foreground: #ffffff;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-secondary);
+  color: var(--color-accent);
   font-family: var(--font-primary);
   font-weight: 400;
   font-style: normal;
 }
 
-/* Brand color utilities */
-.bg-brand {
-  background-color: #083254;
+/* Custom color utilities */
+.bg-primary {
+  background-color: var(--color-primary);
 }
 
-.bg-brand-hover {
-  background-color: #0a4a7a;
+.bg-secondary {
+  background-color: var(--color-secondary);
 }
 
-.text-brand {
-  color: #083254;
+.bg-accent {
+  background-color: var(--color-accent);
 }
 
-.border-brand {
-  border-color: #083254;
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-secondary {
+  border-color: var(--color-secondary);
+}
+
+.border-accent {
+  border-color: var(--color-accent);
 }
 
 /* Sofia Pro font utilities */

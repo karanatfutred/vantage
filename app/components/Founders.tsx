@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Founders() {
   return (
     <section className="py-20 bg-white">
-      <div className="py-24 bg-gray-50">
+      <div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="mb-16">
