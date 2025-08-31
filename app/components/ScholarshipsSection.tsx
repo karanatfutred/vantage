@@ -16,25 +16,17 @@ export default function ScholarshipsSection() {
         </div>
 
         {/* Main Content */}
-        <div className="space-y-20">
-          {/* Top Section - 1 in 5 Statistic in Image Style */}
-          <div className="flex justify-start">
-            <div className="bg-[#0a2342] px-16 py-12 rounded-lg shadow-2xl max-w-5xl">
+        <div className="space-y-5">
+          {/* Top Section - 1 in 5 Statistic in Full Width Black Background */}
+          <div className="w-full">
+            <div className="bg-black px-16 py-12 w-full h-[450px]">
               <div className="text-left">
                 <div
-                  className="text-7xl md:text-8xl font-bold text-white mb-8"
+                  className="text-4xl md:text-5xl text-white leading-tight max-w-3xl"
                   style={{ fontFamily: "serif" }}
                 >
-                  1 in 5
-                </div>
-                <div
-                  className="text-2xl md:text-3xl text-white leading-relaxed"
-                  style={{ fontFamily: "serif" }}
-                >
-                  <div>seats across all programmes is offered as a</div>
-                  <div className="mt-3">
-                    100% scholarship to exceptional candidates
-                  </div>
+                  1 in 5 seats across all programmes is offered as a 100%
+                  scholarship to exceptional candidates
                 </div>
               </div>
             </div>
