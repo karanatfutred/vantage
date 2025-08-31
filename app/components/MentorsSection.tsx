@@ -79,29 +79,25 @@ export default function MentorsSection() {
           >
             {mentors.concat(mentors).map((mentor, index) => (
               <div key={index} className="flex-shrink-0 w-64">
-                <div className="bg-white rounded-xl p-6 border border-gray-300 shadow-md h-[480px]">
+                <div className="rounded-xl pt-12 border border-gray-300 shadow-md h-[480px] bg-[radial-gradient(ellipse_at_center,_#ffffff_0%,_#202020_100%)] flex flex-col">
                   {/* Profile Image with Radial Gradient */}
-                  <div className="flex justify-center mb-6">
-                    <div className="w-full h-48 rounded-t-xl relative overflow-hidden">
+                  <div className="flex justify-center">
+                    <div className="w-full  rounded-t-xl relative overflow-hidden">
                       <img 
                         src="assets/manish.png" 
                         alt={mentor.name}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#083254]/70 via-[#083254]/30 to-white/20"></div>
                     </div>
                   </div>
 
                   {/* Mentor Info */}
-                  <div className="text-center flex flex-col justify-between h-full">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <div className="flex flex-col justify-between h-full p-4 bg-[#202020] bg-opacity-60 rounded-b-xl">
+                    <h3 className="text-xl font-bold text-white mb-2">
                       {mentor.name}
                     </h3>
-                    <p className="text-[#083254] font-semibold text-sm mb-3">
+                    <p className="text-white font-semibold text-sm mb-3">
                       {mentor.title}
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      {mentor.description}
                     </p>
                   </div>
                 </div>
