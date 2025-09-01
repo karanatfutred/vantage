@@ -2,37 +2,49 @@
 
 export default function LearningPractitionersSection() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-20">
-          <div className="bg-[#083254] px-8 py-4 inline-block">
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Learning, Led by Practitioners
-            </h2>
-          </div>
+        <div className="mb-20 text-center">
+          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
+            Learning, Led by Practitioners
+          </h2>
         </div>
 
         {/* Learning Split Visualization */}
         <div className="max-w-6xl mx-auto">
-          {/* Horizontal Progress Bar */}
+          {/* Course Split Overview */}
           <div className="mb-12">
-            {/* Progress Bar */}
-            <div className="relative h-4 bg-gray-200 rounded-full overflow-hidden">
-              {/* Industry Practitioners - Left Half */}
-              <div className="absolute left-0 top-0 h-full w-1/2 bg-gray-400 rounded-l-full"></div>
+            {/* Visual Split Representation */}
+            <div className="flex items-center justify-center mb-8">
+              <div className="flex items-center space-x-8">
+                {/* Industry Practitioners */}
+                <div className="text-center">
+                  <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-4 mx-auto shadow-lg">
+                    <span className="text-white text-2xl font-bold">50%</span>
+                  </div>
+                  <p className="text-sm font-semibold text-gray-700">
+                    Industry Practitioners
+                  </p>
+                </div>
 
-              {/* In-house Academics - Right Half */}
-              <div className="absolute right-0 top-0 h-full w-1/2 bg-gray-400 rounded-r-full"></div>
+                {/* VS Divider */}
+                <div className="flex items-center">
+                  <div className="w-8 h-0.5 bg-gray-300"></div>
+                  <span className="mx-4 text-gray-400 font-semibold">+</span>
+                  <div className="w-8 h-0.5 bg-gray-300"></div>
+                </div>
 
-              {/* Center Divider */}
-              <div className="absolute left-1/2 top-0 h-full w-0.5 bg-white transform -translate-x-1/2"></div>
-            </div>
-
-            {/* Labels */}
-            <div className="flex justify-between mt-3 text-sm font-medium text-gray-600">
-              <span>50% Industry Practitioners</span>
-              <span>50% In-house & Visiting Academics</span>
+                {/* In-house Academics */}
+                <div className="text-center">
+                  <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mb-4 mx-auto shadow-lg">
+                    <span className="text-white text-2xl font-bold">50%</span>
+                  </div>
+                  <p className="text-sm font-semibold text-gray-700">
+                    In-house & Visiting Academics
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -58,20 +70,22 @@ export default function LearningPractitionersSection() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">
+                    <h3 className="text-xl font-bold text-gray-900 font-section-heading">
                       Industry Practitioners
                     </h3>
-                    <p className="text-gray-600 text-sm">50% of Learning</p>
+                    <p className="text-gray-600 text-sm">
+                      50% of Course Content
+                    </p>
                   </div>
                 </div>
               </div>
 
               <div className="p-6">
                 <p className="text-gray-700 leading-relaxed">
-                  Sessions led by global MDs, CEOs, entrepreneurs, and seasoned
-                  practitioners, combining boardroom vision with the operational
-                  depth and practical mastery built on years at the frontlines
-                  of business.
+                  Half of our course content is delivered by global MDs, CEOs,
+                  entrepreneurs, and seasoned practitioners, combining boardroom
+                  vision with the operational depth and practical mastery built
+                  on years at the frontlines of business.
                 </p>
               </div>
             </div>
@@ -102,19 +116,22 @@ export default function LearningPractitionersSection() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">
+                    <h3 className="text-xl font-bold text-gray-900 font-section-heading">
                       In-house & Visiting Academics
                     </h3>
-                    <p className="text-gray-600 text-sm">50% of Learning</p>
+                    <p className="text-gray-600 text-sm">
+                      50% of Course Content
+                    </p>
                   </div>
                 </div>
               </div>
 
               <div className="p-6">
                 <p className="text-gray-700 leading-relaxed">
-                  From top Indian and international business schools, bringing
-                  world-class academic rigor, research depth, and structured
-                  learning.
+                  The other half of our course content comes from top Indian and
+                  international business schools, bringing world-class academic
+                  rigor, research depth, and structured learning to complement
+                  the practical insights.
                 </p>
               </div>
             </div>

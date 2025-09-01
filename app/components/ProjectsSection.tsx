@@ -25,44 +25,46 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16">
-          <div className="bg-[#083254] px-8 py-4 inline-block">
-            <h2 className="text-3xl md:text-4xl font-bold text-white line-through">
-              Projects
-            </h2>
-          </div>
-
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 mt-4">
-            <span className="bg-[#083254] text-white px-3 py-1 rounded">
+        <div className="mb-12 text-center">
+          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading mb-6">
+            <span className="line-through">Projects</span>
+            <span
+              className="italic ml-2"
+              style={{
+                fontFamily: '"Chronicle Display Semibold", serif',
+                color: "#568c65",
+              }}
+            >
               Real Mandates
             </span>
             <span className="ml-2">at Vantage</span>
-          </h3>
-          <p className="text-lg text-gray-600 max-w-4xl">
+          </h2>
+
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
             From idea to execution, students transform challenges into solutions
             adopted by the world's top organizations
           </p>
         </div>
 
         {/* Project Cards Grid */}
-        <div className="flex gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
           {projectCards.map((card, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex-1"
-            >
-              {/* Card Content */}
-              <div className="p-8">
-                <h3 className="text-xl font-bold text-[#083254] mb-4 uppercase tracking-wide">
+            <div key={index} className="relative">
+              <div className="p-6 text-black">
+                <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
                   {card.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed text-base">
+                <p className="text-base leading-relaxed text-black">
                   {card.description}
                 </p>
               </div>
+              {/* Right border line */}
+              {index < projectCards.length - 1 && (
+                <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+              )}
             </div>
           ))}
         </div>

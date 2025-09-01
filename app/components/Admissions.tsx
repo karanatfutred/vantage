@@ -4,115 +4,165 @@ import Image from "next/image";
 
 export default function Admissions() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16">
-          <div className="bg-[#083254] px-8 py-4 inline-block">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Admissions Open
-            </h2>
-          </div>
+        <div className="mb-16 text-center">
+          <h2 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4 font-section-heading">
+            Admissions{" "}
+            <span
+              className="italic"
+              style={{
+                fontFamily: '"Chronicle Display Black", serif',
+                color: "#568c65",
+              }}
+            >
+              Open
+            </span>
+          </h2>
         </div>
 
-        {/* Program Card - Similar to Image Layout */}
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
-          <div className="flex flex-col lg:flex-row">
-            {/* Left Side - Group Photo */}
-            <div className="lg:w-1/2 relative">
-              <div className="w-full h-64 lg:h-full">
+        {/* Program Cards - Side by Side */}
+        <div className="flex flex-col lg:flex-row gap-12 mb-8">
+          {/* First Card - Global Banking & Finance Fellowship */}
+          <div className="bg-white rounded-lg shadow-lg border border-gray-200 w-full lg:w-[500px] p-4 lg:p-5">
+            <div className="flex gap-6">
+              {/* Image on Left */}
+              <div className="w-2/5 bg-white flex-shrink-0 relative overflow-hidden rounded-lg">
                 <Image
-                  src="/assets/hero-image-4.jpg"
-                  alt="Students in Finance Program"
+                  src="/assets/global-banking-finance-fellowship.jpg"
+                  alt="Global Banking & Finance Fellowship"
+                  quality={100}
+                  className="absolute inset-0 w-full h-full object-cover"
                   fill
-                  className="object-cover"
-                  priority
-                  quality={90}
                 />
               </div>
-            </div>
-
-            {/* Right Side - Program Details */}
-            <div className="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-center">
-              {/* Program Details - All at Top */}
-              <div className="mb-2">
-                {/* Badges Row */}
-                <div className="flex gap-2 mb-1">
-                  <span className="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-medium rounded-lg">
+              {/* Content on Right */}
+              <div className="w-3/5">
+                {/* Program Details - Badges at Top */}
+                <div className="flex flex-nowrap gap-1 mb-1">
+                  <span className="inline-flex items-center px-2 py-1 bg-gray-100 text-black text-xs font-normal rounded-sm whitespace-nowrap leading-none">
                     Format - Online Live
                   </span>
-                  <span className="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-medium rounded-lg">
+                  <span className="inline-flex items-center px-2 py-1 bg-gray-100 text-black text-xs font-normal rounded-sm whitespace-nowrap leading-none">
                     Duration - 2 Weeks
                   </span>
-                  <span className="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-medium rounded-lg">
-                    Starts On - 06th Oct 2025
+                </div>
+
+                {/* Course Content Group */}
+                <div className="mt-2">
+                  {/* Program Title */}
+                  <h3 className="text-sm md:text-base font-bold text-gray-900 mb-2 leading-tight font-section-heading">
+                    Global Banking & Finance Fellowship
+                  </h3>
+
+                  {/* Program Description */}
+                  <p className="text-xs text-gray-600 mb-4 leading-relaxed">
+                    Delivered by distinguished CEOs, MDs, and senior executives
+                    from
+                  </p>
+                </div>
+
+                {/* Starts On Badge and Learn More Button - Redesigned */}
+                <div className="flex items-center relative mt-6 -mr-10">
+                  {/* Green Announcement Section */}
+                  <div className="bg-green-100 text-green-800 px-4 py-1 rounded-none flex-1 border border-green-200">
+                    <span className="text-[13px] font-medium whitespace-nowrap">
+                      Starts On - 06th Oct 2025*
+                    </span>
+                  </div>
+
+                  {/* Dark Learn More Button with Overlap */}
+                  <div className="bg-gray-900 text-white px-4 py-[1px] rounded-none flex-shrink-0 -ml-4 relative z-10">
+                    <button className="inline-flex items-center gap-2 text-[11px] font-medium">
+                      <span>LEARN MORE</span>
+                      <svg
+                        className="w-3 h-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Second Card - PGP Strategic Finance & Analytics */}
+          <div className="bg-white rounded-lg shadow-lg border border-gray-200 w-full lg:w-[500px] p-4 lg:p-5">
+            <div className="flex gap-5">
+              {/* Image on Left */}
+              <div className="w-2/5 bg-white flex-shrink-0 relative overflow-hidden rounded-lg">
+                <Image
+                  src="/assets/pgp-strategic-finance- analytics.jpg"
+                  alt="PGP Strategic Finance & Analytics"
+                  quality={100}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  fill
+                />
+              </div>
+              {/* Content on Right */}
+              <div className="w-3/5">
+                {/* Program Details - Badges at Top */}
+                <div className="flex flex-nowrap gap-1 mb-1">
+                  <span className="inline-flex items-center px-2 py-1 bg-gray-100 text-black text-xs font-normal rounded-sm whitespace-nowrap leading-none">
+                    Format - Online Live
+                  </span>
+                  <span className="inline-flex items-center px-2 py-1 bg-gray-100 text-black text-xs font-normal rounded-sm whitespace-nowrap leading-none">
+                    Duration - 3 Weeks
                   </span>
                 </div>
-              </div>
 
-              {/* Program Title */}
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-                Global Banking & Finance Fellowship
-              </h3>
+                {/* Course Content Group */}
+                <div className="mt-2">
+                  {/* Program Title */}
+                  <h3 className="text-sm md:text-base font-bold text-gray-900 mb-2 leading-tight font-section-heading">
+                    PGP Strategic Finance & Analytics
+                  </h3>
 
-              {/* Program Description */}
-              <p className="text-base text-gray-600 mb-6 leading-relaxed">
-                Taught by the leaders who shaped trillion-dollar finance.
-                Delivered by distinguished CEOs, MDs, and senior executives from
-                leading financial institutions.
-              </p>
-
-              {/* Company Logos */}
-              <div className="mb-6">
-                <div className="flex items-center gap-3">
-                  <Image
-                    src="/assets/centrum-wealth.jpg"
-                    alt="Centrum Wealth"
-                    width={50}
-                    height={25}
-                    className="h-6 w-auto"
-                  />
-                  <Image
-                    src="/assets/lloyds.jpg"
-                    alt="Lloyds"
-                    width={50}
-                    height={25}
-                    className="h-6 w-auto"
-                  />
-                  <Image
-                    src="/assets/blue-ashva-capital.png"
-                    alt="Blue Ashva Capital"
-                    width={50}
-                    height={25}
-                    className="h-6 w-auto"
-                  />
-                  <Image
-                    src="/assets/barclays.png"
-                    alt="Barclays"
-                    width={50}
-                    height={25}
-                    className="h-6 w-auto"
-                  />
+                  {/* Program Description */}
+                  <p className="text-xs text-gray-600 mb-4 leading-relaxed">
+                    Advanced program in strategic finance, analytics, and
+                    leadership
+                  </p>
                 </div>
-              </div>
 
-              {/* Call to Action */}
-              <div className="flex justify-end">
-                <div className="w-fit inline-flex items-center gap-2 text-white font-semibold text-base cursor-pointer group hover:scale-105 transition-transform duration-200 bg-black px-5 py-2 rounded-lg">
-                  <span>Learn More</span>
-                  <svg
-                    className="w-4 h-4 transform rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M7 17l9.2-9.2M17 17V7H7"
-                    />
-                  </svg>
+                {/* Starts On Badge and Learn More Button - Redesigned */}
+                <div className="flex items-center relative mt-6 -mr-10">
+                  {/* Green Announcement Section */}
+                  <div className="bg-green-100 text-green-800 px-4 py-1 rounded-none flex-1 border border-green-200">
+                    <span className="text-[13px] font-medium whitespace-nowrap">
+                      Starts On - 06th Oct 2025*
+                    </span>
+                  </div>
+
+                  {/* Dark Learn More Button with Overlap */}
+                  <div className="bg-gray-900 text-white px-4 py-[1px] rounded-none flex-shrink-0 -ml-4 relative z-10">
+                    <button className="inline-flex items-center gap-2 text-[11px] font-medium">
+                      <span>LEARN MORE</span>
+                      <svg
+                        className="w-3 h-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
