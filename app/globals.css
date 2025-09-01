@@ -7,11 +7,11 @@
   font-display: swap;
 }
 
-/* Trajan Pro Font Family */
+/* Chronicle Display Font Family */
 @font-face {
-  font-family: "Trajan Pro Regular";
-  src: url("/fonts/Trajan Pro Regular.ttf") format("truetype");
-  font-weight: normal;
+  font-family: "Chronicle Display Semibold";
+  src: url("/fonts/Chronicle Display Semibold.otf") format("opentype");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -212,6 +212,18 @@ body {
 .font-ultralight {
   font-family: var(--font-primary);
   font-weight: 200;
+}
+
+/* Chronicle Display font utilities */
+.font-chronicle {
+  font-family: "Chronicle Display Semibold", "Times New Roman", serif !important;
+}
+
+/* Section headings font utility */
+.font-section-heading {
+  font-family: "Sofia Pro", sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
 }
 
 .font-extralight {

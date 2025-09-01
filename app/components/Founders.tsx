@@ -26,22 +26,31 @@ const Founders = () => {
   return (
     <div className="w-full">
       {/* White Header Section */}
-      <div className="bg-white h-20 w-full"></div>
-      
+      <div className="bg-white h-12 w-full"></div>
+
       {/* Main Content Section */}
       <div className="bg-white w-full px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Founders Title */}
           <div>
-            <div className="bg-[#C3E7FD] px-8 py-4 inline-block">
-              <h2 className="text-4xl md:text-5xl font-bold text-white">
-                Meet the Founders
+            <div className="text-center">
+              <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
+                Meet the{" "}
+                <span
+                  className="italic"
+                  style={{
+                    fontFamily: '"Chronicle Display Black", serif',
+                    color: "#568c65",
+                  }}
+                >
+                  Founders
+                </span>
               </h2>
             </div>
           </div>
-          
-          {/* Testimonials Grid - Cards and Content in Rows */}
-          <div className="bg-white grid grid-cols-1 lg:grid-cols-2 gap-8  py-4">
+
+          {/* Testimonials Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.id}
