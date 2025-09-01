@@ -4,15 +4,22 @@ import React from "react";
 
 export default function ScholarshipsSection() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16">
-          <div className="bg-[#083254] px-8 py-4 inline-block">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Scholarships & Social Responsibility
-            </h2>
-          </div>
+        <div className="mb-12 text-center">
+          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
+            <span
+              className="italic"
+              style={{
+                fontFamily: '"Chronicle Display Black", serif',
+                color: "#568c65",
+              }}
+            >
+              Scholarships
+            </span>{" "}
+            & Social Responsibility
+          </h2>
         </div>
 
         {/* Main Content */}
@@ -38,7 +45,7 @@ export default function ScholarshipsSection() {
               {/* Academic Merit Scholarships */}
               <div className="relative">
                 <div className="p-6 text-black">
-                  <h3 className="text-lg font-semibold mb-4 text-black">
+                  <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
                     Academic Merit Scholarships
                   </h3>
                   <p className="text-base leading-relaxed text-black">
@@ -52,7 +59,7 @@ export default function ScholarshipsSection() {
               {/* Need-Based Access Scholarships */}
               <div className="relative">
                 <div className="p-6 text-black">
-                  <h3 className="text-lg font-semibold mb-4 text-black">
+                  <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
                     Need-Based Access Scholarships
                   </h3>
                   <p className="text-base leading-relaxed text-black">
@@ -67,7 +74,7 @@ export default function ScholarshipsSection() {
               {/* Achievement Scholarships */}
               <div className="relative">
                 <div className="p-6 text-black">
-                  <h3 className="text-lg font-semibold mb-4 text-black">
+                  <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
                     Achievement Scholarships
                   </h3>
                   <p className="text-base leading-relaxed text-black">
@@ -82,7 +89,7 @@ export default function ScholarshipsSection() {
               {/* Women in Leadership */}
               <div className="relative">
                 <div className="p-6 text-black">
-                  <h3 className="text-lg font-semibold mb-4 text-black">
+                  <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
                     Women in Leadership
                   </h3>
                   <p className="text-base leading-relaxed text-black">

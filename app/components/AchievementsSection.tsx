@@ -4,15 +4,13 @@ import React from "react";
 
 export default function AchievementsSection() {
   return (
-    <section className="py-24 bg-black">
+    <section className="py-16 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16">
-          <div className="bg-white px-8 py-4 inline-block">
-            <h2 className="text-3xl md:text-4xl font-bold text-black">
-              Student Achievements
-            </h2>
-          </div>
+        <div className="mb-16 text-center">
+          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
+            Student Achievements
+          </h2>
         </div>
 
         {/* Five Column Achievements Grid */}
@@ -20,7 +18,7 @@ export default function AchievementsSection() {
           {/* Column 1 - Employment */}
           <div className="relative">
             <div className="p-6 text-white">
-              <h3 className="text-lg font-semibold mb-4 text-white">
+              <h3 className="text-lg font-semibold mb-4 text-white font-section-heading">
                 Employment by leading organizations
               </h3>
               <p className="text-base leading-relaxed text-white">
@@ -35,7 +33,7 @@ export default function AchievementsSection() {
           {/* Column 2 - Graduate School Admissions */}
           <div className="relative">
             <div className="p-6 text-white">
-              <h3 className="text-lg font-semibold mb-4 text-white">
+              <h3 className="text-lg font-semibold mb-4 text-white font-section-heading">
                 Admission to top graduate schools
               </h3>
               <p className="text-base leading-relaxed text-white">
@@ -50,7 +48,7 @@ export default function AchievementsSection() {
           {/* Column 3 - Prestigious Awards */}
           <div className="relative">
             <div className="p-6 text-white">
-              <h3 className="text-lg font-semibold mb-4 text-white">
+              <h3 className="text-lg font-semibold mb-4 text-white font-section-heading">
                 Recipients of prestigious fellowships and awards
               </h3>
               <p className="text-base leading-relaxed text-white">
@@ -66,7 +64,7 @@ export default function AchievementsSection() {
           {/* Column 4 - Startups */}
           <div className="relative">
             <div className="p-6 text-white">
-              <h3 className="text-lg font-semibold mb-4 text-white">
+              <h3 className="text-lg font-semibold mb-4 text-white font-section-heading">
                 Founding purpose-driven startups
               </h3>
               <p className="text-base leading-relaxed text-white">
@@ -80,7 +78,7 @@ export default function AchievementsSection() {
           {/* Column 5 - Employment Rate */}
           <div className="relative">
             <div className="p-6 text-white">
-              <h3 className="text-lg font-semibold mb-4 text-white">
+              <h3 className="text-lg font-semibold mb-4 text-white font-section-heading">
                 Graduate employment and further education rate
               </h3>
               <p className="text-base leading-relaxed text-white">

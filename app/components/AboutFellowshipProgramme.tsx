@@ -51,8 +51,8 @@ const AboutProgramme = () => {
     <div className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-left mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 font-section-heading">
             About the <span className="text-[#083254]">Programme</span>
           </h2>
         </div>
@@ -87,11 +87,11 @@ const AboutProgramme = () => {
 
         {/* Learning Highlights Section */}
         <div className="mb-12">
-          <div className="text-left mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-section-heading">
               Learning <span className="text-[#083254]">Highlights</span>
             </h3>
-            <div className="w-24 h-1 bg-[#083254] rounded-full"></div>
+            <div className="w-24 h-1 bg-[#083254] rounded-full mx-auto"></div>
           </div>
 
           {/* Interactive Cards Grid */}
@@ -120,7 +120,7 @@ const AboutProgramme = () => {
                   </div>
 
                   {/* Title */}
-                  <h4 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#083254] transition-colors">
+                  <h4 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#083254] transition-colors font-section-heading">
                     {highlight.title}
                   </h4>
 

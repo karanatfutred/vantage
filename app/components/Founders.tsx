@@ -26,19 +26,28 @@ const TestimonialSection = () => {
   return (
     <div className="w-full">
       {/* White Header Section */}
-      <div className="bg-white h-20 w-full"></div>
-      
+      <div className="bg-white h-12 w-full"></div>
+
       {/* Main Content Section */}
       <div className="bg-white w-full px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Founders Title */}
-        <div>
-          <div className="bg-[#083254] px-8 py-4 inline-block">
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Meet the Founders
-            </h2>
+          <div>
+            <div className="text-center">
+              <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
+                Meet the{" "}
+                <span
+                  className="italic"
+                  style={{
+                    fontFamily: '"Chronicle Display Black", serif',
+                    color: "#568c65",
+                  }}
+                >
+                  Founders
+                </span>
+              </h2>
+            </div>
           </div>
-        </div>
 
           {/* Testimonials Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">

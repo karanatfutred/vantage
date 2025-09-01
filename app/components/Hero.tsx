@@ -17,8 +17,11 @@ export default function Hero() {
         {/* Main heading */}
         <h1 className="mb-8 leading-tight">
           <div
-            className="text-6xl md:text-8xl font-bold text-white drop-shadow-lg hover:drop-shadow-xl transition-all duration-500 hover:scale-105"
-            style={{ fontFamily: "Trajan Pro Regular, serif" }}
+            className="text-6xl md:text-8xl font-bold text-white drop-shadow-lg hover:drop-shadow-xl transition-all duration-500 hover:scale-105 font-chronicle"
+            style={{
+              fontFamily:
+                '"Chronicle Display Semibold", "Times New Roman", serif',
+            }}
           >
             The <span className="font-extrabold text-white">Finance</span>{" "}
             <span className="text-white">School</span>

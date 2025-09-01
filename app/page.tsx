@@ -7,7 +7,7 @@ import ProjectsSection from "./components/ProjectsSection";
 import LearningPractitionersSection from "./components/LearningPractitionersSection";
 import MentorsSection from "./components/MentorsSection";
 import ScholarshipsSection from "./components/ScholarshipsSection";
-import FAQSection from "./components/FAQSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
       <LearningPractitionersSection />
       <MentorsSection />
       <ScholarshipsSection />
-      <FAQSection />
+      <Footer />
     </main>
   );
 }
