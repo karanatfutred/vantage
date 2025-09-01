@@ -1,126 +1,103 @@
-"use client";
+import Image from "next/image";
 
-export default function LearningPractitionersSection() {
+export default function CustomerTestimonials() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-20">
-          <div className="bg-[#083254] px-8 py-4 inline-block">
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Learning, Led by Practitioners
-            </h2>
+    <div className="flex flex-col justify-center gap-10 md:gap-20 px-64">
+      {/* Header */}
+      <div className="mx-auto max-w-2xl flex items-center text-center">
+        <h2 className="text-3xl lg:text-4xl font-bold">
+          Learning, Led by Practitioners
+        </h2>
+      </div>
+
+      {/* Testimonials Grid */}
+      <div className="flex flex-col gap-6">
+        {/* First Row */}
+        <div className="flex flex-col xl:flex-row gap-6">
+          {/* Customer Story Card with Background Image */}
+          <div
+            className="p-8 rounded-2xl flex flex-col justify-between relative bg-cover bg-center bg-no-repeat h-80 xl:h-auto xl:flex-1"
+            style={{
+              backgroundImage: "url('/assets/industryPracticionor.jpg')",
+            }}
+          >
+            {/* Dark overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/60 rounded-2xl"></div>
+
+            <div className="relative z-10">
+              <span className="text-white text-xl font-medium">
+                50% of Learning
+              </span>
+            </div>
+
+            <div className="flex flex-col gap-6 relative z-10">
+              <h4 className="text-white text-xl lg:text-2xl font-light">
+                Sessions led by global MDs, CEOs, and seasoned practitioners,
+                combining boardroom vision with the operational depth and
+                practical mastery built on years at the frontlines of business.
+              </h4>
+            </div>
+          </div>
+
+          {/* Stats Card - Solid Color */}
+          <div className="flex flex-col justify-between gap-16 xl:max-w-sm bg-[#dcf5e3] rounded-2xl p-8 min-h-80">
+            <div>
+              <span className="uppercase text-sm font-medium text-black">
+                .
+              </span>
+            </div>
+            <div className="flex flex-col gap-1">
+              <h2 className="text-7xl font-bold text-black">50%</h2>
+              <h4 className="text-black text-2xl font-light">
+                Industry Practitioners
+              </h4>
+            </div>
           </div>
         </div>
 
-        {/* Learning Split Visualization */}
-        <div className="max-w-6xl mx-auto">
-          {/* Horizontal Progress Bar */}
-          <div className="mb-12">
-            {/* Progress Bar */}
-            <div className="relative h-4 bg-gray-200 rounded-full overflow-hidden">
-              {/* Industry Practitioners - Left Half */}
-              <div className="absolute left-0 top-0 h-full w-1/2 bg-gray-400 rounded-l-full"></div>
-
-              {/* In-house Academics - Right Half */}
-              <div className="absolute right-0 top-0 h-full w-1/2 bg-gray-400 rounded-r-full"></div>
-
-              {/* Center Divider */}
-              <div className="absolute left-1/2 top-0 h-full w-0.5 bg-white transform -translate-x-1/2"></div>
+        {/* Second Row - Reordered: Small card first, then large card */}
+        <div className="flex flex-col xl:flex-row gap-6">
+          {/* Stats Card - Solid Color */}
+          <div className="flex flex-col justify-between gap-16 xl:max-w-sm bg-[#8ebbfa] rounded-2xl p-8 min-h-80">
+            <div>
+              <span className="uppercase text-sm font-medium text-white/60">
+                .
+              </span>
             </div>
-
-            {/* Labels */}
-            <div className="flex justify-between mt-3 text-sm font-medium text-gray-600">
-              <span>50% Industry Practitioners</span>
-              <span>50% In-house & Visiting Academics</span>
+            <div className="flex flex-col gap-1">
+              <h2 className="text-7xl font-bold text-white">50%</h2>
+              <h4 className="text-white text-2xl font-light">
+                In-house & Visiting Academics
+              </h4>
             </div>
           </div>
 
-          {/* Two Column Cards Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Industry Practitioners Card */}
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
-              <div className="bg-gray-50 border-b border-gray-200 p-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <svg
-                      className="w-6 h-6 text-gray-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">
-                      Industry Practitioners
-                    </h3>
-                    <p className="text-gray-600 text-sm">50% of Learning</p>
-                  </div>
-                </div>
-              </div>
+          {/* Customer Story Card with Background Image */}
+          <div
+            className="p-8 rounded-2xl flex flex-col justify-between relative bg-cover bg-center bg-no-repeat h-80 xl:h-auto xl:flex-1"
+            style={{
+              backgroundImage: "url('/assets/classroom.jpg')",
+            }}
+          >
+            {/* Dark overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/60 rounded-2xl"></div>
 
-              <div className="p-6">
-                <p className="text-gray-700 leading-relaxed">
-                  Sessions led by global MDs, CEOs, entrepreneurs, and seasoned
-                  practitioners, combining boardroom vision with the operational
-                  depth and practical mastery built on years at the frontlines
-                  of business.
-                </p>
-              </div>
+            <div className="relative z-10">
+              <span className="text-white text-xl font-medium">
+                50% of Learning
+              </span>
             </div>
 
-            {/* In-house and Visiting Academics Card */}
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
-              <div className="bg-gray-50 border-b border-gray-200 p-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <svg
-                      className="w-6 h-6 text-gray-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 14l9-5-9-5-9 5 9 5z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">
-                      In-house & Visiting Academics
-                    </h3>
-                    <p className="text-gray-600 text-sm">50% of Learning</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <p className="text-gray-700 leading-relaxed">
-                  From top Indian and international business schools, bringing
-                  world-class academic rigor, research depth, and structured
-                  learning.
-                </p>
-              </div>
+            <div className="flex flex-col gap-6 relative z-10">
+              <h4 className="text-white text-xl lg:text-2xl font-light">
+                From top Indian and international business schools, bringing
+                world-class academic rigor, research depth, and structured
+                learning.
+              </h4>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

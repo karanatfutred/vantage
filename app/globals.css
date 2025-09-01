@@ -31,6 +31,16 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Sofia Pro Light';
+  src: url('/fonts/SofiaProLight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+.sofia-pro-light {
+  font-family: 'Sofia Pro Light', sans-serif;
+  font-weight: 300;
+}
 
 @font-face {
   font-family: "Sofia Pro";
@@ -154,7 +164,7 @@
 }
 
 body {
-  background: var(--color-secondary);
+  /* background: var(--color-secondary); */
   color: var(--color-accent);
   font-family: var(--font-primary);
   font-weight: 400;
