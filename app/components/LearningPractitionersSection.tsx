@@ -7,7 +7,16 @@ export default function CustomerTestimonials() {
         {/* Section Header */}
         <div className="mb-20 text-center">
           <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
-            Learning, Led by Practitioners
+            <span
+              className="italic"
+              style={{
+                fontFamily: '"Chronicle Display Black", serif',
+                color: "#568c65",
+              }}
+            >
+              Learning
+            </span>
+            , Led by Practitioners
           </h2>
         </div>
 

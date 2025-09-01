@@ -8,7 +8,7 @@ export default function Admissions() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <h2 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4 font-section-heading">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4 font-section-heading">
             Admissions{" "}
             <span
               className="italic"
