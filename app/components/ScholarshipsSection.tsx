@@ -4,36 +4,39 @@ import React from "react";
 
 export default function ScholarshipsSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-12 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
-            <span
-              className="italic"
-              style={{
-                fontFamily: '"Chronicle Display Black", serif',
-                color: "#568c65",
-              }}
-            >
-              Scholarships
-            </span>{" "}
-            & Social Responsibility
-          </h2>
-        </div>
-
         {/* Main Content */}
         <div className="space-y-5">
           {/* Top Section - 1 in 5 Statistic in Full Width Black Background */}
           <div className="w-full">
-            <div className="bg-black px-16 py-12 w-full h-[450px]">
+            <div className="bg-black px-16 py-12 w-full h-[450px] relative">
               <div className="text-left">
-                <div
-                  className="text-4xl md:text-5xl text-white leading-tight max-w-3xl"
-                  style={{ fontFamily: "serif" }}
-                >
-                  1 in 5 seats across all programmes is offered as a 100%
-                  scholarship to exceptional candidates
+                <div className="text-4xl md:text-5xl text-white leading-tight max-w-3xl">
+                  1 in every 5 seats is reserved as a full scholarship, awarded
+                  only to the most outstanding candidates
+                </div>
+              </div>
+
+              {/* Bottom Heading */}
+              <div className="absolute bottom-8 left-16">
+                <div className="text-4xl md:text-5xl text-white leading-tight max-w-3xl">
+                  <span
+                    className="italic"
+                    style={{
+                      fontFamily: '"Chronicle Display Black", serif',
+                      color: "white",
+                    }}
+                  >
+                    Scholarships
+                  </span>{" "}
+                  <span
+                    style={{
+                      fontFamily: '"Sofia Pro Light", sans-serif',
+                    }}
+                  >
+                    & Social Responsibility
+                  </span>
                 </div>
               </div>
             </div>

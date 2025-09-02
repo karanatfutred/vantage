@@ -4,14 +4,34 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-16">
+    <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Column 1: About us */}
+          {/* Column 1: About Vantage */}
           <div>
-            <h3 className="text-lg font-bold mb-4">About us</h3>
+            <h3 className="text-lg font-bold mb-4">About Vantage</h3>
             <ul className="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  tabIndex={0}
+                  aria-label="Our Story"
+                >
+                  Our Story
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  tabIndex={0}
+                  aria-label="Meet the Founders"
+                >
+                  Meet the Founders
+                </a>
+              </li>
               <li>
                 <a
                   href="#"
@@ -25,18 +45,18 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 2: Academics */}
+          {/* Column 2: Programs */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Academics</h3>
+            <h3 className="text-lg font-bold mb-4">Programs</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Postgraduate Programme"
+                  aria-label="Global Banking & Finance Fellowship"
                 >
-                  Postgraduate Programme
+                  Global Banking & Finance Fellowship
                 </a>
               </li>
               <li>
@@ -44,9 +64,9 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Undergraduate Programme"
+                  aria-label="PGP Strategic Finance & Analytics"
                 >
-                  Undergraduate Programme
+                  PGP Strategic Finance & Analytics
                 </a>
               </li>
               <li>
@@ -54,26 +74,26 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Executive Programme"
+                  aria-label="Executive Education"
                 >
-                  Executive Programme
+                  Executive Education
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Innovation */}
+          {/* Column 3: Learning & Innovation */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Innovation</h3>
+            <h3 className="text-lg font-bold mb-4">Learning & Innovation</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Student Entrepreneurship"
+                  aria-label="Real Mandates"
                 >
-                  Student Entrepreneurship
+                  Real Mandates
                 </a>
               </li>
               <li>
@@ -81,26 +101,36 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Faculty Research"
+                  aria-label="Student Achievements"
                 >
-                  Faculty Research
+                  Student Achievements
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  tabIndex={0}
+                  aria-label="Industry Partnerships"
+                >
+                  Industry Partnerships
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Other Links */}
+          {/* Column 4: Resources & Support */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Other Links</h3>
+            <h3 className="text-lg font-bold mb-4">Resources & Support</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="For Companies"
+                  aria-label="Scholarships"
                 >
-                  For Companies
+                  Scholarships
                 </a>
               </li>
               <li>
@@ -108,9 +138,9 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Jobs"
+                  aria-label="Admissions"
                 >
-                  Jobs
+                  Admissions
                 </a>
               </li>
               <li>
@@ -118,9 +148,9 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Become A Master"
+                  aria-label="Contact Us"
                 >
-                  Become A Master
+                  Contact Us
                 </a>
               </li>
               <li>
@@ -128,29 +158,9 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Events"
+                  aria-label="Privacy Policy"
                 >
-                  Events
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Blog"
-                >
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Policies and Resources"
-                >
-                  Policies and Resources
+                  Privacy Policy
                 </a>
               </li>
             </ul>

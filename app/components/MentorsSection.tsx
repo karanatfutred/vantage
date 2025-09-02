@@ -36,10 +36,10 @@ export default function MentorsSection() {
   }, [mentors.length]);
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center">
           <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
             Meet Your{" "}
             <span
