@@ -4,7 +4,7 @@ import React from "react";
 
 export default function AchievementsSection() {
   return (
-    <section className="py-16 bg-black">
+    <section className="py-12 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16 text-center">

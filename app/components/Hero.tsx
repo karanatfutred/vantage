@@ -49,7 +49,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[30vh] flex flex-col items-center justify-center bg-black text-center pt-32 overflow-hidden">
+    <section className="relative min-h-[30vh] flex flex-col items-center justify-center bg-black text-center pt-24 overflow-hidden pb-8">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full opacity-30 blur-3xl"></div>

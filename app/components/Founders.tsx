@@ -26,7 +26,7 @@ const Founders = () => {
   return (
     <div className="w-full">
       {/* White Header Section */}
-      <div className="bg-white h-12 w-full"></div>
+      <div className="bg-white h-8 w-full"></div>
 
       {/* Main Content Section */}
       <div className="bg-white w-full px-4 sm:px-6 lg:px-8">
@@ -49,70 +49,222 @@ const Founders = () => {
             </div>
           </div>
 
-          {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.id}
-                className="px-4 sm:px-8 py-8 sm:py-12"
-              >
-                {/* Row Layout Container - Both cards have same layout: image left, text right */}
-                <div className="flex flex-col sm:flex-row items-start gap-6 lg:gap-8">
-                  {/* Image Section - White background */}
-                  <div className="flex-shrink-0 ">
-                    <img
-                      src={testimonial.image}
-                      alt="Profile"
-                      className="w-32 h-32 sm:w-40 sm:h-40 lg:w-70 lg:h-70 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Content Section - Both cards left-aligned */}
-                  <div className="flex-1 text-left">
-                    {/* Founder Name Button */}
-                    <div className="text-black text-sm sm:text-base lg:text-xl  py-2 font-semibold tracking-wide border-none leading-relaxed mb-4">
-                      {testimonial.name}
+          {/* Duplicate Founders Section */}
+          <div className="mt-12 mb-16">
+            {/* Testimonials Grid - Duplicate */}
+            <div className="flex flex-col gap-8 lg:gap-12">
+              {/* Dr. Manish Malhotra Card */}
+              {testimonials
+                .filter((testimonial) => testimonial.id !== 2)
+                .map((testimonial) => (
+                  <div
+                    key={`duplicate-${testimonial.id}`}
+                    className="px-4 sm:px-8 py-2 sm:py-4 flex-1"
+                  >
+                    {/* Row Layout Container - Content on left, image on right */}
+                    <div className="flex flex-col sm:flex-row items-start gap-4 lg:gap-6">
+                      {/* Content Section - Left side */}
+                      <div className="text-left order-1 sm:order-1">
+                        {/* Founder Name Button */}
+                        <div className="text-black text-xl sm:text-2xl lg:text-3xl  py-2 font-semibold tracking-wide border-none leading-tight">
+                          Dr. Manish{" "}
+                          <span
+                            style={{
+                              fontFamily: '"Chronicle Display Black", serif',
+                              color: "#568C65",
+                              fontStyle: "italic",
+                            }}
+                          >
+                            Malhotra
+                          </span>
+                        </div>
+
+                        {/* Content Text */}
+                        <p className="text-gray-600 text-xs sm:text-xs leading-relaxed mb-4">
+                          {testimonial.content}
+                        </p>
+
+                        {/* Additional Description */}
+                        <p
+                          className="text-xs sm:text-sm leading-normal mb-6 max-w-sm tracking-wide italic"
+                          style={{
+                            fontFamily: '"Sofia Pro Bold Az", sans-serif',
+                            color: "#1a1a1a",
+                          }}
+                        >
+                          Reimagining education for an{" "}
+                          <span
+                            style={{
+                              fontFamily: '"Sofia Pro Bold Az", sans-serif',
+                              color: "#568C65",
+                              fontWeight: "bold",
+                              fontStyle: "italic",
+                            }}
+                          >
+                            AI-Powered
+                          </span>
+                          , skills-first world.
+                        </p>
+
+                        {/* Company Logos - Below description */}
+                        <div className="flex flex-row gap-3 items-start">
+                          {testimonial.logo && (
+                            <div className="flex-shrink-0">
+                              <img
+                                src={testimonial.logo}
+                                alt="Company logo"
+                                className="h-4 sm:h-5 lg:h-6 w-auto object-contain transition-opacity duration-200"
+                                style={{ imageRendering: "crisp-edges" }}
+                              />
+                            </div>
+                          )}
+                          {testimonial.logo2 && (
+                            <div className="flex-shrink-0">
+                              <img
+                                src={testimonial.logo2}
+                                alt="Company logo"
+                                className="h-4 sm:h-5 lg:h-6 w-auto object-contain transition-opacity duration-200"
+                                style={{ imageRendering: "crisp-edges" }}
+                              />
+                            </div>
+                          )}
+                          {testimonial.logo3 && (
+                            <div className="flex-shrink-0">
+                              <img
+                                src={testimonial.logo3}
+                                alt="Company logo"
+                                className="h-4 sm:h-5 lg:h-6 w-auto object-contain transition-opacity duration-200"
+                                style={{ imageRendering: "crisp-edges" }}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Right Section - Image only */}
+                      <div className="flex flex-col items-center gap-6 order-2 sm:order-2">
+                        {/* Image Section */}
+                        <div className="flex-shrink-0 ">
+                          <img
+                            src={testimonial.image}
+                            alt="Profile"
+                            className="w-40 h-40 sm:w-46 sm:h-46 lg:w-52 lg:h-52 object-contain"
+                            style={{
+                              filter: "drop-shadow(10px 5px 0px #568C65)",
+                            }}
+                          />
+                        </div>
+                      </div>
                     </div>
-                    
-                    {/* Content Text */}
-                    <p className="text-black text-sm sm:text-sm leading-relaxed mb-6">
-                      {testimonial.content}
-                    </p>
-                    
-                    {/* Company Logos - Both cards left-aligned */}
-                    <div className="flex flex-col gap-3 mt-4 items-start">
-                      {testimonial.logo && (
-                        <div className="flex-shrink-0">
+                  </div>
+                ))}
+
+              {/* Syed Raza Card */}
+              {testimonials
+                .filter((testimonial) => testimonial.id === 2)
+                .map((testimonial) => (
+                  <div
+                    key={`syed-${testimonial.id}`}
+                    className="px-4 sm:px-8 py-2 sm:py-4 flex-1 ml-auto"
+                  >
+                    {/* Row Layout Container - Content on left, image on right */}
+                    <div className="flex flex-col sm:flex-row items-start gap-8 lg:gap-12">
+                      {/* Content Section - Left side */}
+                      <div className="text-left order-1 sm:order-1">
+                        {/* Founder Name Button */}
+                        <div className="text-black text-xl sm:text-2xl lg:text-3xl  py-2 font-semibold tracking-wide border-none leading-tight">
+                          Syed{" "}
+                          <span
+                            style={{
+                              fontFamily: '"Chronicle Display Black", serif',
+                              color: "#568C65",
+                              fontStyle: "italic",
+                            }}
+                          >
+                            Raza
+                          </span>
+                        </div>
+
+                        {/* Content Text */}
+                        <p className="text-gray-600 text-xs sm:text-xs leading-relaxed mb-4">
+                          {testimonial.content}
+                        </p>
+
+                        {/* Additional Description */}
+                        <p
+                          className="text-xs sm:text-sm leading-normal mb-6 max-w-sm tracking-wide italic"
+                          style={{
+                            fontFamily: '"Sofia Pro Bold Az", sans-serif',
+                            color: "#1a1a1a",
+                          }}
+                        >
+                          Transforming financial services with innovation and{" "}
+                          <span
+                            style={{
+                              fontFamily: '"Sofia Pro Bold Az", sans-serif',
+                              color: "#568C65",
+                              fontWeight: "bold",
+                              fontStyle: "italic",
+                            }}
+                          >
+                            AI-Powered
+                          </span>{" "}
+                          leadership.
+                        </p>
+
+                        {/* Company Logos - Below description */}
+                        <div className="flex flex-row gap-3 items-start">
+                          {testimonial.logo && (
+                            <div className="flex-shrink-0">
+                              <img
+                                src={testimonial.logo}
+                                alt="Company logo"
+                                className="h-4 sm:h-5 lg:h-6 w-auto object-contain transition-opacity duration-200"
+                                style={{ imageRendering: "crisp-edges" }}
+                              />
+                            </div>
+                          )}
+                          {testimonial.logo2 && (
+                            <div className="flex-shrink-0">
+                              <img
+                                src={testimonial.logo2}
+                                alt="Company logo"
+                                className="h-4 sm:h-5 lg:h-6 w-auto object-contain transition-opacity duration-200"
+                                style={{ imageRendering: "crisp-edges" }}
+                              />
+                            </div>
+                          )}
+                          {testimonial.logo3 && (
+                            <div className="flex-shrink-0">
+                              <img
+                                src={testimonial.logo3}
+                                alt="Company logo"
+                                className="h-4 sm:h-5 lg:h-6 w-auto object-contain transition-opacity duration-200"
+                                style={{ imageRendering: "crisp-edges" }}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Right Section - Image only */}
+                      <div className="flex flex-col items-center gap-6 order-2 sm:order-2">
+                        {/* Image Section */}
+                        <div className="flex-shrink-0 ">
                           <img
-                            src={testimonial.logo}
-                            alt="Company logo"
-                            className="h-6 sm:h-8 lg:h-8 w-auto object-contain transition-opacity duration-200"
+                            src={testimonial.image}
+                            alt="Profile"
+                            className="w-40 h-40 sm:w-46 sm:h-46 lg:w-52 lg:h-52 object-contain"
+                            style={{
+                              filter: "drop-shadow(10px 5px 0px #568C65)",
+                            }}
                           />
                         </div>
-                      )}
-                      {testimonial.logo2 && (
-                        <div className="flex-shrink-0">
-                          <img
-                            src={testimonial.logo2}
-                            alt="Company logo"
-                            className="h-6 sm:h-8 lg:h-8 w-auto object-contain transition-opacity duration-200"
-                          />
-                        </div>
-                      )}
-                      {testimonial.logo3 && (
-                        <div className="flex-shrink-0">
-                          <img
-                            src={testimonial.logo3}
-                            alt="Company logo"
-                            className="h-6 sm:h-8 lg:h-8 w-auto object-contain transition-opacity duration-200"
-                          />
-                        </div>
-                      )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                ))}
+            </div>
           </div>
         </div>
       </div>
