@@ -10,7 +10,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center bg-gray-700">
               <Image
                 src="/assets/logo.png"
                 alt="Vantage Logo"
@@ -43,7 +43,7 @@ export default function Navbar() {
                 onClick={(e) => e.preventDefault()}
               >
                 PGP{" "}
-                <span className="text-yellow-500 font-semibold">
+                <span className="text-[#a5d2b1] font-semibold">
                   ( Coming Soon )
                 </span>
               </Link>
@@ -52,7 +52,7 @@ export default function Navbar() {
 
           {/* Apply Now Button */}
           <div className="hidden md:block">
-            <button className="bg-yellow-500 text-white px-6 py-2 rounded-md text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200">
+            <button className="bg-[#a5d2b1] text-black px-6 py-2 rounded-md text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200">
               Apply Now
             </button>
           </div>

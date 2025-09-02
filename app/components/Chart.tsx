@@ -7,64 +7,60 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
-  Legend,
   ResponsiveContainer,
+  LabelList,
 } from "recharts";
 
-// Sample data based on the description
+// Updated data with your provided values and difference calculations
 const compensationData = [
   {
     year: "Year 1",
-    standardFinance: 90000,
-    highFinance: 175000,
+    standardFinance: 1000000,
+    highFinance: 2300000,
+    difference: 1300000,
   },
   {
     year: "Year 2",
-    standardFinance: 100000,
-    highFinance: 200000,
+    standardFinance: 1200000,
+    highFinance: 3500000,
+    difference: 2300000,
   },
   {
     year: "Year 3",
-    standardFinance: 110000,
-    highFinance: 250000,
+    standardFinance: 1600000,
+    highFinance: 4200000,
+    difference: 2600000,
   },
   {
     year: "Year 4",
-    standardFinance: 120000,
-    highFinance: 300000,
+    standardFinance: 1800000,
+    highFinance: 4400000,
+    difference: 2600000,
   },
   {
     year: "Year 5",
-    standardFinance: 130000,
-    highFinance: 375000,
+    standardFinance: 2200000,
+    highFinance: 5000000,
+    difference: 2800000,
   },
 ];
 
+// Updated formatter function to handle ReactNode types
+const formatLakhs = (value: any): string => {
+  if (typeof value === "number") {
+    return `${Math.round(value / 100000)}L`;
+  }
+  return "";
+};
+
 const FinanceCompensationChart: React.FC = () => {
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat("en-US", {
+    return new Intl.NumberFormat("en-IN", {
       style: "currency",
-      currency: "USD",
+      currency: "INR",
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);
-  };
-
-  const CustomTooltip = ({ active, payload, label }: any) => {
-    if (active && payload && payload.length) {
-      return (
-        <div className="bg-white p-4 border border-gray-300 rounded shadow-lg">
-          <p className="font-semibold text-gray-900">{label}</p>
-          {payload.map((entry: any, index: number) => (
-            <p key={index} style={{ color: entry.color }} className="text-sm">
-              {entry.name}: {formatCurrency(entry.value)}
-            </p>
-          ))}
-        </div>
-      );
-    }
-    return null;
   };
 
   // Calculate total difference over 5 years
@@ -77,6 +73,82 @@ const FinanceCompensationChart: React.FC = () => {
     0
   );
   const totalDifference = totalHighFinance - totalStandardFinance;
+
+  // Find the maximum value for Y-axis domain
+  const maxValue = Math.max(
+    ...compensationData.map((item) =>
+      Math.max(item.standardFinance, item.highFinance)
+    )
+  );
+  const yAxisMax = Math.ceil(maxValue * 1.1);
+
+  // Custom component to render difference lines
+  const CustomizedDifference = (props: any) => {
+    const { payload, x, y, width, height } = props;
+    if (!payload) return null;
+
+    const standardFinance = payload.standardFinance;
+    const highFinance = payload.highFinance;
+    const difference = highFinance - standardFinance;
+
+    // Calculate positions for the bars
+    const chartHeight = 320; // Approximate chart height
+    const standardHeight = (standardFinance / yAxisMax) * chartHeight;
+    const highFinanceHeight = (highFinance / yAxisMax) * chartHeight;
+
+    const standardTop = chartHeight - standardHeight + 20; // +20 for margin
+    const highFinanceTop = chartHeight - highFinanceHeight + 20;
+
+    const centerX = x + width / 2;
+    const lineX = centerX + width * 0.6; // Position line to the right of bars
+
+    return (
+      <g>
+        {/* Vertical dashed line */}
+        <line
+          x1={lineX}
+          y1={standardTop}
+          x2={lineX}
+          y2={highFinanceTop}
+          stroke="#ff6b35"
+          strokeWidth={2}
+          strokeDasharray="4,4"
+        />
+
+        {/* Top horizontal tick */}
+        <line
+          x1={lineX - 5}
+          y1={highFinanceTop}
+          x2={lineX + 5}
+          y2={highFinanceTop}
+          stroke="#ff6b35"
+          strokeWidth={2}
+        />
+
+        {/* Bottom horizontal tick */}
+        <line
+          x1={lineX - 5}
+          y1={standardTop}
+          x2={lineX + 5}
+          y2={standardTop}
+          stroke="#ff6b35"
+          strokeWidth={2}
+        />
+
+        {/* Difference label */}
+        <text
+          x={lineX + 8}
+          y={(standardTop + highFinanceTop) / 2 + 4}
+          fill="#ff6b35"
+          fontSize="12"
+          fontWeight="600"
+          textAnchor="start"
+        >
+          +{Math.round(difference / 100000)}L
+        </text>
+      </g>
+    );
+  };
 
   return (
     <div className="w-full max-w-6xl mx-auto p-6 bg-white">
@@ -107,7 +179,7 @@ const FinanceCompensationChart: React.FC = () => {
             data={compensationData}
             margin={{
               top: 20,
-              right: 30,
+              right: 100,
               left: 20,
               bottom: 5,
             }}
@@ -125,20 +197,46 @@ const FinanceCompensationChart: React.FC = () => {
               axisLine={false}
               tickLine={false}
               tick={{ fontSize: 12, fill: "#666" }}
-              domain={[0, 400000]}
+              domain={[0, yAxisMax]}
             />
-            <Tooltip content={<CustomTooltip />} />
-            <Bar
-              dataKey="standardFinance"
-              fill="#189eda"
-              radius={[4, 4, 0, 0]}
-              name="Standard Finance"
-            />
+
             <Bar
               dataKey="highFinance"
-              fill="#0a425c"
+              fill="#000"
               radius={[4, 4, 0, 0]}
               name="High Finance"
+            >
+              <LabelList
+                dataKey="highFinance"
+                position="insideTop"
+                formatter={formatLakhs}
+                style={{ fill: "#fff", fontWeight: 600, fontSize: 14 }}
+              />
+            </Bar>
+            <Bar
+              dataKey="standardFinance"
+              fill="#639b72"
+              radius={[4, 4, 0, 0]}
+              name="Standard Finance"
+            >
+              <LabelList
+                dataKey="standardFinance"
+                position="insideTop"
+                formatter={formatLakhs}
+                style={{
+                  fill: "#fff",
+                  fontWeight: 600,
+                  fontSize: 14,
+                }}
+              />
+            </Bar>
+
+            {/* Add invisible bar to render custom difference lines */}
+            <Bar
+            id="difference-bar"
+              dataKey="difference"
+              fill="transparent"
+              shape={<CustomizedDifference />}
             />
           </BarChart>
         </ResponsiveContainer>
@@ -151,15 +249,19 @@ const FinanceCompensationChart: React.FC = () => {
           <div className="flex items-start space-x-3">
             <div
               className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
-              style={{ backgroundColor: "#189eda" }}
+              style={{ backgroundColor: "#639b72" }}
             >
               1
             </div>
             <div className="text-sm text-gray-700">
               <p>
+                <span
+                  className="inline-block w-3 h-3 rounded mr-2"
+                  style={{ backgroundColor: "#639b72" }}
+                ></span>
                 Standard Finance Compensation assumed to be top end of the range
-                in HCOL locations starting at <strong>$90,000</strong> with
-                annual <strong>$10,000</strong> increases in pay
+                in HCOL locations starting at <strong>₹10,00,000</strong> with
+                varying annual increases in pay
               </p>
             </div>
           </div>
@@ -167,12 +269,13 @@ const FinanceCompensationChart: React.FC = () => {
           <div className="flex items-start space-x-3">
             <div
               className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
-              style={{ backgroundColor: "#0a425c" }}
+              style={{ backgroundColor: "#000" }}
             >
               2
             </div>
             <div className="text-sm text-gray-700">
               <p>
+                <span className="inline-block w-3 h-3 bg-black rounded mr-2"></span>
                 High Finance Avg Pay based on average high finance roles from
                 2022–2025 (data from <strong>79,000+</strong> submissions to the
                 WSO Company Database)

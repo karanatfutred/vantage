@@ -51,11 +51,11 @@ export default function Hero() {
   return (
     <section className="relative min-h-[30vh] flex flex-col items-center justify-center bg-black text-center pt-24 overflow-hidden pb-8">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full opacity-30 blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-secondary/20 to-primary/20 rounded-full opacity-30 blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full opacity-20 blur-3xl"></div>
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -82,7 +82,7 @@ export default function Hero() {
         <div className="mb-16">
           <p
             className="text-center text-base md:text-lg font-light"
-            style={{ color: "#5A8DEE" }}
+            style={{ color: "#a5d2b1" }}
           >
             Investment Banking | Private Equity & Venture Capital | Capital
             Markets | Wealth, Asset & Risk Management | Fintech & Digital

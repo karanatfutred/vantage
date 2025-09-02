@@ -25,7 +25,7 @@ export default function ScholarshipsSection() {
                     className="italic"
                     style={{
                       fontFamily: '"Chronicle Display Black", serif',
-                      color: "white",
+                      color: "#A5D2B0",
                     }}
                   >
                     Scholarships
