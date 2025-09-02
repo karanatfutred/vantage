@@ -23,11 +23,11 @@ const LearningHighlightsSection = () => {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
+          <h2 className="text-5xl md:text-6xl font-bold text-white font-section-heading">
             Learning{" "}
             <span
               className="italic"
@@ -45,17 +45,17 @@ const LearningHighlightsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
           {highlights.map((highlight, index) => (
             <div key={index} className="relative">
-              <div className="p-6 text-black">
-                <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
+              <div className="p-6 text-white">
+                <h3 className="text-lg font-semibold mb-4 text-white font-section-heading">
                   {highlight.title}
                 </h3>
-                <p className="text-base leading-relaxed text-black">
+                <p className="text-base leading-relaxed text-white">
                   {highlight.description}
                 </p>
               </div>
               {/* Right border line - only for first 3 columns on desktop */}
               {index < 3 && (
-                <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-px bg-white opacity-30"></div>
               )}
             </div>
           ))}

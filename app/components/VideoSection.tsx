@@ -1,9 +1,9 @@
 const VideoSection = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-8 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Video Container */}
-        <div className="relative w-full">
+        <div className="relative w-full max-w-2xl mx-auto">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <video
               className="w-full h-auto"

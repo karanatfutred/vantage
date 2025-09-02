@@ -1,4 +1,3 @@
-import MentorsSection from "../components/MentorsSection";
 import Navbar from "../components/Navbar";
 import OverviewSection from "../components/OverviewSection";
 import LearningHighlightsSection from "../components/LearningHighlightsSection";
@@ -11,7 +10,6 @@ export default function Fellowship() {
       <OverviewSection />
       <VideoSection />
       <LearningHighlightsSection />
-      <MentorsSection />
     </div>
   );
 }

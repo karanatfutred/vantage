@@ -10,7 +10,7 @@ export default function MentorsSection() {
     { image: "assets/mentors/satya.jpeg" },
     { image: "assets/mentors/sandeep.jpeg" },
     { image: "assets/mentors/lisa.jpeg" },
-    { image: "assets/mentors/syed.jpeg" }
+    { image: "assets/mentors/syed.jpeg" },
   ];
 
   // Auto-scroll functionality
