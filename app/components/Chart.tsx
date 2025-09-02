@@ -79,116 +79,118 @@ const FinanceCompensationChart: React.FC = () => {
   const totalDifference = totalHighFinance - totalStandardFinance;
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6 bg-white">
-      {/* Section Header */}
-      <div className="mb-12 text-center">
-        <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading mb-6">
-          <span className="ml-2">What's at </span>
-          <span
-            className="italic ml-2"
-            style={{
-              fontFamily: '"Chronicle Display Semibold", serif',
-              color: "#568c65",
-            }}
-          >
-            Stake?
-          </span>
-        </h2>
-
-        <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-          High Finance Vs. Standard Finance | Massive pay gap over 5 years
-        </p>
-      </div>
-
-      {/* Chart Container */}
-      <div className="w-full h-96 mb-6">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            data={compensationData}
-            margin={{
-              top: 20,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-            barCategoryGap="20%"
-          >
-            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-            <XAxis
-              dataKey="year"
-              axisLine={false}
-              tickLine={false}
-              tick={{ fontSize: 12, fill: "#666" }}
-            />
-            <YAxis
-              tickFormatter={formatCurrency}
-              axisLine={false}
-              tickLine={false}
-              tick={{ fontSize: 12, fill: "#666" }}
-              domain={[0, 400000]}
-            />
-            <Tooltip content={<CustomTooltip />} />
-            <Bar
-              dataKey="standardFinance"
-              fill="#189eda"
-              radius={[4, 4, 0, 0]}
-              name="Standard Finance"
-            />
-            <Bar
-              dataKey="highFinance"
-              fill="#0a425c"
-              radius={[4, 4, 0, 0]}
-              name="High Finance"
-            />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-
-      {/* Legend and Footer */}
-      <div className="space-y-4">
-        {/* Legends */}
-        <div className="space-y-3">
-          <div className="flex items-start space-x-3">
-            <div
-              className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
-              style={{ backgroundColor: "#189eda" }}
+    <section className="pt-10 pb-5 bg-white border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="mb-12 text-center">
+          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading mb-6">
+            <span className="ml-2">What's at </span>
+            <span
+              className="italic ml-2"
+              style={{
+                fontFamily: '"Chronicle Display Semibold", serif',
+                color: "#568c65",
+              }}
             >
-              1
-            </div>
-            <div className="text-sm text-gray-700">
-              <p>
-                Standard Finance Compensation assumed to be top end of the range
-                in HCOL locations starting at <strong>$90,000</strong> with
-                annual <strong>$10,000</strong> increases in pay
-              </p>
-            </div>
-          </div>
+              Stake?
+            </span>
+          </h2>
 
-          <div className="flex items-start space-x-3">
-            <div
-              className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
-              style={{ backgroundColor: "#0a425c" }}
-            >
-              2
-            </div>
-            <div className="text-sm text-gray-700">
-              <p>
-                High Finance Avg Pay based on average high finance roles from
-                2022–2025 (data from <strong>79,000+</strong> submissions to the
-                WSO Company Database)
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Title */}
-        <div className="text-center pt-4">
-          <p className="text-lg font-semibold text-gray-900">
-            {formatCurrency(totalDifference)}+ in lost income in just 5 years
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            High Finance Vs. Standard Finance | Massive pay gap over 5 years
           </p>
         </div>
+
+        {/* Chart Container */}
+        <div className="w-full h-96 mb-6">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={compensationData}
+              margin={{
+                top: 20,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+              barCategoryGap="20%"
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+              <XAxis
+                dataKey="year"
+                axisLine={false}
+                tickLine={false}
+                tick={{ fontSize: 12, fill: "#666" }}
+              />
+              <YAxis
+                tickFormatter={formatCurrency}
+                axisLine={false}
+                tickLine={false}
+                tick={{ fontSize: 12, fill: "#666" }}
+                domain={[0, 400000]}
+              />
+              <Tooltip content={<CustomTooltip />} />
+              <Bar
+                dataKey="standardFinance"
+                fill="#189eda"
+                radius={[4, 4, 0, 0]}
+                name="Standard Finance"
+              />
+              <Bar
+                dataKey="highFinance"
+                fill="#0a425c"
+                radius={[4, 4, 0, 0]}
+                name="High Finance"
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Legend and Footer */}
+        <div className="space-y-4">
+          {/* Legends */}
+          <div className="space-y-3">
+            <div className="flex items-start space-x-3">
+              <div
+                className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
+                style={{ backgroundColor: "#189eda" }}
+              >
+                1
+              </div>
+              <div className="text-sm text-gray-700">
+                <p>
+                  Standard Finance Compensation assumed to be top end of the
+                  range in HCOL locations starting at <strong>$90,000</strong>{" "}
+                  with annual <strong>$10,000</strong> increases in pay
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-3">
+              <div
+                className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
+                style={{ backgroundColor: "#0a425c" }}
+              >
+                2
+              </div>
+              <div className="text-sm text-gray-700">
+                <p>
+                  High Finance Avg Pay based on average high finance roles from
+                  2022–2025 (data from <strong>79,000+</strong> submissions to
+                  the WSO Company Database)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Title */}
+          <div className="text-center pt-4">
+            <p className="text-lg font-semibold text-gray-900">
+              {formatCurrency(totalDifference)}+ in lost income in just 5 years
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

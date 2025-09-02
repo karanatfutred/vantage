@@ -33,7 +33,6 @@ const HeroSection = () => {
 
           {/* CTA Button */}
           <div className="flex flex-row items-center justify-center gap-8 mt-8 pb-10">
-            
             <Link
               href="/apply"
               className="inline-flex items-center justify-center px-12 py-4 text-xl font-medium text-black bg-[#a5d2b1] rounded-2xl"
