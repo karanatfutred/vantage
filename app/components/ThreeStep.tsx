@@ -6,19 +6,19 @@ const ThreeStep = () => {
   const sections = [
     {
       id: 'why-augment-1',
-      title: 'Real-World Startup Insights',
+      title: 'Week 1',
       description: 'Gain hands-on experience and actionable skills. Augment provides real-world tactics and frameworks, taught by business legends.',
       buttonText: 'Explore Courses',
       buttonLink: '/augment-mba-program',
-      image: '/assets/classroom.png'
+      image: '/assets/classroom.jpg'
     },
     {
       id: 'why-augment-2',
-      title: 'Learn On Your Own Time',
+      title: 'Week 2',
       description: 'Flexible, self-paced education for entrepreneurs. Access the best alternative MBA—anywhere, anytime, on any device.',
       buttonText: 'Explore Courses',
       buttonLink: '/augment-mba-program',
-      image: '/assets/image.png'
+      image: '/assets/classroom.jpg'
     },
     {
       id: 'why-augment-3',
@@ -26,21 +26,29 @@ const ThreeStep = () => {
       description: 'Get support from your peers through online masterminds and real-world networking events.',
       buttonText: 'Explore Community',
       buttonLink: 'https://augment.org/students',
-      image: '/assets/image.png'
+      image: '/assets/classroom.jpg'
     }
   ];
 
   return (
-    <section className="bg-gray-200 text-black">
+    <section className="text-black">
       <div className="px-4 lg:pt-[50px] mx-auto max-w-[1272px]">
         {/* Header Section */}
-        <div className="py-[30px] md:py-[50px] mx-auto px-4 text-center pt-0 text-black">
-          <div className="mb-2 md:mb-5 text-sm uppercase tracking-wider lg:text-lg">
-            Why augment?
-          </div>
-          <h2 className="text-3xl md:text-5xl md:whitespace-pre-line font-bold">
-            The Essentials of{'\n'}Entrepreneurship
+
+                <div className="mb-8 text-center">
+          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
+            Meet Your{" "}
+            <span
+              className="italic"
+              style={{
+                fontFamily: '"Chronicle Display Black", serif',
+                color: "#568c65",
+              }}
+            >
+              Mentors
+            </span>
           </h2>
+          <p className="text-lg text-gray-600 mt-4">Your mentors comes from</p>
         </div>
 
         {/* Content Sections */}
@@ -51,7 +59,7 @@ const ThreeStep = () => {
               id={section.id}
               className={`flex flex-col lg:flex-row ${
                 index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              } lg:items-stretch gap-6 lg:gap-20 items-center py-[35px] lg:py-[50px]`}
+              } lg:items-stretch gap-6 lg:gap-20 items-center `}
             >
               {/* Image Section */}
               <div className="w-full lg:max-w-[calc(50%-2.5rem)] lg:flex-1 lg:aspect-square">
@@ -90,7 +98,7 @@ const ThreeStep = () => {
                 {/* Text Content */}
                 <div className="lg:flex lg:flex-col lg:justify-center lg:flex-1">
                   <div className="text-sm uppercase tracking-wider opacity-70 mb-4">
-                    Why Augment?
+                    Curriculum
                   </div>
                   <h3 className="text-[1.625rem] text-gray-800 lg:text-4xl font-bold mb-5 lg:mb-6">
                     {section.title}
@@ -101,12 +109,12 @@ const ThreeStep = () => {
                 </div>
 
                 {/* CTA Button */}
-                <Link
+                {/* <Link
                   href={section.buttonLink}
                   className="inline-flex items-center justify-center px-6 py-3 bg-white text-black border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors self-center lg:self-start"
                 >
                   {section.buttonText}
-                </Link>
+                </Link> */}
               </div>
             </div>
           ))}
