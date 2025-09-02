@@ -69,7 +69,7 @@ export default function LearningSection() {
   };
 
   return (
-    <section className="py-12 bg-white">
+    <section className="pt-10 pb-5 bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-8 text-center">
@@ -89,7 +89,7 @@ export default function LearningSection() {
         </div>
 
         {/* Full Width Banner with Tabs */}
-        <div className="w-full h-[600px] mb-16 relative overflow-hidden rounded-lg">
+        <div className="w-full h-[600px] relative overflow-hidden rounded-lg">
           {/* Background Images with Opacity Transitions */}
           {tabs.map((tab, index) => (
             <div key={tab.id} className="absolute inset-0">

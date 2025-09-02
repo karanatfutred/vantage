@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import OverviewSection from "../components/OverviewSection";
 import LearningHighlightsSection from "../components/LearningHighlightsSection";
 import VideoSection from "../components/VideoSection";
+import MentorsSection from "../components/MentorsSection";
 import ThreeStep from "../components/ThreeStep";
 
 export default function Fellowship() {
@@ -15,6 +16,7 @@ export default function Fellowship() {
       <OverviewSection />
       <VideoSection />
       <LearningHighlightsSection />
+      <MentorsSection />
       <ThreeStep />
     </div>
   );

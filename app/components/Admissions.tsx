@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Admissions() {
   return (
-    <section className="py-12 bg-white">
+    <section className="pt-10 pb-5 bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12 text-center">
@@ -23,7 +23,7 @@ export default function Admissions() {
         </div>
 
         {/* Program Cards - Side by Side */}
-        <div className="flex flex-col lg:flex-row gap-12 mb-8">
+        <div className="flex flex-col lg:flex-row gap-12">
           {/* First Card - Global Banking & Finance Fellowship */}
           <div className="bg-white rounded-lg shadow-lg border border-gray-200 w-full lg:w-[500px] p-4 lg:p-5">
             <div className="flex gap-6">

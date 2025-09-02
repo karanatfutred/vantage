@@ -32,13 +32,13 @@
   font-display: swap;
 }
 @font-face {
-  font-family: 'Sofia Pro Light';
-  src: url('/fonts/SofiaProLight.woff2') format('woff2');
+  font-family: "Sofia Pro Light";
+  src: url("/fonts/SofiaProLight.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
 }
 .sofia-pro-light {
-  font-family: 'Sofia Pro Light', sans-serif;
+  font-family: "Sofia Pro Light", sans-serif;
   font-weight: 300;
 }
 

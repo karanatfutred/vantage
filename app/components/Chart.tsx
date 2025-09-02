@@ -151,26 +151,27 @@ const FinanceCompensationChart: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6 bg-white">
-      {/* Section Header */}
-      <div className="mb-12 text-center">
-        <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading mb-6">
-          <span className="ml-2">What's at </span>
-          <span
-            className="italic ml-2"
-            style={{
-              fontFamily: '"Chronicle Display Semibold", serif',
-              color: "#568c65",
-            }}
-          >
-            Stake?
-          </span>
-        </h2>
+    <section className="pt-10 pb-5 bg-white border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="mb-12 text-center">
+          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading mb-6">
+            <span className="ml-2">What's at </span>
+            <span
+              className="italic ml-2"
+              style={{
+                fontFamily: '"Chronicle Display Semibold", serif',
+                color: "#568c65",
+              }}
+            >
+              Stake?
+            </span>
+          </h2>
 
-        <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-          High Finance Vs. Standard Finance | Massive pay gap over 5 years
-        </p>
-      </div>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            High Finance Vs. Standard Finance | Massive pay gap over 5 years
+          </p>
+        </div>
 
       {/* Chart Container */}
       <div className="w-full h-96 mb-6">
@@ -284,14 +285,15 @@ const FinanceCompensationChart: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Title */}
-        <div className="text-center pt-4">
-          <p className="text-lg font-semibold text-gray-900">
-            {formatCurrency(totalDifference)}+ in lost income in just 5 years
-          </p>
+          {/* Bottom Title */}
+          <div className="text-center pt-4">
+            <p className="text-lg font-semibold text-gray-900">
+              {formatCurrency(totalDifference)}+ in lost income in just 5 years
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

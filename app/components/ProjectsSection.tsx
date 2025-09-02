@@ -25,7 +25,7 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section className="py-12 bg-white">
+    <section className="pt-10 pb-5 bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-8 text-center">
@@ -40,7 +40,7 @@ export default function ProjectsSection() {
             >
               Real Mandates
             </span>
-            <span className="ml-2">at Vantage</span>
+            <span className="ml-4">at Vantage</span>
           </h2>
 
           <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
