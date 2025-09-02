@@ -8,6 +8,7 @@ import LearningPractitionersSection from "./components/LearningPractitionersSect
 import MentorsSection from "./components/MentorsSection";
 import ScholarshipsSection from "./components/ScholarshipsSection";
 import Footer from "./components/Footer";
+import FinanceCompensationChart from "./components/Chart";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <LearningSection />
       <ProjectsSection />
       <LearningPractitionersSection />
+      <FinanceCompensationChart />
       <MentorsSection />
       <ScholarshipsSection />
       <Footer />
