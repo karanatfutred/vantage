@@ -6,6 +6,7 @@ import LearningHighlightsSection from "../components/LearningHighlightsSection";
 import VideoSection from "../components/VideoSection";
 import MentorsSection from "../components/MentorsSection";
 import ThreeStep from "../components/ThreeStep";
+import ProgramDirector from "../components/ProgramDirector";
 
 export default function Fellowship() {
   return (
@@ -15,6 +16,7 @@ export default function Fellowship() {
       <CourseInfoComponent />
       <OverviewSection />
       <VideoSection />
+      <ProgramDirector />
       <LearningHighlightsSection />
       <MentorsSection />
       <ThreeStep />
