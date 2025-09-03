@@ -30,7 +30,7 @@ const CourseInfoComponent = () => {
   ];
 
   return (
-    <section className="pt-12 bg-white">
+    <section className=" bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Statistics Section */}
         <div className="flex flex-col md:flex-row justify-center items-center text-left pt-5 space-y-8">
