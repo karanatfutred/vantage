@@ -41,7 +41,7 @@ const AdmissionScholarshipFees = () => {
       <div className="px-4 lg:pt-[50px] mx-auto max-w-[1272px]">
         {/* Header Section */}
         <div className="mb-12 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold text-white font-section-heading">
+          <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
             Admission,{" "}
             <span
               className="italic"
@@ -107,9 +107,7 @@ const AdmissionScholarshipFees = () => {
                 <h3 className="text-2xl font-bold mb-3">
                   {scholarshipInfo.title}
                 </h3>
-                <p className=" text-sm mb-4">
-                  {scholarshipInfo.description}
-                </p>
+                <p className=" text-sm mb-4">{scholarshipInfo.description}</p>
                 <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 mb-4">
                   <p className="text-sm font-medium">
                     {scholarshipInfo.deadline}
