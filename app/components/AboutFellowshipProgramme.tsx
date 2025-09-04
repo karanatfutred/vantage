@@ -51,7 +51,7 @@ const AboutProgramme = () => {
     <div className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 font-section-heading">
             About the <span className="text-[#083254]">Programme</span>
           </h2>
@@ -90,7 +90,7 @@ const AboutProgramme = () => {
 
         {/* Learning Highlights Section */}
         <div className="mb-12">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-section-heading">
               Learning <span className="text-[#083254]">Highlights</span>
             </h3>
