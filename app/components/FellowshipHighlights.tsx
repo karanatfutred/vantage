@@ -44,7 +44,7 @@ const CourseInfoComponent = () => {
               >
                 {stat.label}
               </p>
-              <h2 className="mt-4 font-normal text-gray-800 text-xl">
+              <h2 className="mt-4 font-normal text-gray-800 text-xl font-section-heading">
                 <span>{stat.number}</span>
               </h2>
               {index < statsData.length - 1 && (

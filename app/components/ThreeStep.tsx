@@ -131,7 +131,7 @@ const ThreeStep = () => {
       <div className="px-4 lg:pt-[50px] mx-auto max-w-[1272px]">
         {/* Header Section */}
         <div className="mb-8 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold text-white font-section-heading">
+          <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
             Meet Your{" "}
             <span
               className="italic"
@@ -147,7 +147,7 @@ const ThreeStep = () => {
         </div>
 
         {/* First Section: Weekly Schedule & Tabs - ADJUSTED WIDTHS */}
-        <div className="flex flex-col lg:flex-row lg:items-stretch gap-6 lg:gap-20 mb-12  rounded-2xl">
+        <div className="flex flex-col lg:flex-row lg:items-stretch gap-6 lg:gap-20 mb-12 rounded-2xl">
           {/* Tabs & Description (LEFT) - REDUCED WIDTH */}
           <div className="flex flex-col gap-8 w-full lg:w-[35%] lg:px-8 lg:py-10 justify-center">
             {/* Tabs */}
@@ -261,48 +261,48 @@ const ThreeStep = () => {
         </div>
 
         {/* Other Sections: Image + Content - UNCHANGED */}
-<div>
- {sections.map((section, index) => (
-<div
-key={section.id}
-id={section.id}
-className={`flex flex-col lg:flex-row ${
-index % 2 === 0 ? "lg:flex-row-reverse" : ""
-} lg:items-stretch gap-6 lg:gap-20 items-center mb-12 rounded-2xl`}
->
-{/* Content Section - REDUCED WIDTH like LEFT section with fixed height */}
-<div className="flex flex-col gap-8 w-full lg:w-[35%] lg:px-8 lg:py-10 justify-center h-[400px]">
-<div className="lg:flex lg:flex-col lg:justify-center lg:flex-1">
-<div className="text-sm uppercase tracking-wider opacity-70 mb-2">
- Curriculum
-</div>
-<h3 className="text-[1.625rem] lg:text-3xl font-bold mb-3">
-{section.title}
-</h3>
-<div className="text-base">
-<p>{section.description}</p>
-</div>
-</div>
-</div>
-{/* Image Section - INCREASED WIDTH like RIGHT section with fixed dimensions */}
-<div className="w-full p-6 rounded-2xl">
-<div className="bg-white p-4 rounded-2xl h-[400px] w-full">
-<div className="h-full w-full overflow-hidden">
-<figure className="relative h-full w-full">
-<Image
-alt="Entrepreneurship illustration"
-src={section.image}
-fill
-className="object-cover rounded-2xl"
-sizes="(max-width: 1024px) 100vw, 50vw"
-/>
-</figure>
-</div>
-</div>
-</div>
-</div>
- ))}
-</div>
+        <div>
+          {sections.map((section, index) => (
+            <div
+              key={section.id}
+              id={section.id}
+              className={`flex flex-col lg:flex-row ${
+                index % 2 === 0 ? "lg:flex-row-reverse" : ""
+              } lg:items-stretch gap-6 lg:gap-20 items-center rounded-2xl`}
+            >
+              {/* Content Section - REDUCED WIDTH like LEFT section with fixed height */}
+              <div className="flex flex-col gap-8 w-full lg:w-[35%] lg:px-8 lg:py-10 justify-center h-[400px]">
+                <div className="lg:flex lg:flex-col lg:justify-center lg:flex-1">
+                  <div className="text-sm uppercase tracking-wider opacity-70 mb-2">
+                    Curriculum
+                  </div>
+                  <h3 className="text-[1.625rem] lg:text-3xl font-bold mb-3">
+                    {section.title}
+                  </h3>
+                  <div className="text-base">
+                    <p>{section.description}</p>
+                  </div>
+                </div>
+              </div>
+              {/* Image Section - INCREASED WIDTH like RIGHT section with fixed dimensions */}
+              <div className="w-full p-6 rounded-2xl">
+                <div className="bg-white p-4 rounded-2xl h-[400px] w-full">
+                  <div className="h-full w-full overflow-hidden">
+                    <figure className="relative h-full w-full">
+                      <Image
+                        alt="Entrepreneurship illustration"
+                        src={section.image}
+                        fill
+                        className="object-cover rounded-2xl"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

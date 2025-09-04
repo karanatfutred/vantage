@@ -20,13 +20,28 @@ const OverviewSection = () => {
           </p>
         </div>
 
-        <p className="text-lg sm:text-xl text-white leading-relaxed text-center">
+        <p className="text-lg sm:text-xl text-white leading-relaxed text-center mb-12">
           Designed and delivered by global finance CXOs, The Global Fellowship
           In High Finance is India's most selective program in modern finance.
           Over two weeks, you move beyond theory into the boardrooms of CXOs,
           learning how fintech, venture capital, wealth & private banking,
           credit, and risk operate at the highest level.
         </p>
+
+        {/* Video Container */}
+        <div className="relative w-full max-w-2xl mx-auto">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <video
+              className="w-full h-auto"
+              controls
+              preload="metadata"
+              playsInline
+            >
+              <source src="/fellowship-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
       </div>
     </section>
   );

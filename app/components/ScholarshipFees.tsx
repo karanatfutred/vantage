@@ -81,7 +81,7 @@ const ScholarshipFees = () => {
 
           {/* Card 2: Main Heading - White Background */}
           <div className="bg-white rounded-2xl p-8 flex flex-col justify-center items-center text-center">
-            <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
               <span
                 className="italic"
                 style={{

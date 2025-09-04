@@ -2,8 +2,8 @@ const BuiltFor = () => {
   return (
     <section className="pt-10 bg-black border-b border-gray-600">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-50">
-        <div className="text-center ">
-          <h2 className="text-5xl md:text-6xl font-bold text-white font-section-heading">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
             <span
               className="italic"
               style={{

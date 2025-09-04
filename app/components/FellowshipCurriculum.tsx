@@ -55,7 +55,7 @@ const AugmentSection = () => {
           <div className="text-sm font-semibold uppercase tracking-wider opacity-70 mb-4">
             Why Augment?
           </div>
-          <h3 className="text-[1.625rem] font-bold text-charcoal lg:text-3xl mb-5 lg:mb-6">
+          <h3 className="text-[1.625rem] font-bold text-charcoal lg:text-3xl mb-5 lg:mb-6 font-section-heading">
             Real-World Startup Insights
           </h3>
           <div className="text-base leading-relaxed">
