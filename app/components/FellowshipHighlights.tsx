@@ -13,7 +13,7 @@ const CourseInfoComponent = () => {
   const statsData = [
     {
       number: "06th Oct 2025",
-      label: "Starts On",
+      label: "StartsOn",
     },
     {
       number: "02 Weeks",
@@ -26,30 +26,27 @@ const CourseInfoComponent = () => {
     {
       number: "14,999",
       label: "Price",
-    }
+    },
   ];
 
   return (
-    <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
+    <section className=" bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Statistics Section */}
-        <div className="flex flex-col md:flex-row text-left py-5 ">
+        <div className="flex flex-col md:flex-row justify-center items-center text-left pt-5 space-y-8">
           {statsData.map((stat, index) => (
-            <div key={index} className="relative px-10">
-              {/* Heading/Label on top */}
+            <div key={index} className="relative px-16">
               <p
-                className="text-gray-600 font-semibold text-2xl italic"
+                className="mt-2 text-gray-600 font-semibold text-2xl italic"
                 style={{
                   fontFamily: "Instrument Serif, serif",
                 }}
               >
                 {stat.label}
               </p>
-              {/* Value below */}
-              <h2 className="mt-4 font-normal text-gray-800 text-xl ">
+              <h2 className="mt-4 font-normal text-gray-800 text-xl font-section-heading">
                 <span>{stat.number}</span>
               </h2>
-              {/* Divider line */}
               {index < statsData.length - 1 && (
                 <div className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 h-28 w-px bg-gray-200"></div>
               )}

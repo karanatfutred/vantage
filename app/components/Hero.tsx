@@ -5,8 +5,8 @@ import { useState, useRef } from "react";
 
 // Add Trajan Pro Regular font
 const trajanPro = {
-  fontFamily: 'Trajan Pro Regular, serif',
-  src: 'url(/fonts/Trajan Pro Regular.ttf) format("truetype")'
+  fontFamily: "Trajan Pro Regular, serif",
+  src: 'url(/fonts/Trajan Pro Regular.ttf) format("truetype")',
 };
 
 export default function Hero() {
@@ -55,7 +55,10 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-[20vh] flex flex-col items-center justify-center bg-black text-center pt-40 overflow-hidden pb-8">
+    <section
+      id="hero"
+      className="relative min-h-[20vh] flex flex-col items-center justify-center bg-black text-center pt-32 overflow-hidden pb-8"
+    >
       {/* Background decorative elements */}
       {/* <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full opacity-30 blur-3xl"></div>
@@ -66,39 +69,74 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Main heading */}
-        <h1 className="mb-4 leading-tight">
+        <h1 className="mb-2 leading-tight">
           <div
-            className="text-6xl md:text-8xl font-bold text-white drop-shadow-lg hover:drop-shadow-xl transition-all duration-500 hover:scale-105 uppercase"
+            className="text-[4.6rem] md:text-[7.2rem] font-bold text-white drop-shadow-lg hover:drop-shadow-xl transition-all duration-500 hover:scale-105 whitespace-nowrap"
             style={{
-              fontFamily: 'Trajan Pro Regular, serif',
+              fontFamily: "Trajan Pro Regular, serif",
             }}
           >
-            The <span className="font-extrabold text-white">Finance</span>{" "}
-            <span className="text-white">School</span>
+            <span
+              style={{
+                fontFamily: '"Trajan Pro Regular", serif',
+              }}
+            >
+              The
+            </span>{" "}
+            <span
+              style={{
+                fontFamily: '"Trajan Pro Regular", serif',
+                color: "#ffffff",
+              }}
+            >
+              Finance
+            </span>{" "}
+            <span
+              className="text-white"
+              style={{
+                fontFamily: '"Trajan Pro Regular", serif',
+              }}
+            >
+              School
+            </span>
           </div>
         </h1>
 
         {/* Description */}
-        <p className="text-base md:text-lg lg:text-2xl text-white mb-12 font-light max-w-4xl mx-auto">
+        <p className="text-base md:text-lg lg:text-2xl text-white mb-10 font-light max-w-4xl mx-auto">
           Taught by the leaders who shaped trillion-dollar finance
         </p>
 
         {/* Program Offerings */}
-        <div className="mb-16">
+        <div className="mb-8">
           <p
             className="text-center text-base md:text-lg font-light"
             style={{ color: "#c8e6d3" }}
           >
-            Investment Banking | Private Equity & Venture Capital | Capital
-            Markets | Wealth, Asset & Risk Management | Fintech & Digital
-            Finance
+            <span>Investment Banking </span>
+            <span className="text-white" aria-hidden="true">
+              |
+            </span>
+            <span> Private Equity & Venture Capital </span>
+            <span className="text-white" aria-hidden="true">
+              |
+            </span>
+            <span> Capital Markets </span>
+            <span className="text-white" aria-hidden="true">
+              |
+            </span>
+            <span> Wealth, Asset & Risk Management </span>
+            <span className="text-white" aria-hidden="true">
+              |
+            </span>
+            <span> Fintech & Digital Finance</span>
           </p>
         </div>
 
         {/* Image Grid - 3 Different Sizes with Equal Mouse Tracking */}
         <div
           ref={gridRef}
-          className="flex justify-center pb-10 mt-24 cursor-none"
+          className="flex justify-center pb-10 mt-16 cursor-none"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onMouseEnter={handleMouseEnter}

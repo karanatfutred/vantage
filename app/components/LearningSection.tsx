@@ -86,10 +86,10 @@ export default function LearningSection() {
             </span>{" "}
             the Classroom
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+          {/* <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
             Immersive learning experiences that prepare you for real-world
             challenges
-          </p>
+          </p> */}
         </div>
 
         {/* Full Width Banner with Tabs */}

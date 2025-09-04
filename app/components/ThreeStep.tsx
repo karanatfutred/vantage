@@ -98,7 +98,7 @@ const ThreeStep = () => {
 
   const sections = [
     {
-      id: "vantage-2",
+      id: "why-augment-2",
       title: "Week 2",
       description:
         "Flexible, self-paced education for entrepreneurs. Access the best alternative MBA—anywhere, anytime, on any device.",
@@ -107,7 +107,7 @@ const ThreeStep = () => {
       image: "/assets/classroom.jpg",
     },
     {
-      id: "vantage-3",
+      id: "why-augment-3",
       title: "Connect With Fellow Founders",
       description:
         "Get support from your peers through online masterminds and real-world networking events.",
@@ -172,7 +172,7 @@ const ThreeStep = () => {
                 Curriculum
               </div>
               <h3 className="text-[1.625rem] lg:text-3xl font-bold mb-3">
-                {weekTabs[activeTab].subtitle}
+                {weekTabs[activeTab].title}: {weekTabs[activeTab].subtitle}
               </h3>
               <p className="text-base">{weekTabs[activeTab].description}</p>
             </div>

@@ -18,9 +18,9 @@ export default function CustomerTestimonials() {
             </span>
             , Led by Practitioners
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+          {/* <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
             Industry experts shaping the future of finance education
-          </p>
+          </p> */}
         </div>
 
         {/* Testimonials Grid */}
