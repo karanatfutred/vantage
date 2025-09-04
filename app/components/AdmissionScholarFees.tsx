@@ -59,8 +59,8 @@ const AdmissionScholarshipFees = () => {
           </p>
         </div>
 
-        {/* Three Cards Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
+        {/* Two Cards Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Card 1: Admission Process */}
           <div className="p-6">
             <div className="text-center mb-6">
@@ -101,9 +101,10 @@ const AdmissionScholarshipFees = () => {
             </div>
           </div>
 
-          {/* Card 2: Scholarship Program */}
+          {/* Card 2: Merged Scholarship Program & Program Fees */}
           <div className="bg-white rounded-2xl p-6">
-            <div className="text-center mb-6">
+            {/* Scholarship Section */}
+            <div className="text-center mb-8">
               <div className="text-sm text-[#568c65] uppercase tracking-wider mb-2">
                 Financial Aid
               </div>
@@ -115,63 +116,47 @@ const AdmissionScholarshipFees = () => {
               </p>
             </div>
 
-            <div className="mb-6">
-              <h4 className="text-lg font-semibold mb-3 text-[#568c65]">
+            <div className="mb-8">
+              {/* <h4 className="text-lg font-semibold mb-3 text-[#568c65]">
                 Eligibility Criteria
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-6">
                 {scholarshipInfo.eligibility.map((item, index) => (
                   <li key={index} className="flex items-start gap-2 text-sm">
                     <span className="text-[#A5D2B0] mt-1">•</span>
                     <span className="text-gray-600">{item}</span>
                   </li>
                 ))}
-              </ul>
-            </div>
+              </ul> */}
 
-            <div className="bg-[#A5D2B0] rounded-lg p-4 text-center">
-              <p className="text-sm font-medium text-black">
-                {scholarshipInfo.deadline}
-              </p>
-            </div>
-          </div>
-
-          {/* Card 3: Program Fees */}
-          <div className="bg-white rounded-2xl p-6">
-            <div className="text-center mb-6">
-              <div className="text-sm text-[#568c65] uppercase tracking-wider mb-2">
-                Investment
-              </div>
-              <h3 className="text-2xl font-bold text-black mb-3">
-                Program Fee
-              </h3>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-[#568c65] rounded-lg p-8 mb-6">
-                <div className="text-5xl font-bold text-white mb-2">
-                  $12,500
-                </div>
-                <p className="text-base text-gray-200">
-                  Complete 2-week intensive program
+              <div className="bg-[#A5D2B0] rounded-lg p-3 text-center mb-8">
+                <p className="text-sm font-medium text-black">
+                  {scholarshipInfo.deadline}
                 </p>
               </div>
+            </div>
 
-              <div className="space-y-3">
-                <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                  <span className="text-sm text-gray-600">
-                    Materials & Resources
-                  </span>
-                  <span className="text-sm font-medium">Included</span>
+            {/* Program Fees Section */}
+            <div className="border-t border-gray-200 pt-8">
+              <div className="text-center mb-6">
+                <div className="text-sm text-[#568c65] uppercase tracking-wider mb-2">
+                  Investment
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                  <span className="text-sm text-gray-600">Certification</span>
-                  <span className="text-sm font-medium">Included</span>
+                <h3 className="text-2xl font-bold text-black mb-3">
+                  Program Fee
+                </h3>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-[#568c65] rounded-lg p-6 mb-6">
+                  <div className="text-4xl font-bold text-white mb-2">
+                    $12,500
+                  </div>
+                  <p className="text-sm text-gray-200">
+                    Complete 2-week intensive program
+                  </p>
                 </div>
-                <div className="flex justify-between items-center py-2">
-                  <span className="text-sm text-gray-600">Alumni Access</span>
-                  <span className="text-sm font-medium">Lifetime</span>
-                </div>
+
               </div>
             </div>
           </div>
