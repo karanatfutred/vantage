@@ -13,6 +13,7 @@ import CallToActionSection from "../components/CallToActionSection";
 import Footer from "../components/Footer";
 import AdmissionProcess from "../components/FellowshipAdmission";
 import AdmissionScholarshipFees from "../components/AdmissionScholarFees";
+import CertificateSection from "../components/Certificate";
 
 export default function Fellowship() {
   return (
@@ -28,6 +29,7 @@ export default function Fellowship() {
       <MentorsSection />
       <ThreeStep />
       <FAQSection />
+      <CertificateSection />
       <CallToActionSection />
       <Footer />
     </div>
