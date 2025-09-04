@@ -3,6 +3,12 @@
 import Image from "next/image";
 import { useState, useRef } from "react";
 
+// Add Trajan Pro Regular font
+const trajanPro = {
+  fontFamily: 'Trajan Pro Regular, serif',
+  src: 'url(/fonts/Trajan Pro Regular.ttf) format("truetype")'
+};
+
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isOnGrid, setIsOnGrid] = useState(false);
@@ -49,7 +55,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[30vh] flex flex-col items-center justify-center bg-black text-center pt-24 overflow-hidden pb-8">
+    <section id="hero" className="relative min-h-[20vh] flex flex-col items-center justify-center bg-black text-center pt-40 overflow-hidden pb-8">
       {/* Background decorative elements */}
       {/* <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full opacity-30 blur-3xl"></div>
@@ -60,12 +66,11 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Main heading */}
-        <h1 className="mb-8 leading-tight">
+        <h1 className="mb-4 leading-tight">
           <div
-            className="text-6xl md:text-8xl font-bold text-white drop-shadow-lg hover:drop-shadow-xl transition-all duration-500 hover:scale-105 font-chronicle"
+            className="text-6xl md:text-8xl font-bold text-white drop-shadow-lg hover:drop-shadow-xl transition-all duration-500 hover:scale-105 uppercase"
             style={{
-              fontFamily:
-                '"Chronicle Display Semibold", "Times New Roman", serif',
+              fontFamily: 'Trajan Pro Regular, serif',
             }}
           >
             The <span className="font-extrabold text-white">Finance</span>{" "}
@@ -74,7 +79,7 @@ export default function Hero() {
         </h1>
 
         {/* Description */}
-        <p className="text-lg md:text-xl lg:text-2xl text-white mb-3 font-light max-w-4xl mx-auto">
+        <p className="text-base md:text-lg lg:text-2xl text-white mb-12 font-light max-w-4xl mx-auto">
           Taught by the leaders who shaped trillion-dollar finance
         </p>
 
@@ -82,7 +87,7 @@ export default function Hero() {
         <div className="mb-16">
           <p
             className="text-center text-base md:text-lg font-light"
-            style={{ color: "#a5d2b1" }}
+            style={{ color: "#c8e6d3" }}
           >
             Investment Banking | Private Equity & Venture Capital | Capital
             Markets | Wealth, Asset & Risk Management | Fintech & Digital

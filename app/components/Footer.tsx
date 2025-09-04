@@ -17,41 +17,98 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Our Story"
+                  aria-label="About Us"
                 >
-                  Our Story
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Meet the Founders"
-                >
-                  Meet the Founders
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Careers"
-                >
-                  Careers
+                  About Us
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 2: Programs */}
+          {/* Column 2: Homepage */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Programs</h3>
+            <h3 className="text-lg font-bold mb-4">Homepage</h3>
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="#meet-founders"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  tabIndex={0}
+                  aria-label="Meet The Founders"
+                >
+                  Meet The Founders
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#open-admissions"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  tabIndex={0}
+                  aria-label="Open Admissions"
+                >
+                  Open Admissions
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#learning-beyond-classroom"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  tabIndex={0}
+                  aria-label="Learning Beyond The Classroom"
+                >
+                  Learning Beyond The Classroom
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#real-mandates"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  tabIndex={0}
+                  aria-label="Real Mandates At Vantage"
+                >
+                  Real Mandates At Vantage
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#learning-practitioners"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  tabIndex={0}
+                  aria-label="Learning, Led by Practitioners"
+                >
+                  Learning, Led by Practitioners
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#whats-at-stake"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  tabIndex={0}
+                  aria-label="What's at Stake?"
+                >
+                  What's at Stake?
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#meet-mentors"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  tabIndex={0}
+                  aria-label="Meet Your Mentors"
+                >
+                  Meet Your Mentors
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Fellowships */}
+          <div>
+            <h3 className="text-lg font-bold mb-4">Fellowships</h3>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="#global-banking-fellowship"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="Global Banking & Finance Fellowship"
@@ -61,7 +118,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#pgp-strategic-finance"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="PGP Strategic Finance & Analytics"
@@ -71,49 +128,42 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#fellowship-curriculum"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Executive Education"
+                  aria-label="Fellowship Curriculum"
                 >
-                  Executive Education
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Learning & Innovation */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Learning & Innovation</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Real Mandates"
-                >
-                  Real Mandates
+                  Fellowship Curriculum
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#learning-practitioners"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Student Achievements"
+                  aria-label="Learning Practitioners"
                 >
-                  Student Achievements
+                  Learning Practitioners
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#about-fellowship"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Industry Partnerships"
+                  aria-label="About Fellowship Programme"
                 >
-                  Industry Partnerships
+                  About Fellowship Programme
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#chart"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  tabIndex={0}
+                  aria-label="Program Chart"
+                >
+                  Program Chart
                 </a>
               </li>
             </ul>

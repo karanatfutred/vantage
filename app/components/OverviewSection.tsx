@@ -1,9 +1,9 @@
 const OverviewSection = () => {
   return (
-    <section className="pt-10 pb-5 bg-black">
+    <section className="pt-10  bg-black border-b border-gray-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-bold text-white font-section-heading">
+          <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
             About the{" "}
             <span
               className="italic"
@@ -15,6 +15,9 @@ const OverviewSection = () => {
               Programme
             </span>
           </h2>
+          <p className="text-base md:text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+            Comprehensive finance education for the modern professional
+          </p>
         </div>
 
         <p className="text-lg sm:text-xl text-white leading-relaxed text-center">

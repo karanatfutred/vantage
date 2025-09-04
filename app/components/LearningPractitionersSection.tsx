@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function CustomerTestimonials() {
   return (
-    <section className="pt-10 pb-5 bg-white border-b border-gray-200">
+    <section id="learning-practitioners" className="pt-10  bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
+          <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
             <span
               className="italic"
               style={{
@@ -18,6 +18,9 @@ export default function CustomerTestimonials() {
             </span>
             , Led by Practitioners
           </h2>
+          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            Industry experts shaping the future of finance education
+          </p>
         </div>
 
         {/* Testimonials Grid */}

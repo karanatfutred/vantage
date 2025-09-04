@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ScholarshipsSection() {
   return (
-    <section className="pt-10 pb-5 bg-white border-b border-gray-200">
+    <section className="pt-10  bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Content */}
         <div className="space-y-5">
@@ -12,7 +12,7 @@ export default function ScholarshipsSection() {
           <div className="w-full">
             <div className="bg-black px-16 py-12 w-full h-[450px] relative">
               <div className="text-left">
-                <div className="text-4xl md:text-5xl text-white leading-tight max-w-3xl">
+                <div className="text-3xl md:text-4xl text-white leading-tight max-w-3xl">
                   1 in every 5 seats is reserved as a full scholarship, awarded
                   only to the most outstanding candidates
                 </div>
@@ -20,7 +20,7 @@ export default function ScholarshipsSection() {
 
               {/* Bottom Heading */}
               <div className="absolute bottom-8 left-16">
-                <div className="text-4xl md:text-5xl text-white leading-tight max-w-3xl">
+                <div className="text-3xl md:text-4xl text-white leading-tight max-w-3xl">
                   <span
                     className="italic"
                     style={{
@@ -42,64 +42,71 @@ export default function ScholarshipsSection() {
             </div>
           </div>
 
-          {/* Bottom Section - Four Scholarship Types in Image Style */}
-          <div className="rounded-2xl p-8">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
-              {/* Academic Merit Scholarships */}
-              <div className="relative">
-                <div className="p-6 text-black">
-                  <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
-                    Academic Merit Scholarships
-                  </h3>
-                  <p className="text-base leading-relaxed text-black">
-                    Awarded to students with outstanding academic records
-                  </p>
-                </div>
-                {/* Right border line */}
-                <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
-              </div>
+        </div>
+      </div>
 
-              {/* Need-Based Access Scholarships */}
-              <div className="relative">
-                <div className="p-6 text-black">
-                  <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
-                    Need-Based Access Scholarships
-                  </h3>
-                  <p className="text-base leading-relaxed text-black">
-                    Need-conscious support ensures that financial constraints
-                    don't limit admission
-                  </p>
-                </div>
-                {/* Right border line */}
-                <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+      {/* Full width background div for scholarship cards */}
+      <div 
+        className="w-full border-t border-gray-300"
+        style={{ backgroundColor: "#F7F7F7" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Bottom Section - Four Scholarship Types */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
+            {/* Academic Merit Scholarships */}
+            <div className="relative">
+              <div className="p-6 text-black">
+                <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
+                  Academic Merit Scholarships
+                </h3>
+                <p className="text-base leading-relaxed text-black">
+                  Awarded to students with outstanding academic records
+                </p>
               </div>
+              {/* Right border line */}
+              <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+            </div>
 
-              {/* Achievement Scholarships */}
-              <div className="relative">
-                <div className="p-6 text-black">
-                  <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
-                    Achievement Scholarships
-                  </h3>
-                  <p className="text-base leading-relaxed text-black">
-                    Presented to professionals demonstrating exceptional impact
-                    in their field
-                  </p>
-                </div>
-                {/* Right border line */}
-                <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+            {/* Need-Based Access Scholarships */}
+            <div className="relative">
+              <div className="p-6 text-black">
+                <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
+                  Need-Based Access Scholarships
+                </h3>
+                <p className="text-base leading-relaxed text-black">
+                  Need-conscious support ensures that financial constraints
+                  don't limit admission
+                </p>
               </div>
+              {/* Right border line */}
+              <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+            </div>
 
-              {/* Women in Leadership */}
-              <div className="relative">
-                <div className="p-6 text-black">
-                  <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
-                    Women in Leadership
-                  </h3>
-                  <p className="text-base leading-relaxed text-black">
-                    Targeted scholarships to foster gender diversity and support
-                    women poised to lead in business
-                  </p>
-                </div>
+            {/* Achievement Scholarships */}
+            <div className="relative">
+              <div className="p-6 text-black">
+                <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
+                  Achievement Scholarships
+                </h3>
+                <p className="text-base leading-relaxed text-black">
+                  Presented to professionals demonstrating exceptional impact
+                  in their field
+                </p>
+              </div>
+              {/* Right border line */}
+              <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+            </div>
+
+            {/* Women in Leadership */}
+            <div className="relative">
+              <div className="p-6 text-black">
+                <h3 className="text-lg font-semibold mb-4 text-black font-section-heading">
+                  Women in Leadership
+                </h3>
+                <p className="text-base leading-relaxed text-black">
+                  Targeted scholarships to foster gender diversity and support
+                  women poised to lead in business
+                </p>
               </div>
             </div>
           </div>

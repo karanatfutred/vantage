@@ -45,11 +45,11 @@ export default function MentorsSection() {
   }, [bottomBrands.length]);
 
   return (
-    <section className="pt-10 pb-5 bg-white border-b border-gray-200">
+    <section id="meet-mentors" className="pt-10  bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-8 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
+          <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
             Meet Your{" "}
             <span
               className="italic"
@@ -61,7 +61,9 @@ export default function MentorsSection() {
               Mentors
             </span>
           </h2>
-          <p className="text-lg text-gray-600 mt-4">Your mentors comes from</p>
+          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            Your mentors comes from
+          </p>
         </div>
 
         {/* Company Logos Animation */}
