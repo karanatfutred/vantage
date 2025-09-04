@@ -16,31 +16,8 @@ const ScholarshipFees = () => {
     deadline: "Applications due by March 15th",
   };
 
-  const feeStructure = [
-    {
-      category: "Full Program Fee",
-      amount: "$12,500",
-      description: "Complete 2-week intensive program",
-    },
-    {
-      category: "Early Bird Discount",
-      amount: "$10,500",
-      description: "Register 3 months in advance",
-    },
-    {
-      category: "Alumni Referral",
-      amount: "$11,000",
-      description: "Referred by program alumni",
-    },
-    {
-      category: "Group Enrollment",
-      amount: "$9,500",
-      description: "Per person (minimum 3 participants)",
-    },
-  ];
-
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-16 border-b border-gray-600">
       <div className="px-4 mx-auto max-w-[1272px]">
         {/* Three Cards Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -121,25 +98,6 @@ const ScholarshipFees = () => {
                 Includes materials, certification & alumni access
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-12 text-center bg-[#f8f9fa] rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-black mb-4">
-            Ready to Transform Your Finance Career?
-          </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Don't let financial constraints hold you back. Explore our
-            scholarship opportunities and flexible payment options.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#568c65] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#4a7556] transition-colors">
-              Apply for Scholarship
-            </button>
-            <button className="bg-white text-[#568c65] border-2 border-[#568c65] px-8 py-3 rounded-lg font-semibold hover:bg-[#568c65] hover:text-white transition-colors">
-              View Full Curriculum
-            </button>
           </div>
         </div>
       </div>

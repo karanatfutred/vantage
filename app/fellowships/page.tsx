@@ -9,6 +9,8 @@ import ThreeStep from "../components/ThreeStep";
 import ProgramDirector from "../components/ProgramDirector";
 import BuiltFor from "../components/BuiltFor";
 import ScholarshipFees from "../components/ScholarshipFees";
+import AdmissionProcess from "../components/FellowshipAdmission";
+import AdmissionScholarshipFees from "../components/AdmissionScholarFees";
 
 export default function Fellowship() {
   return (
@@ -20,6 +22,8 @@ export default function Fellowship() {
       <VideoSection />
       <ProgramDirector />
       <LearningHighlightsSection />
+      <AdmissionProcess />
+      <AdmissionScholarshipFees/>
       <BuiltFor />
       <ScholarshipFees />
       <MentorsSection />
