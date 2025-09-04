@@ -7,6 +7,7 @@ import ProjectsSection from "./components/ProjectsSection";
 import LearningPractitionersSection from "./components/LearningPractitionersSection";
 import MentorsSection from "./components/MentorsSection";
 import ScholarshipsSection from "./components/ScholarshipsSection";
+import CallToActionSection from "./components/CallToActionSection";
 import Footer from "./components/Footer";
 import FinanceCompensationChart from "./components/Chart";
 
@@ -23,6 +24,7 @@ export default function Home() {
       <FinanceCompensationChart />
       <MentorsSection />
       <ScholarshipsSection />
+      <CallToActionSection />
       <Footer />
     </main>
   );
