@@ -7,6 +7,8 @@ import VideoSection from "../components/VideoSection";
 import MentorsSection from "../components/MentorsSection";
 import ThreeStep from "../components/ThreeStep";
 import ProgramDirector from "../components/ProgramDirector";
+import BuiltFor from "../components/BuiltFor";
+import ScholarshipFees from "../components/ScholarshipFees";
 
 export default function Fellowship() {
   return (
@@ -18,6 +20,8 @@ export default function Fellowship() {
       <VideoSection />
       <ProgramDirector />
       <LearningHighlightsSection />
+      <BuiltFor />
+      <ScholarshipFees />
       <MentorsSection />
       <ThreeStep />
     </div>
