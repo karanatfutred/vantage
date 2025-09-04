@@ -37,7 +37,7 @@ const AdmissionScholarshipFees = () => {
   };
 
   return (
-    <section className="bg-black">
+    <section className="bg-black border-b broder-gray-800 ">
       <div className="px-4 lg:pt-[50px] mx-auto max-w-[1272px]">
         {/* Header Section */}
         <div className="mb-12 text-center">
@@ -62,11 +62,8 @@ const AdmissionScholarshipFees = () => {
         {/* Two Cards Row */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Card 1: Admission Process */}
-          <div className="p-6">
+          <div className="p-8">
             <div className="text-center mb-6">
-              <div className="text-sm text-[#568c65] uppercase tracking-wider mb-2">
-                Process
-              </div>
               <h3 className="text-2xl font-bold text-white mb-3">
                 Admission Process
               </h3>
@@ -91,9 +88,7 @@ const AdmissionScholarshipFees = () => {
                     </span>
                   </h4>
                   <div className=" text-white rounded-lg p-2">
-                    <h5 className="font-semibold mb-2">
-                      {step.title}
-                    </h5>
+                    <h5 className="font-semibold mb-2">{step.title}</h5>
                     <p className="text-sm">{step.description}</p>
                   </div>
                 </div>
@@ -102,53 +97,37 @@ const AdmissionScholarshipFees = () => {
           </div>
 
           {/* Card 2: Merged Scholarship Program & Program Fees */}
-          <div className="bg-white rounded-2xl p-6">
-            {/* Scholarship Section */}
-            <div className="text-center mb-8">
-              <div className="text-sm text-[#568c65] uppercase tracking-wider mb-2">
-                Financial Aid
-              </div>
-              <h3 className="text-2xl font-bold text-black mb-3">
-                {scholarshipInfo.title}
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                {scholarshipInfo.description}
-              </p>
-            </div>
-
-            <div className="mb-8">
-              {/* <h4 className="text-lg font-semibold mb-3 text-[#568c65]">
-                Eligibility Criteria
-              </h4>
-              <ul className="space-y-2 mb-6">
-                {scholarshipInfo.eligibility.map((item, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm">
-                    <span className="text-[#A5D2B0] mt-1">•</span>
-                    <span className="text-gray-600">{item}</span>
-                  </li>
-                ))}
-              </ul> */}
-
-              <div className="bg-[#A5D2B0] rounded-lg p-3 text-center mb-8">
-                <p className="text-sm font-medium text-black">
-                  {scholarshipInfo.deadline}
+          <div className="bg-black rounded-2xl p-6">
+            {/* Scholarship Card */}
+            <div className="mb-6">
+              <div className="bg-white text-black rounded-2xl p-6 text-center">
+                <div className="text-sm uppercase tracking-wider mb-2">
+                  Financial Aid
+                </div>
+                <h3 className="text-2xl font-bold mb-3">
+                  {scholarshipInfo.title}
+                </h3>
+                <p className=" text-sm mb-4">
+                  {scholarshipInfo.description}
                 </p>
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 mb-4">
+                  <p className="text-sm font-medium">
+                    {scholarshipInfo.deadline}
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Program Fees Section */}
-            <div className="border-t border-gray-200 pt-8">
-              <div className="text-center mb-6">
+            {/* Program Fee Card */}
+            <div>
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-2xl p-6 text-center">
                 <div className="text-sm text-[#568c65] uppercase tracking-wider mb-2">
                   Investment
                 </div>
                 <h3 className="text-2xl font-bold text-black mb-3">
                   Program Fee
                 </h3>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-[#568c65] rounded-lg p-6 mb-6">
+                <div className="bg-[#568c65] rounded-lg p-6">
                   <div className="text-4xl font-bold text-white mb-2">
                     $12,500
                   </div>
@@ -156,7 +135,6 @@ const AdmissionScholarshipFees = () => {
                     Complete 2-week intensive program
                   </p>
                 </div>
-
               </div>
             </div>
           </div>

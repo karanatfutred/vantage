@@ -23,10 +23,8 @@ export default function Fellowship() {
       <OverviewSection />
       <ProgramDirector />
       <LearningHighlightsSection />
-      <AdmissionProcess />
       <AdmissionScholarshipFees/>
       <BuiltFor />
-      <ScholarshipFees />
       <MentorsSection />
       <ThreeStep />
       <FAQSection />
