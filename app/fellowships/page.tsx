@@ -9,6 +9,7 @@ import ProgramDirector from "../components/ProgramDirector";
 import BuiltFor from "../components/BuiltFor";
 import ScholarshipFees from "../components/ScholarshipFees";
 import FAQSection from "../components/FAQSection";
+import CallToActionSection from "../components/CallToActionSection";
 import Footer from "../components/Footer";
 import AdmissionProcess from "../components/FellowshipAdmission";
 import AdmissionScholarshipFees from "../components/AdmissionScholarFees";
@@ -29,6 +30,7 @@ export default function Fellowship() {
       <MentorsSection />
       <ThreeStep />
       <FAQSection />
+      <CallToActionSection />
       <Footer />
     </div>
   );
