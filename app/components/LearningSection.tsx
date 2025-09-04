@@ -69,11 +69,11 @@ export default function LearningSection() {
   };
 
   return (
-    <section className="pt-10 pb-5 bg-white border-b border-gray-200">
+    <section id="learning-beyond-classroom" className="pt-10  bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-8 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
             Learning{" "}
             <span
               className="italic"
@@ -86,6 +86,10 @@ export default function LearningSection() {
             </span>{" "}
             the Classroom
           </h2>
+          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            Immersive learning experiences that prepare you for real-world
+            challenges
+          </p>
         </div>
 
         {/* Full Width Banner with Tabs */}

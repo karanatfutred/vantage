@@ -151,11 +151,11 @@ const FinanceCompensationChart: React.FC = () => {
   };
 
   return (
-    <section className="pt-10 pb-5 bg-white border-b border-gray-200">
+    <section id="whats-at-stake" className="pt-10  bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
             <span className="ml-2">What's at </span>
             <span
               className="italic ml-2"
@@ -168,122 +168,123 @@ const FinanceCompensationChart: React.FC = () => {
             </span>
           </h2>
 
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
             High Finance Vs. Standard Finance | Massive pay gap over 5 years
           </p>
         </div>
 
-      {/* Chart Container */}
-      <div className="w-full h-96 mb-6">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            data={compensationData}
-            margin={{
-              top: 20,
-              right: 100,
-              left: 20,
-              bottom: 5,
-            }}
-            barCategoryGap="20%"
-          >
-            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-            <XAxis
-              dataKey="year"
-              axisLine={false}
-              tickLine={false}
-              tick={{ fontSize: 12, fill: "#666" }}
-            />
-            <YAxis
-              tickFormatter={formatCurrency}
-              axisLine={false}
-              tickLine={false}
-              tick={{ fontSize: 12, fill: "#666" }}
-              domain={[0, yAxisMax]}
-            />
-
-            <Bar
-              dataKey="highFinance"
-              fill="#000"
-              radius={[4, 4, 0, 0]}
-              name="High Finance"
+        {/* Chart Container */}
+        <div className="w-full h-96 mb-6">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={compensationData}
+              margin={{
+                top: 20,
+                right: 100,
+                left: 20,
+                bottom: 5,
+              }}
+              barCategoryGap="20%"
             >
-              <LabelList
+              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+              <XAxis
+                dataKey="year"
+                axisLine={false}
+                tickLine={false}
+                tick={{ fontSize: 12, fill: "#666" }}
+              />
+              <YAxis
+                tickFormatter={formatCurrency}
+                axisLine={false}
+                tickLine={false}
+                tick={{ fontSize: 12, fill: "#666" }}
+                domain={[0, yAxisMax]}
+              />
+
+              <Bar
                 dataKey="highFinance"
-                position="insideTop"
-                formatter={formatLakhs}
-                style={{ fill: "#fff", fontWeight: 600, fontSize: 14 }}
-              />
-            </Bar>
-            <Bar
-              dataKey="standardFinance"
-              fill="#639b72"
-              radius={[4, 4, 0, 0]}
-              name="Standard Finance"
-            >
-              <LabelList
+                fill="#000"
+                radius={[4, 4, 0, 0]}
+                name="High Finance"
+              >
+                <LabelList
+                  dataKey="highFinance"
+                  position="insideTop"
+                  formatter={formatLakhs}
+                  style={{ fill: "#fff", fontWeight: 600, fontSize: 14 }}
+                />
+              </Bar>
+              <Bar
                 dataKey="standardFinance"
-                position="insideTop"
-                formatter={formatLakhs}
-                style={{
-                  fill: "#fff",
-                  fontWeight: 600,
-                  fontSize: 14,
-                }}
+                fill="#639b72"
+                radius={[4, 4, 0, 0]}
+                name="Standard Finance"
+              >
+                <LabelList
+                  dataKey="standardFinance"
+                  position="insideTop"
+                  formatter={formatLakhs}
+                  style={{
+                    fill: "#fff",
+                    fontWeight: 600,
+                    fontSize: 14,
+                  }}
+                />
+              </Bar>
+
+              {/* Add invisible bar to render custom difference lines */}
+              <Bar
+                id="difference-bar"
+                dataKey="difference"
+                fill="transparent"
+                shape={<CustomizedDifference />}
               />
-            </Bar>
-
-            {/* Add invisible bar to render custom difference lines */}
-            <Bar
-            id="difference-bar"
-              dataKey="difference"
-              fill="transparent"
-              shape={<CustomizedDifference />}
-            />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-
-      {/* Legend and Footer */}
-      <div className="space-y-4">
-        {/* Legends */}
-        <div className="space-y-3">
-          <div className="flex items-start space-x-3">
-            <div
-              className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
-              style={{ backgroundColor: "#639b72" }}
-            >
-              1
-            </div>
-            <div className="text-sm text-gray-700">
-              <p>
-                <span
-                  className="inline-block w-3 h-3 rounded mr-2"
-                  style={{ backgroundColor: "#639b72" }}
-                ></span>
-                Standard Finance Compensation assumed to be top end of the range
-                in HCOL locations starting at <strong>₹10,00,000</strong> with
-                varying annual increases in pay
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start space-x-3">
-            <div
-              className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
-              style={{ backgroundColor: "#000" }}
-            >
-              2
-            </div>
-            <div className="text-sm text-gray-700">
-              <p>
-                <span className="inline-block w-3 h-3 bg-black rounded mr-2"></span>
-                High Finance Avg Pay based on average high finance roles from
-                2022–2025 (data from <strong>79,000+</strong> submissions to the
-                WSO Company Database)
-              </p>
-            </div>
-          </div>
+            </BarChart>
+          </ResponsiveContainer>
         </div>
+
+        {/* Legend and Footer */}
+        <div className="space-y-4">
+          {/* Legends */}
+          <div className="space-y-3">
+            <div className="flex items-start space-x-3">
+              <div
+                className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
+                style={{ backgroundColor: "#639b72" }}
+              >
+                1
+              </div>
+              <div className="text-sm text-gray-700">
+                <p>
+                  <span
+                    className="inline-block w-3 h-3 rounded mr-2"
+                    style={{ backgroundColor: "#639b72" }}
+                  ></span>
+                  Standard Finance Compensation assumed to be top end of the
+                  range in HCOL locations starting at{" "}
+                  <strong>₹10,00,000</strong> with varying annual increases in
+                  pay
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-3">
+              <div
+                className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
+                style={{ backgroundColor: "#000" }}
+              >
+                2
+              </div>
+              <div className="text-sm text-gray-700">
+                <p>
+                  <span className="inline-block w-3 h-3 bg-black rounded mr-2"></span>
+                  High Finance Avg Pay based on average high finance roles from
+                  2022–2025 (data from <strong>79,000+</strong> submissions to
+                  the WSO Company Database)
+                </p>
+              </div>
+            </div>
+          </div>
 
           {/* Bottom Title */}
           <div className="text-center pt-4">
