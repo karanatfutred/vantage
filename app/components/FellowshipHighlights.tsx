@@ -33,7 +33,7 @@ const CourseInfoComponent = () => {
     <section className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
         {/* Statistics Section */}
-        <div className="flex flex-col md:flex-row text-left py-5 ">
+        <div className="flex flex-col md:flex-row text-left py-8 ">
           {statsData.map((stat, index) => (
             <div key={index} className="relative px-10">
               {/* Heading/Label on top */}
