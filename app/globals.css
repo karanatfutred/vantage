@@ -17,6 +17,32 @@
 }
 
 @font-face {
+  font-family: "Chronicle Display Black";
+  src: url("/fonts/Chronicle Display Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Trajan Pro Font Family */
+@font-face {
+  font-family: "Trajan Pro Regular";
+  src: url("/fonts/Trajan Pro Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Tight Black */
+@font-face {
+  font-family: "Inter Tight Black";
+  src: url("/assets/fonts2/InterTight-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Sofia Pro";
   src: url("/fonts/Sofia Pro UltraLight Italic Az.otf") format("opentype");
   font-weight: 200;
@@ -33,9 +59,10 @@
 }
 @font-face {
   font-family: "Sofia Pro Light";
-  src: url("/fonts/SofiaProLight.woff2") format("woff2");
+  src: url("/fonts/Sofia Pro Light Az.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 .sofia-pro-light {
   font-family: "Sofia Pro Light", sans-serif;
@@ -100,6 +127,15 @@
 
 @font-face {
   font-family: "Sofia Pro";
+  src: url("/fonts/Sofia Pro Semi Bold Az.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Explicit alias to avoid family collisions when selecting Semi Bold */
+@font-face {
+  font-family: "Sofia Pro Semibold";
   src: url("/fonts/Sofia Pro Semi Bold Az.otf") format("opentype");
   font-weight: 700;
   font-style: normal;

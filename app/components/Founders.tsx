@@ -25,7 +25,10 @@ const Founders = () => {
   ];
 
   return (
-    <section id="meet-founders" className="pt-10 bg-white border-b border-gray-200">
+    <section
+      id="meet-founders"
+      className="pt-10 bg-white border-b border-gray-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Founders Title */}
         <div>
@@ -42,9 +45,9 @@ const Founders = () => {
                 Founders
               </span>
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            {/* <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
               Leadership that drives innovation and excellence
-            </p>
+            </p> */}
           </div>
         </div>
 
@@ -60,13 +63,12 @@ const Founders = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Syed's Card */}
-            <div className="flex gap-6">
+            <div className="flex gap-3">
               <div
                 className="relative flex justify-center overflow-hidden"
                 style={{
                   width: "250px",
                   height: "250px",
-                  // backgroundColor: "#EBEBEB",
                   borderRadius: "8px",
                 }}
               >
@@ -74,20 +76,16 @@ const Founders = () => {
                   src="/assets/syed_raza-long.png"
                   alt="Syed Raza"
                   quality={100}
-                  className="object-cover object-top hover:grayscale-0 transition-all duration-300"
-                  // className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-300"
+                  className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-300"
                   width={300}
                   height={180}
-                  // style={{
-                  //   filter: "drop-shadow(0px 0px 10px #000000)",
-                  // }}
                   style={{
                     filter: `
-                    drop-shadow(5px 0 0 #FFFFFF)
-                    drop-shadow(0 5px 0 #FFFFFF)
-                    drop-shadow(-5px 0 0 #FFFFFF)
-                    drop-shadow(0 -5px 0 #FFFFFF)
-                  `,
+          drop-shadow(5px 0 0 white)
+          drop-shadow(0 5px 0 white)
+          drop-shadow(-5px 0 0 white)
+          drop-shadow(0 -5px 0 white)
+        `,
                   }}
                 />
                 {/* Solid white div positioned relative to image */}
@@ -107,12 +105,22 @@ const Founders = () => {
                       Raza
                     </span>
                   </span>
-                  <span className="text-xs text-gray-600">Co-Founder</span>
+                  <span
+                    className="text-xs text-gray-600"
+                    style={{
+                      color: "#4B5563",
+                      fontStyle: "italic",
+                      fontFamily: '"Sofia Pro Light", sans-serif',
+                      fontWeight: 300,
+                    }}
+                  >
+                    Co-Founder
+                  </span>
                 </div>
               </div>
-              <div className="w-1/2 flex flex-col justify-center">
+              <div className="w-[295px] flex flex-col justify- mt-10 gap-2">
                 <p
-                  className="text-md sm:text-lg leading-snug tracking-wide mb-4"
+                  className="text-sm sm:text-sm leading-snug tracking-wide mb-4"
                   style={{
                     fontFamily: '"Sofia Pro Bold Az", sans-serif',
                     color: "#1a1a1a",
@@ -120,74 +128,66 @@ const Founders = () => {
                 >
                   <span
                     style={{
-                      fontSize: "1.5rem",
-                      color: "#4B5563",
-                      lineHeight: "1",
-                    }}
-                  >
-                    "
-                  </span>
-                  <span
-                    style={{
                       fontStyle: "italic",
                       color: "#568C65",
+                      fontFamily: '"Chronicle Display Black", serif',
                     }}
                   >
-                    From mastering high finance to shaping leaders
-                  </span>
-                  <span style={{ color: "#4B5563", fontStyle: "italic" }}>
-                    , now building what learning should've been practical and
-                    outcome-driven.
-                  </span>
+                    From steering trillion-dollar balance sheets to shaping
+                    fintech ventures,
+                  </span>{" "}
                   <span
                     style={{
-                      fontSize: "1.5rem",
                       color: "#4B5563",
-                      lineHeight: "1",
+                      fontStyle: "italic",
+                      fontFamily: '"Sofia Pro Light", sans-serif',
+                      fontWeight: 300,
                     }}
                   >
-                    "
+                    now opening access to the world of high finance once guarded
+                    by Ivy League halls and global boardrooms.
                   </span>
                 </p>
                 {/* Company Logos with Designations */}
-                <div className="flex flex-col items-start gap-1">
-                  <div className="flex items-center gap-3 w-full">
-                    <div className="w-5 flex-shrink-0">
+                <div className="flex flex-col items-start gap-2">
+                  <div className="flex items-center gap-0 w-full">
+                    <div className="w-9 flex-shrink-0">
                       <Image
                         src="/assets/barclays-short-logo.png"
                         alt="Barclays logo"
-                        width={50}
+                        width={25}
                         height={16}
-                        className="h-3 sm:h-4 lg:h-5 w-full object-contain transition-opacity duration-200"
+                        className="h-3 sm:h-4 lg:h-5 object-contain transition-opacity duration-200"
                         quality={100}
                       />
                     </div>
                     <span className="text-xs font-normal text-gray-500">
-                      Former MD & CEO
+                      Former MD & CEO, Barclays (UK & Americas)
                     </span>
                   </div>
-                  <div className="flex items-start gap-3 w-full">
-                    <div className="w-5 flex-shrink-0">
+                  <div className="flex items-start gap-0 w-full">
+                    <div className="w-9 flex-shrink-0">
                       <Image
                         src="/assets/lamaa-short-logo.png"
                         alt="Lamaa logo"
-                        width={50}
+                        width={25}
                         height={36}
                         className="h-3 sm:h-4 lg:h-5 object-contain transition-opacity duration-200"
                         quality={100}
                       />
                     </div>
                     <span className="text-xs font-normal text-gray-500">
-                      Former CEO
+                      Former CEO, Lamaa Saudi
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/oxford-logo.png"
                       alt="Oxford logo"
-                      width={60}
-                      height={18}
-                      className="h-3 sm:h-4 lg:h-5 w-auto object-contain transition-opacity duration-200 flex-shrink-0"
+                      width={80} // increase width
+                      height={22} // adjust height proportionally
+                      className="h-3 sm:h-5 lg:h-7 w-auto object-contain transition-opacity duration-200 flex-shrink-0"
+                      unoptimized
                       quality={100}
                     />
                   </div>
@@ -196,7 +196,7 @@ const Founders = () => {
             </div>
 
             {/* Manish's Card */}
-            <div className="flex gap-6">
+            <div className="flex gap-3">
               <div
                 className="relative flex justify-center overflow-hidden"
                 style={{
@@ -239,18 +239,28 @@ const Founders = () => {
                       Malhotra
                     </span>
                   </span>
-                  <span className="text-xs text-gray-600">Co-Founder</span>
+                  <span
+                    className="text-xs text-gray-600"
+                    style={{
+                      color: "#4B5563",
+                      fontStyle: "italic",
+                      fontFamily: '"Sofia Pro Light", sans-serif',
+                      fontWeight: 300,
+                    }}
+                  >
+                    Co-Founder
+                  </span>
                 </div>
               </div>
-              <div className="w-1/2 flex flex-col justify-center">
+              <div className="w-[295px] flex flex-col justify- mt-10 gap-2">
                 <p
-                  className="text-md sm:text-lg leading-snug tracking-wide mb-4"
+                  className="text-sm sm:text-sm leading-snug tracking-wide mb-4"
                   style={{
                     fontFamily: '"Sofia Pro Bold Az", sans-serif',
                     color: "#1a1a1a",
                   }}
                 >
-                  <span
+                  {/* <span
                     style={{
                       fontSize: "1.5rem",
                       color: "#4B5563",
@@ -258,20 +268,30 @@ const Founders = () => {
                     }}
                   >
                     "
-                  </span>
+                  </span> */}
                   <span
                     style={{
                       fontStyle: "italic",
                       color: "#568C65",
+                      fontFamily: '"Chronicle Display Black", serif',
                     }}
                   >
-                    From scaling education ventures to global exits
-                  </span>
-                  <span style={{ color: "#4B5563", fontStyle: "italic" }}>
-                    , now building what learning should've been creation-led and
-                    outcome-driven
-                  </span>
+                    From scaling and exiting multi-million-dollar ventures
+                    worldwide,
+                  </span>{" "}
                   <span
+                    style={{
+                      color: "#4B5563",
+                      fontStyle: "italic",
+                      fontFamily: '"Sofia Pro Light", sans-serif',
+                      fontWeight: 300,
+                    }}
+                  >
+                    now building what learning should have always been where
+                    students learn to go from zero to one hundred and create at
+                    scale from day one.
+                  </span>
+                  {/* <span
                     style={{
                       fontSize: "1.5rem",
                       color: "#4B5563",
@@ -279,10 +299,10 @@ const Founders = () => {
                     }}
                   >
                     "
-                  </span>
+                  </span> */}
                 </p>
                 {/* Company Logos with Designations */}
-                <div className="flex flex-col items-start gap-1">
+                <div className="flex flex-col items-start gap-2">
                   <div className="flex items-center gap-0 w-full">
                     <div className="w-16 flex-shrink-0">
                       <Image
@@ -310,7 +330,7 @@ const Founders = () => {
                       />
                     </div>
                     <span className="text-xs font-normal text-gray-500">
-                      Ex-Founder & CEO
+                      Ex-Founder & CEO, Employability.life
                     </span>
                   </div>
                   <div className="flex items-center gap-2">

@@ -29,7 +29,7 @@ const OverviewSection = () => {
         </p>
 
         {/* Video Container */}
-        <div className="relative w-full max-w-3xl mx-auto">
+        <div className="relative w-full max-w-2xl mx-auto">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <video
               className="w-full h-auto"

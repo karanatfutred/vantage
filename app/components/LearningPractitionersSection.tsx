@@ -18,9 +18,9 @@ export default function CustomerTestimonials() {
             </span>
             , Led by Practitioners
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+          {/* <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
             Industry experts shaping the future of finance education
-          </p>
+          </p> */}
         </div>
 
         {/* Testimonials Grid */}
@@ -72,15 +72,15 @@ export default function CustomerTestimonials() {
           {/* Second Row - Reordered: Small card first, then large card */}
           <div className="flex flex-col xl:flex-row gap-6">
             {/* Stats Card - Solid Color */}
-            <div className="flex flex-col justify-between gap-16 xl:max-w-sm bg-[#8ebbfa] rounded-2xl p-8 min-h-80">
+            <div className="flex flex-col justify-between gap-16 xl:max-w-sm bg-gray-200 rounded-2xl p-8 min-h-80">
               <div>
                 <span className="uppercase text-sm font-medium text-white/60">
                   .
                 </span>
               </div>
               <div className="flex flex-col gap-1">
-                <h2 className="text-7xl font-bold text-white">50%</h2>
-                <h4 className="text-white text-2xl font-light">
+                <h2 className="text-7xl font-bold text-black">50%</h2>
+                <h4 className="text-black text-2xl font-light">
                   In-house & Visiting Academics
                 </h4>
               </div>
