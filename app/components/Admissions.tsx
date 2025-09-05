@@ -65,7 +65,7 @@ export default function Admissions() {
                     {/* Content on Right */}
                     <div className="flex-1 flex flex-col">
                       {/* Badges */}
-                      <div className="flex gap-2 mb-3">
+                      {/* <div className="flex gap-2 mb-3">
                         <span
                           className="inline-flex items-center px-2 py-1 text-white text-xs font-normal rounded-sm whitespace-nowrap leading-none"
                           style={{
@@ -84,11 +84,31 @@ export default function Admissions() {
                         >
                           2 Weeks
                         </span>
-                      </div>
+                      </div> */}
 
                       <h2 className="text-lg font-bold text-gray-900 mb-2">
                         Global Banking & Finance Fellowship
                       </h2>
+
+                      <div className="flex gap-2 mb-3">
+                        <span
+                          className="inline-flex items-center px-2 py-1 text-gray-600 text-xs font-normal rounded-full whitespace-nowrap leading-none border border-gray-600"
+                          style={{
+                            fontFamily: "Sofia Pro Light, sans-serif",
+                            // backgroundColor: "#0A2338",
+                          }}
+                        >
+                          Online Live
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2 py-1 text-gray-900 text-xs font-normal rounded-full whitespace-nowrap leading-none bg-gray-100"
+                          style={{
+                            fontFamily: "Sofia Pro Light, sans-serif",
+                          }}
+                        >
+                          2 Weeks
+                        </span>
+                      </div>
 
                       <p className="text-sm text-gray-600 mb-4 leading-relaxed">
                         Delivered by distinguished CEOs, MDs, and senior
@@ -99,7 +119,7 @@ export default function Admissions() {
                       <div className="flex items-center relative mt-auto -mr-4">
                         <div className="bg-green-100 text-green-800 px-4 py-1 rounded-none w-48 border border-green-200">
                           <span className="text-[13px] font-medium whitespace-nowrap">
-                            Starts On - 06th Oct 2025*
+                            Starts On - 06th Oct 2025
                           </span>
                         </div>
 
@@ -142,31 +162,29 @@ export default function Admissions() {
 
                     {/* Content on Right */}
                     <div className="flex-1 flex flex-col">
+                      <h2 className="text-lg font-bold text-gray-900 mb-2">
+                        PGP Strategic Finance & Analytics
+                      </h2>
                       {/* Badges */}
                       <div className="flex gap-2 mb-3">
                         <span
-                          className="inline-flex items-center px-2 py-1 text-white text-xs font-normal rounded-sm whitespace-nowrap leading-none"
+                          className="inline-flex items-center px-2 py-1 text-gray-600 text-xs font-normal rounded-full whitespace-nowrap leading-none border border-gray-600"
                           style={{
                             fontFamily: "Sofia Pro Light, sans-serif",
-                            backgroundColor: "#0A2338",
+                            // backgroundColor: "#0A2338",
                           }}
                         >
                           Online Live
                         </span>
                         <span
-                          className="inline-flex items-center px-2 py-1 text-gray-800 text-xs font-normal rounded-sm whitespace-nowrap leading-none"
+                          className="inline-flex items-center px-2 py-1 text-gray-900 text-xs font-normal rounded-full whitespace-nowrap leading-none bg-gray-100"
                           style={{
                             fontFamily: "Sofia Pro Light, sans-serif",
-                            backgroundColor: "#F5F5F5",
                           }}
                         >
-                          6 Months
+                          2 Weeks
                         </span>
                       </div>
-
-                      <h2 className="text-lg font-bold text-gray-900 mb-2">
-                        PGP Strategic Finance & Analytics
-                      </h2>
 
                       <p className="text-sm text-gray-600 mb-4 leading-relaxed">
                         Advanced program in strategic finance, analytics, and
@@ -177,7 +195,7 @@ export default function Admissions() {
                       <div className="flex items-center relative mt-auto -mr-4">
                         <div className="bg-green-100 text-green-800 px-4 py-1 rounded-none w-48 border border-green-200">
                           <span className="text-[13px] font-medium whitespace-nowrap">
-                            Starts On - 15th Nov 2025*
+                            Starts On - 15th Nov 2025
                           </span>
                         </div>
 
