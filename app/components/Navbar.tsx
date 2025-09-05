@@ -10,13 +10,12 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center bg-gray-700">
+            <Link href="/" className="flex items-center">
               <Image
-                src="/assets/logo.png"
+                src="/assets/vantage-logo-light.png"
                 alt="Vantage Logo"
-                width={180}
-                height={60}
-                className="h-16 w-auto"
+                width={150}
+                height={50}
                 priority
               />
             </Link>
@@ -24,7 +23,12 @@ export default function Navbar() {
 
           {/* Navigation Items */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div
+              className="ml-10 flex items-baseline space-x-8"
+              style={{
+                fontFamily: '"Sofia Pro Light", serif',
+              }}
+            >
               <Link
                 href="/about"
                 className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
@@ -43,7 +47,12 @@ export default function Navbar() {
                 onClick={(e) => e.preventDefault()}
               >
                 PGP{" "}
-                <span className="text-[#a5d2b1] font-semibold">
+                <span
+                  className="text-[#a5d2b1] font-semibold"
+                  style={{
+                    fontFamily: '"Chronicle Display Black", serif',
+                  }}
+                >
                   ( Coming Soon )
                 </span>
               </Link>
