@@ -22,25 +22,25 @@ const compensationData = [
   {
     year: "Year 2",
     standardFinance: 1200000,
-    highFinance: 3500000,
+    highFinance: 3000000,
     difference: 2300000,
   },
   {
     year: "Year 3",
     standardFinance: 1600000,
-    highFinance: 4200000,
+    highFinance: 4000000,
     difference: 2600000,
   },
   {
     year: "Year 4",
     standardFinance: 1800000,
-    highFinance: 4400000,
+    highFinance: 4500000,
     difference: 2600000,
   },
   {
     year: "Year 5",
     standardFinance: 2200000,
-    highFinance: 5000000,
+    highFinance: 5500000,
     difference: 2800000,
   },
 ];
@@ -203,7 +203,7 @@ const FinanceCompensationChart: React.FC = () => {
 
               <Bar
                 dataKey="highFinance"
-                fill="#000"
+                fill="#639b72"
                 radius={[4, 4, 0, 0]}
                 name="High Finance"
               >
@@ -216,7 +216,7 @@ const FinanceCompensationChart: React.FC = () => {
               </Bar>
               <Bar
                 dataKey="standardFinance"
-                fill="#639b72"
+                fill="#000000"
                 radius={[4, 4, 0, 0]}
                 name="Standard Finance"
               >
@@ -247,10 +247,10 @@ const FinanceCompensationChart: React.FC = () => {
         <div className="space-y-4">
           {/* Legends */}
           <div className="space-y-3">
-            <div className="flex items-start space-x-3">
+            <div className="flex items-end space-x-3 ">
               <div
                 className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
-                style={{ backgroundColor: "#639b72" }}
+                style={{ backgroundColor: "#000000" }}
               >
                 1
               </div>
@@ -258,7 +258,7 @@ const FinanceCompensationChart: React.FC = () => {
                 <p>
                   <span
                     className="inline-block w-3 h-3 rounded mr-2"
-                    style={{ backgroundColor: "#639b72" }}
+                    style={{ backgroundColor: "#000000" }}
                   ></span>
                   Standard Finance Compensation assumed to be top end of the
                   range in HCOL locations starting at{" "}
@@ -268,16 +268,16 @@ const FinanceCompensationChart: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start space-x-3">
+            <div className="flex items-end space-x-3">
               <div
                 className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
-                style={{ backgroundColor: "#000" }}
+                style={{ backgroundColor: "#639b72" }}
               >
                 2
               </div>
               <div className="text-sm text-gray-700">
                 <p>
-                  <span className="inline-block w-3 h-3 bg-black rounded mr-2"></span>
+                  <span className="inline-block w-3 h-3 bg-[#639b72] rounded mr-2"></span>
                   High Finance Avg Pay based on average high finance roles from
                   2022–2025 (data from <strong>79,000+</strong> submissions to
                   the WSO Company Database)
