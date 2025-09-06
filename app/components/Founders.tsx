@@ -46,8 +46,8 @@ const Founders = () => {
               </span>
             </h2>
             <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-              From building institutions to shaping global markets, now
-              reimagining what education was meant to be.
+              From building institutions to shaping global markets, now{" "}
+              <b> reimagining</b> what education was meant to be
             </p>
           </div>
         </div>

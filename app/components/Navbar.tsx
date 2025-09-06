@@ -53,6 +53,13 @@ export default function Navbar() {
                   ( Coming Soon )
                 </span>
               </Link>
+              <Link
+                href="#"
+                className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
+                onClick={(e) => e.preventDefault()}
+              >
+                Team & Learning
+              </Link>
             </div>
           </div>
 
@@ -124,17 +131,25 @@ export default function Navbar() {
           >
             B&F Fellowship
           </Link>
-          <span className="text-white text-lg font-light">
+
+          <div className="text-white text-lg font-light">
             PG Programme{" "}
-            <span
+            <p
               className="text-[#a5d2b1] font-semibold"
               style={{
                 fontFamily: '"Chronicle Display Black", serif',
               }}
             >
               ( Coming Soon )
-            </span>
-          </span>
+            </p>
+          </div>
+          <Link
+            href="/fellowships"
+            className="text-white text-lg font-light hover:text-accent"
+            onClick={() => setMobileOpen(false)}
+          >
+            Team & Learning
+          </Link>
         </div>
       )}
     </nav>

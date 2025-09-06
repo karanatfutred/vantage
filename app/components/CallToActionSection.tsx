@@ -19,7 +19,7 @@ const CallToActionSection = () => {
 
           {/* CTA Button */}
           <div className="flex justify-center mt-10">
-            <button className="bg-[#D8E3DA] text-black px-10 py-4 rounded-lg font-semibold text-lg font-section-heading shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+            <button className="bg-[#a5d2b1] text-black px-10 py-4 rounded-lg font-semibold text-lg font-section-heading shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
               Apply Now
             </button>
           </div>

@@ -71,8 +71,7 @@ export default function Admissions() {
                   <p className="text-[13px] text-gray-600 leading-relaxed">
                     Learn the breadth of global finance, from your first break
                     to closing deals, designed and delivered by MDs and CEOs of
-                    Barclays, Lloyds Bank, Centrum Wealth, and a top-tier
-                    venture capital firm.
+                    Barclays, Lloyds Bank, Centrum Wealth, & a top-tier VC firm.
                   </p>
 
                   {/* Responsive Starts On Section and Learn More Button */}
@@ -113,7 +112,7 @@ export default function Admissions() {
                       </div>
                       <div className="bg-gray-900 text-white px-3 lg:px-4 py-1 -ml-2 relative z-10">
                         <button className="inline-flex items-center gap-2 text-xs font-medium">
-                          <span>SHOW INTEREST</span>
+                          <span>LEARN MORE</span>
                           <svg
                             className="w-3 h-3"
                             fill="none"
