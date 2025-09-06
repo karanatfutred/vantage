@@ -43,7 +43,7 @@ export default function Navbar() {
                 className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
                 onClick={(e) => e.preventDefault()}
               >
-                PG Programme{" "}
+                PG Programme
                 <span
                   className="text-[#a5d2b1] font-semibold"
                   style={{
@@ -58,7 +58,14 @@ export default function Navbar() {
                 className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
                 onClick={(e) => e.preventDefault()}
               >
-                Team & Learning
+                Team
+              </Link>
+              <Link
+                href="#"
+                className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
+                onClick={(e) => e.preventDefault()}
+              >
+                Learning
               </Link>
             </div>
           </div>
@@ -97,7 +104,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="h-80 fixed inset-0 z-50 bg-black flex flex-col items-center justify-start pt-5 space-y-8 md:hidden transition-all">
+        <div className="h-80 fixed inset-0 z-50 bg-black flex flex-col items-center justify-start pt-5 md:hidden transition-all">
           <div className="w-full flex justify-between items-center border-b border-primary/30 z-50 shadow-lg pb-4 px-[24px]">
             <button className="bg-[#a5d2b1] text-black px-4 py-1 rounded-sm text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200">
               Apply Now
@@ -126,13 +133,13 @@ export default function Navbar() {
 
           <Link
             href="/fellowships"
-            className="text-white text-lg font-light hover:text-accent"
+            className="text-white text-lg font-light hover:text-accent py-2"
             onClick={() => setMobileOpen(false)}
           >
             B&F Fellowship
           </Link>
 
-          <div className="text-white text-lg font-light">
+          <Link href="#" className="text-white text-lg font-light py-2">
             PG Programme{" "}
             <p
               className="text-[#a5d2b1] font-semibold"
@@ -142,13 +149,20 @@ export default function Navbar() {
             >
               ( Coming Soon )
             </p>
-          </div>
+          </Link>
           <Link
-            href="/fellowships"
-            className="text-white text-lg font-light hover:text-accent"
+            href="#"
+            className="text-white text-lg font-light hover:text-accent py-2"
             onClick={() => setMobileOpen(false)}
           >
-            Team & Learning
+            Team
+          </Link>
+          <Link
+            href="#"
+            className="text-white text-lg font-light hover:text-accent py-2"
+            onClick={() => setMobileOpen(false)}
+          >
+            Learning
           </Link>
         </div>
       )}

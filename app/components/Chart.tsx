@@ -15,33 +15,33 @@ import {
 const compensationData = [
   {
     year: "Year 1",
-    standardFinance: 1000000,
-    highFinance: 2300000,
-    difference: 1300000,
+    standardFinance: 800000,
+    highFinance: 2000000,
+    difference: 1200000,
   },
   {
     year: "Year 2",
-    standardFinance: 1200000,
-    highFinance: 3000000,
-    difference: 2300000,
+    standardFinance: 1500000,
+    highFinance: 2500000,
+    difference: 1000000,
   },
   {
     year: "Year 3",
-    standardFinance: 1600000,
-    highFinance: 4000000,
-    difference: 2600000,
+    standardFinance: 1100000,
+    highFinance: 3300000,
+    difference: 1200000,
   },
   {
     year: "Year 4",
-    standardFinance: 1800000,
-    highFinance: 4500000,
-    difference: 2600000,
+    standardFinance: 2500000,
+    highFinance: 4000000,
+    difference: 1500000,
   },
   {
     year: "Year 5",
-    standardFinance: 2200000,
-    highFinance: 5500000,
-    difference: 2800000,
+    standardFinance: 2700000,
+    highFinance: 4500000,
+    difference: 1800000,
   },
 ];
 
@@ -155,11 +155,11 @@ const FinanceCompensationChart: React.FC = () => {
       id="whats-at-stake"
       className="pt-10  bg-white border-b border-gray-200"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto">
         {/* Section Header */}
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
-            <span className="ml-2">What's at </span>
+            The
             <span
               className="italic ml-2"
               style={{
@@ -167,123 +167,117 @@ const FinanceCompensationChart: React.FC = () => {
                 color: "#568c65",
               }}
             >
-              Stake?
-            </span>
+              ₹1 Crore
+            </span>{" "}
+            Opportunity Gap in Just 5 Years
           </h2>
 
           <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-            High Finance vs Standard Finance: A ₹1.15 Crore Gap
+            High Finance vs. Regular Finance Roles
           </p>
         </div>
 
         {/* Chart Container */}
-        <div className="w-full h-96 mb-6">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={compensationData}
-              margin={{
-                top: 20,
-                right: 100,
-                left: 20,
-                bottom: 5,
-              }}
-              barCategoryGap="20%"
-            >
-              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-              <XAxis
-                dataKey="year"
-                axisLine={false}
-                tickLine={false}
-                tick={{ fontSize: 12, fill: "#666" }}
-              />
-              <YAxis
-                tickFormatter={formatCurrency}
-                axisLine={false}
-                tickLine={false}
-                tick={{ fontSize: 12, fill: "#666" }}
-                domain={[0, yAxisMax]}
-              />
-
-              <Bar
-                dataKey="highFinance"
-                fill="#639b72"
-                radius={[4, 4, 0, 0]}
-                name="High Finance"
+        <div className="max-w-7xl h-96 mx-auto mb-6 overflow-x-auto ">
+          <div className="w-7xl h-96">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={compensationData}
+                margin={{
+                  top: 20,
+                  right: 100,
+                  left: 20,
+                  bottom: 5,
+                }}
+                barCategoryGap="20%"
               >
-                <LabelList
+                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                <XAxis
+                  dataKey="year"
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fontSize: 12, fill: "#666" }}
+                />
+                <YAxis
+                  tickFormatter={formatCurrency}
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fontSize: 12, fill: "#666" }}
+                  domain={[0, yAxisMax]}
+                />
+
+                <Bar
                   dataKey="highFinance"
-                  position="insideTop"
-                  formatter={formatLakhs}
-                  style={{ fill: "#fff", fontWeight: 600, fontSize: 14 }}
-                />
-              </Bar>
-              <Bar
-                dataKey="standardFinance"
-                fill="#000000"
-                radius={[4, 4, 0, 0]}
-                name="Standard Finance"
-              >
-                <LabelList
+                  fill="#639b72"
+                  radius={[4, 4, 0, 0]}
+                  name="High Finance"
+                >
+                  <LabelList
+                    dataKey="highFinance"
+                    position="insideTop"
+                    formatter={formatLakhs}
+                    style={{ fill: "#fff", fontWeight: 600, fontSize: 14 }}
+                  />
+                </Bar>
+                <Bar
                   dataKey="standardFinance"
-                  position="insideTop"
-                  formatter={formatLakhs}
-                  style={{
-                    fill: "#fff",
-                    fontWeight: 600,
-                    fontSize: 14,
-                  }}
-                />
-              </Bar>
+                  fill="#000000"
+                  radius={[4, 4, 0, 0]}
+                  name="Standard Finance"
+                >
+                  <LabelList
+                    dataKey="standardFinance"
+                    position="insideTop"
+                    formatter={formatLakhs}
+                    style={{
+                      fill: "#fff",
+                      fontWeight: 600,
+                      fontSize: 14,
+                    }}
+                  />
+                </Bar>
 
-              {/* Add invisible bar to render custom difference lines */}
-              <Bar
-                id="difference-bar"
-                dataKey="difference"
-                fill="transparent"
-                shape={<CustomizedDifference />}
-              />
-            </BarChart>
-          </ResponsiveContainer>
+                <Bar
+                  id="difference-bar"
+                  dataKey="difference"
+                  fill="transparent"
+                  shape={<CustomizedDifference />}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
 
         {/* Legend and Footer */}
-        <div className="space-y-4">
+        <div className="mx-auto max-w-7xl space-y-4">
           {/* Legends */}
           <div className="space-y-3">
-            <div className="flex items-end space-x-3 ">
-              <div
-                className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
-                style={{ backgroundColor: "#000000" }}
-              >
-                1
-              </div>
+            <div className="flex items-center space-x-3 ">
               <div className="text-sm text-gray-700">
                 <p>
                   <span
                     className="inline-block w-3 h-3 rounded mr-2"
                     style={{ backgroundColor: "#000000" }}
                   ></span>
-                  Standard Finance Compensation assumed to be top end of the
-                  range in HCOL locations starting at{" "}
-                  <strong>₹10,00,000</strong> with varying annual increases in
-                  pay
+                  Standard Finance pay estimates are based on post-MBA
+                  compensation at top banks and financial institutions, assuming
+                  roles such as Financial Analyst and Relationship Manager, etc,
+                  with a standard progression to Senior Manager within 4–5
+                  years, using data from Glassdoor, AmbitionBox, and similar
+                  sources. pay
                 </p>
               </div>
             </div>
 
-            <div className="flex items-end space-x-3">
-              <div
-                className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
-                style={{ backgroundColor: "#639b72" }}
-              >
-                2
-              </div>
+            <div className="flex items-center space-x-3">
               <div className="text-sm text-gray-700">
                 <p>
                   <span className="inline-block w-3 h-3 bg-[#639b72] rounded mr-2"></span>
-                  High Finance Avg Pay based on average high finance roles from
-                  2022–2025 (data from <strong>79,000+</strong> submissions to
-                  the WSO Company Database)
+                  High Finance pay estimates are based on post-MBA compensation
+                  at top investment banks (such as JP Morgan and Goldman Sachs)
+                  and leading VC funds, assuming a standard progression from
+                  Associate to VP within 3–5 years, using data from Glassdoor,
+                  AmbitionBox, and similar sources.
                 </p>
               </div>
             </div>

@@ -55,16 +55,11 @@ const Founders = () => {
         {/* Founders Cards - Side by Side */}
       </div>
 
-      <div
-        className="mt-8 w-full pt-5"
-        style={{
-          backgroundColor: "#f7f7f7",
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <div className="mt-8 w-full bg-[#f7f7f7] pt-5 overflow-x-auto">
+        <div className="w-[40rem] sm:w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+          <div className="grid grid-cols-2 sm:gap-12">
             {/* Syed's Card */}
-            <div className="flex gap-3">
+            <div className="flex flex-col items-center sm:items-start sm:flex-row gap-3">
               <div
                 className="relative flex justify-center overflow-hidden"
                 style={{
@@ -77,17 +72,9 @@ const Founders = () => {
                   src="/assets/syed_raza-long.png"
                   alt="Syed Raza"
                   quality={100}
-                  className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-300"
+                  className="object-cover object-top transition-all duration-300"
                   width={300}
                   height={180}
-                  style={{
-                    filter: `
-          drop-shadow(5px 0 0 white)
-          drop-shadow(0 5px 0 white)
-          drop-shadow(-5px 0 0 white)
-          drop-shadow(0 -5px 0 white)
-        `,
-                  }}
                 />
                 {/* Solid white div positioned relative to image */}
                 <div
@@ -152,7 +139,7 @@ const Founders = () => {
                   </span>
                 </p>
                 {/* Company Logos with Designations */}
-                <div className="flex flex-col items-start gap-2 mt-auto pb-2">
+                <div className="flex flex-col items-start gap-2 mt-8 sm:mt-auto pb-2">
                   <div className="flex items-center gap-0 w-full">
                     <div className="w-9 flex-shrink-0">
                       <Image
@@ -199,7 +186,7 @@ const Founders = () => {
             </div>
 
             {/* Manish's Card */}
-            <div className="flex gap-3">
+            <div className="flex flex-col items-center sm:items-start sm:flex-row gap-3">
               <div
                 className="relative flex justify-center overflow-hidden"
                 style={{
@@ -213,17 +200,9 @@ const Founders = () => {
                   src="/assets/manish-long-photo.png"
                   alt="Dr. Manish Malhotra"
                   quality={100}
-                  className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-300"
+                  className="object-cover object-top transition-all duration-300"
                   width={300}
                   height={180}
-                  style={{
-                    filter: `
-      drop-shadow(5px 0 0 white)
-      drop-shadow(0 5px 0 white)
-      drop-shadow(-5px 0 0 white)
-      drop-shadow(0 -5px 0 white)
-    `,
-                  }}
                 />
                 {/* Solid white div positioned relative to image */}
                 <div
@@ -306,7 +285,7 @@ const Founders = () => {
                   </span> */}
                 </p>
                 {/* Company Logos with Designations */}
-                <div className="flex flex-col items-start gap-2 mt-auto pb-2">
+                <div className="flex flex-col items-start gap-2 mt-8 sm:mt-auto pb-2">
                   <div className="flex items-center gap-0 w-full">
                     <div className="w-16 flex-shrink-0">
                       <Image
@@ -352,201 +331,6 @@ const Founders = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Founders Section - Side by Side */}
-        {/* <div className="mt-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"> */}
-        {/* Dr. Manish Malhotra Card */}
-        {/* {testimonials
-           .filter((testimonial) => testimonial.id !== 2)
-           .map((testimonial) => ( */}
-        {/* <div
-                  key={`duplicate-${testimonial.id}`}
-                  className="px-4 sm:px-8 py-2 sm:py-4 flex-1"
-                >
-                  <div className="flex flex-col sm:flex-row items-start gap-4 lg:gap-6">
-                    <div className="text-left order-1 sm:order-1">
-                      <div className="text-black text-xl sm:text-2xl lg:text-3xl  py-2 font-semibold tracking-wide border-none leading-tight">
-                        Dr. Manish{" "}
-                        <span
-                          style={{
-                            fontFamily: '"Chronicle Display Black", serif',
-                            color: "#4B5563",
-                            fontStyle: "italic",
-                          }}
-                        >
-                          Malhotra
-                        </span>
-                      </div>
-                      <p className="text-gray-600 text-xs sm:text-xs leading-relaxed mb-4">
-                        {testimonial.content}
-                      </p>
-                      <p
-                        className="text-xs sm:text-sm leading-normal mb-6 max-w-sm tracking-wide italic"
-                        style={{
-                          fontFamily: '"Sofia Pro Bold Az", sans-serif',
-                          color: "#1a1a1a",
-                        }}
-                      >
-                        Reimagining education for an{" "}
-                        <span
-                          style={{
-                            fontFamily: '"Sofia Pro Bold Az", sans-serif',
-                            color: "#4B5563",
-                            fontWeight: "bold",
-                            fontStyle: "italic",
-                          }}
-                        >
-                          AI-Powered
-                        </span>
-                        , skills-first world.
-                      </p>
-                      <div className="flex flex-row gap-3 items-start">
-                        {testimonial.logo && (
-                          <div className="flex-shrink-0">
-                            <img
-                              src={testimonial.logo}
-                              alt="Company logo"
-                              className="h-4 sm:h-5 lg:h-6 w-auto object-contain transition-opacity duration-200"
-                              style={{ imageRendering: "crisp-edges" }}
-                            />
-                          </div>
-                        )}
-                        {testimonial.logo2 && (
-                          <div className="flex-shrink-0">
-                            <img
-                              src={testimonial.logo2}
-                              alt="Company logo"
-                              className="h-4 sm:h-5 lg:h-6 w-auto object-contain transition-opacity duration-200"
-                              style={{ imageRendering: "crisp-edges" }}
-                            />
-                          </div>
-                        )}
-                        {testimonial.logo3 && (
-                          <div className="flex-shrink-0">
-                            <img
-                              src={testimonial.logo3}
-                              alt="Company logo"
-                              className="h-4 sm:h-5 lg:h-6 w-auto object-contain transition-opacity duration-200"
-                              style={{ imageRendering: "crisp-edges" }}
-                            />
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-center gap-6 order-2 sm:order-2">
-                      <div className="flex-shrink-0 ">
-                        <img
-                          src={testimonial.image}
-                          alt="Profile"
-                          className="w-40 h-40 sm:w-46 sm:h-46 lg:w-52 lg:h-52 object-contain"
-                          style={{
-                            filter: "drop-shadow(10px 5px 0px #568C65)",
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          ))} */}
-
-        {/* Syed Raza Card */}
-        {/* {testimonials
-              .filter((testimonial) => testimonial.id === 2)
-              .map((testimonial) => (
-                <div
-                  key={`syed-${testimonial.id}`}
-                  className="px-4 sm:px-8 py-2 sm:py-4 flex-1"
-                >
-                  <div className="flex flex-col sm:flex-row items-start gap-4 lg:gap-6">
-                    <div className="text-left order-1 sm:order-1">
-                      <div className="text-black text-xl sm:text-2xl lg:text-3xl  py-2 font-semibold tracking-wide border-none leading-tight">
-                        Syed{" "}
-                        <span
-                          style={{
-                            fontFamily: '"Chronicle Display Black", serif',
-                            color: "#4B5563",
-                            fontStyle: "italic",
-                          }}
-                        >
-                          Raza
-                        </span>
-                      </div>
-                      <p className="text-gray-600 text-xs sm:text-xs leading-relaxed mb-4">
-                        {testimonial.content}
-                      </p>
-                      <p
-                        className="text-xs sm:text-sm leading-normal mb-6 max-w-sm tracking-wide italic"
-                        style={{
-                          fontFamily: '"Sofia Pro Bold Az", sans-serif',
-                          color: "#1a1a1a",
-                        }}
-                      >
-                        Transforming financial services with innovation and{" "}
-                        <span
-                          style={{
-                            fontFamily: '"Sofia Pro Bold Az", sans-serif',
-                            color: "#4B5563",
-                            fontWeight: "bold",
-                            fontStyle: "italic",
-                          }}
-                        >
-                          AI-Powered
-                        </span>{" "}
-                        leadership.
-                      </p>
-                      <div className="flex flex-row gap-3 items-start">
-                        {testimonial.logo && (
-                          <div className="flex-shrink-0">
-                            <img
-                              src={testimonial.logo}
-                              alt="Company logo"
-                              className="h-4 sm:h-5 lg:h-6 w-auto object-contain transition-opacity duration-200"
-                              style={{ imageRendering: "crisp-edges" }}
-                            />
-                          </div>
-                        )}
-                        {testimonial.logo2 && (
-                          <div className="flex-shrink-0">
-                            <img
-                              src={testimonial.logo2}
-                              alt="Company logo"
-                              className="h-4 sm:h-5 lg:h-6 w-auto object-contain transition-opacity duration-200"
-                              style={{ imageRendering: "crisp-edges" }}
-                            />
-                          </div>
-                        )}
-                        {testimonial.logo3 && (
-                          <div className="flex-shrink-0">
-                            <img
-                              src={testimonial.logo3}
-                              alt="Company logo"
-                              className="h-4 sm:h-5 lg:h-6 w-auto object-contain transition-opacity duration-200"
-                              style={{ imageRendering: "crisp-edges" }}
-                            />
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-center gap-6 order-2 sm:order-2">
-                      <div className="flex-shrink-0 ">
-                        <img
-                          src={testimonial.image}
-                          alt="Profile"
-                          className="w-40 h-40 sm:w-46 sm:h-46 lg:w-52 lg:h-52 object-contain"
-                          style={{
-                            filter: "drop-shadow(10px 5px 0px #568C65)",
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-           ))} */}
-        {/* </div>
-        </div> */}
       </div>
     </section>
   );

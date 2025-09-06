@@ -8,25 +8,8 @@ export default function Footer() {
     <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Column 1: About Vantage */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">About Vantage</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="About Us"
-                >
-                  About Us
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 2: Homepage */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-8">
+          {/* Column 1: Home */}
           <div>
             <h3 className="text-lg font-bold mb-4">Home</h3>
             <ul className="space-y-2">
@@ -63,7 +46,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Fellowships */}
+          {/* Column 2: Fellowships */}
           <div>
             <h3 className="text-lg font-bold mb-4">Fellowship</h3>
             <ul className="space-y-2">
@@ -90,7 +73,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact Us */}
+          {/* Column 3: Contact Us */}
           <div>
             <h3 className="text-lg font-bold mb-4">Contact Us</h3>
             <ul className="space-y-2">

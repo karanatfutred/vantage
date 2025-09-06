@@ -51,8 +51,8 @@ export default function MentorsSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
+        <div className="text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-black font-section-heading">
             Learn from{" "}
             <span
               className="italic"
@@ -72,7 +72,7 @@ export default function MentorsSection() {
         </div>
 
         {/* Company Logos Animation */}
-        <div className="mt-16">
+        <div className="mt-10">
           <div className="bg-white py-6 overflow-hidden">
             <div
               ref={lowerRowRef}

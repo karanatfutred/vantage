@@ -10,17 +10,17 @@ export default function ScholarshipsSection() {
         <div className="space-y-5">
           {/* Top Section - 1 in 5 Statistic in Full Width Black Background */}
           <div className="w-full">
-            <div className="bg-black px-16 py-12 w-full h-[450px] relative">
+            <div className="bg-black px-6 sm:px-16 py-5 sm:py-12 w-full h-72 sm:h-[450px] relative">
               <div className="text-left">
-                <div className="text-3xl md:text-4xl text-white leading-tight max-w-3xl">
+                <div className="text-xl md:text-4xl text-white leading-tight max-w-3xl">
                   1 in every 5 seats is reserved as a full scholarship, awarded
                   only to the most outstanding candidates
                 </div>
               </div>
 
               {/* Bottom Heading */}
-              <div className="absolute bottom-8 left-16">
-                <div className="text-3xl md:text-4xl text-white leading-tight max-w-3xl">
+              <div className="absolute bottom-4 sm:bottom-8 sm:left-16">
+                <div className="text-2xl md:text-4xl text-white leading-tight max-w-3xl">
                   <span
                     className="italic"
                     style={{
@@ -41,12 +41,11 @@ export default function ScholarshipsSection() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
       {/* Full width background div for scholarship cards */}
-      <div 
+      <div
         className="w-full border-t border-gray-300"
         style={{ backgroundColor: "#F7F7F7" }}
       >
@@ -64,7 +63,9 @@ export default function ScholarshipsSection() {
                 </p>
               </div>
               {/* Right border line */}
-              <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+              <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+              {/* Bottom line for mobile */}
+              <div className="block sm:hidden w-full h-px bg-gray-400 opacity-50"></div>
             </div>
 
             {/* Need-Based Access Scholarships */}
@@ -79,7 +80,9 @@ export default function ScholarshipsSection() {
                 </p>
               </div>
               {/* Right border line */}
-              <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+              <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+              {/* Bottom line for mobile */}
+              <div className="block sm:hidden w-full h-px bg-gray-400 opacity-50"></div>
             </div>
 
             {/* Achievement Scholarships */}
@@ -89,12 +92,14 @@ export default function ScholarshipsSection() {
                   Achievement Scholarships
                 </h3>
                 <p className="text-base leading-relaxed text-black">
-                  Presented to professionals demonstrating exceptional impact
-                  in their field
+                  Presented to professionals demonstrating exceptional impact in
+                  their field
                 </p>
               </div>
               {/* Right border line */}
-              <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+              <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+              {/* Bottom line for mobile */}
+              <div className="block sm:hidden w-full h-px bg-gray-400 opacity-50"></div>
             </div>
 
             {/* Women in Leadership */}
