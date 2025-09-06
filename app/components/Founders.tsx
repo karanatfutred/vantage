@@ -45,6 +45,10 @@ const Founders = () => {
                 Founders
               </span>
             </h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              From building institutions to shaping global markets, now
+              reimagining what education was meant to be.
+            </p>
           </div>
         </div>
 
@@ -95,7 +99,7 @@ const Founders = () => {
                     <span
                       style={{
                         fontFamily: '"Chronicle Display Black", serif',
-                        color: "#4B5563",
+                        color: "#568c65",
                         fontStyle: "italic",
                       }}
                     >
@@ -143,7 +147,7 @@ const Founders = () => {
                       fontWeight: 300,
                     }}
                   >
-                    now opening access to the world of high finance once guarded
+                    now opening doors to the world of high finance once guarded
                     by Ivy League halls and global boardrooms.
                   </span>
                 </p>
@@ -231,7 +235,7 @@ const Founders = () => {
                     <span
                       style={{
                         fontFamily: '"Chronicle Display Black", serif',
-                        color: "#4B5563",
+                        color: "#568c65",
                         fontStyle: "italic",
                       }}
                     >

@@ -69,8 +69,11 @@ export default function LearningSection() {
   };
 
   return (
-    <section id="learning-beyond-classroom" className="pt-10  bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="learning-beyond-classroom"
+      className="pt-10  bg-white border-b border-gray-200"
+    >
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="mb-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
@@ -93,7 +96,7 @@ export default function LearningSection() {
         </div>
 
         {/* Full Width Banner with Tabs */}
-        <div className="w-full h-[600px] relative overflow-hidden rounded-lg">
+        <div className="w-full h-[800px] relative overflow-hidden">
           {/* Background Images with Opacity Transitions */}
           {tabs.map((tab, index) => (
             <div key={tab.id} className="absolute inset-0">
@@ -125,7 +128,7 @@ export default function LearningSection() {
             <div className="absolute inset-0 flex items-center justify-center">
               <div
                 key={activeTab}
-                className="text-4xl text-white/90 max-w-4xl leading-relaxed text-center transition-all duration-700 ease-in-out transform"
+                className="text-5xl text-white/90 max-w-4xl leading-relaxed text-center transition-all duration-700 ease-in-out transform"
                 style={{
                   animation: "fadeInUp 0.7s ease-out",
                 }}

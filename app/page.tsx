@@ -10,6 +10,7 @@ import ScholarshipsSection from "./components/ScholarshipsSection";
 import CallToActionSection from "./components/CallToActionSection";
 import Footer from "./components/Footer";
 import FinanceCompensationChart from "./components/Chart";
+import HighFinance from "./components/HighFinance";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <LearningSection />
       <ProjectsSection />
       <LearningPractitionersSection />
+      <HighFinance />
       <FinanceCompensationChart />
       <MentorsSection />
       <ScholarshipsSection />

@@ -25,7 +25,10 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section id="real-mandates" className="pt-10 bg-white border-b border-gray-200">
+    <section
+      id="real-mandates"
+      className="pt-10 bg-white border-b border-gray-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-8 text-center">
@@ -51,7 +54,7 @@ export default function ProjectsSection() {
       </div>
 
       {/* Full width background div for cards */}
-      <div 
+      <div
         className="w-full border-t border-gray-300"
         style={{ backgroundColor: "#000000" }}
       >
@@ -70,7 +73,7 @@ export default function ProjectsSection() {
                 </div>
                 {/* Right border line */}
                 {index < projectCards.length - 1 && (
-                  <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-600 opacity-50"></div>
+                  <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
                 )}
               </div>
             ))}

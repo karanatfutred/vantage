@@ -2,7 +2,10 @@ import Image from "next/image";
 
 export default function CustomerTestimonials() {
   return (
-    <section id="learning-practitioners" className="pt-10  bg-white border-b border-gray-200">
+    <section
+      id="learning-practitioners"
+      className="pt-10  bg-white border-b border-gray-200 pb-12"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12 text-center">
@@ -37,18 +40,11 @@ export default function CustomerTestimonials() {
               {/* Dark overlay for better text readability */}
               <div className="absolute inset-0 bg-black/60 rounded-2xl"></div>
 
-              <div className="relative z-10">
-                <span className="text-white text-xl font-medium">
-                  50% of Learning
-                </span>
-              </div>
-
-              <div className="flex flex-col gap-6 relative z-10">
+              <div className="flex flex-col gap-6 relative z-10 mt-auto">
                 <h4 className="text-white text-xl lg:text-2xl font-light">
-                  Sessions led by global MDs, CEOs, and seasoned practitioners,
-                  combining boardroom vision with the operational depth and
-                  practical mastery built on years at the frontlines of
-                  business.
+                  Led by MDs, CEOs, and practitioners from leading investment
+                  banks, PE/VC, consulting, and tech firms, blending boardroom
+                  vision with practical mastery from years at the frontlines.
                 </h4>
               </div>
             </div>
@@ -96,13 +92,7 @@ export default function CustomerTestimonials() {
               {/* Dark overlay for better text readability */}
               <div className="absolute inset-0 bg-black/60 rounded-2xl"></div>
 
-              <div className="relative z-10">
-                <span className="text-white text-xl font-medium">
-                  50% of Learning
-                </span>
-              </div>
-
-              <div className="flex flex-col gap-6 relative z-10">
+              <div className="flex flex-col gap-6 relative z-10 mt-auto">
                 <h4 className="text-white text-xl lg:text-2xl font-light">
                   From top Indian and international business schools, bringing
                   world-class academic rigor, research depth, and structured

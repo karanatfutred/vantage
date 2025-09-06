@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -27,16 +28,16 @@ export default function Footer() {
 
           {/* Column 2: Homepage */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Homepage</h3>
+            <h3 className="text-lg font-bold mb-4">Home</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#meet-founders"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Meet The Founders"
+                  aria-label="Team"
                 >
-                  Meet The Founders
+                  Team
                 </a>
               </li>
               <li>
@@ -44,9 +45,9 @@ export default function Footer() {
                   href="#open-admissions"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Open Admissions"
+                  aria-label="Upcoming Cohorts"
                 >
-                  Open Admissions
+                  Upcoming Cohorts
                 </a>
               </li>
               <li>
@@ -54,49 +55,9 @@ export default function Footer() {
                   href="#learning-beyond-classroom"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Learning Beyond The Classroom"
+                  aria-label="Learning"
                 >
-                  Learning Beyond The Classroom
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#real-mandates"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Real Mandates At Vantage"
-                >
-                  Real Mandates At Vantage
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#learning-practitioners"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Learning, Led by Practitioners"
-                >
-                  Learning, Led by Practitioners
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#whats-at-stake"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="What's at Stake?"
-                >
-                  What's at Stake?
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#meet-mentors"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Meet Your Mentors"
-                >
-                  Meet Your Mentors
+                  Learning
                 </a>
               </li>
             </ul>
@@ -104,7 +65,7 @@ export default function Footer() {
 
           {/* Column 3: Fellowships */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Fellowships</h3>
+            <h3 className="text-lg font-bold mb-4">Fellowship</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -113,7 +74,7 @@ export default function Footer() {
                   tabIndex={0}
                   aria-label="Global Banking & Finance Fellowship"
                 >
-                  Global Banking & Finance Fellowship
+                  About
                 </a>
               </li>
               <li>
@@ -121,96 +82,39 @@ export default function Footer() {
                   href="#pgp-strategic-finance"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="PGP Strategic Finance & Analytics"
+                  aria-label="Learning"
                 >
-                  PGP Strategic Finance & Analytics
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#fellowship-curriculum"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Fellowship Curriculum"
-                >
-                  Fellowship Curriculum
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#learning-practitioners"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Learning Practitioners"
-                >
-                  Learning Practitioners
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about-fellowship"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="About Fellowship Programme"
-                >
-                  About Fellowship Programme
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#chart"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Program Chart"
-                >
-                  Program Chart
+                  Learning
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Resources & Support */}
+          {/* Column 4: Contact Us */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Resources & Support</h3>
+            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
             <ul className="space-y-2">
-              <li>
+              <li>mandip@thevantageinstitute.com</li>
+              <li className="flex space-x-4 mt-2">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Scholarships"
                 >
-                  Scholarships
+                  <Instagram size={22} />
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Admissions"
                 >
-                  Admissions
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Contact Us"
-                >
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Privacy Policy"
-                >
-                  Privacy Policy
+                  <Linkedin size={22} />
                 </a>
               </li>
             </ul>
@@ -223,7 +127,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="text-center">
           <div className="text-gray-400 text-sm">
-            © 2024 Vantage. All rights reserved.
+            © 2025 Vantage. All rights reserved.
           </div>
         </div>
       </div>
