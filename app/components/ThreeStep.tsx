@@ -4,6 +4,7 @@ import Image from "next/image";
 
 const ThreeStep = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const weekTabs = [
     {
@@ -117,13 +118,36 @@ const ThreeStep = () => {
     },
   ];
 
-  // Function to group schedule items
+  // Function to group schedule items for desktop
   const getGroupedSchedule = (schedule: any[]) => {
     return [
       [schedule[0], schedule[1]], // Monday & Tuesday
       [schedule[2]], // Wednesday
       [schedule[3], schedule[4]], // Thursday & Friday
     ];
+  };
+
+  // Navigation functions for mobile carousel
+  const nextSlide = () => {
+    setCurrentSlide((prev) => 
+      prev === weekTabs[activeTab].schedule.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => 
+      prev === 0 ? weekTabs[activeTab].schedule.length - 1 : prev - 1
+    );
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  // Reset carousel when tab changes
+  const handleTabChange = (index: number) => {
+    setActiveTab(index);
+    setCurrentSlide(0);
   };
 
   return (
@@ -146,39 +170,136 @@ const ThreeStep = () => {
           <p className="text-lg text-white mt-4">Your mentors comes from</p>
         </div>
 
-        {/* First Section: Weekly Schedule & Tabs - ADJUSTED WIDTHS */}
-        <div className="flex flex-col lg:flex-row lg:items-stretch gap-6 lg:gap-20 mb-12 rounded-2xl">
-          {/* Tabs & Description (LEFT) - REDUCED WIDTH */}
-          <div className="flex flex-col gap-8 w-full lg:w-[35%] lg:px-8 lg:py-10 justify-center">
-            {/* Tabs */}
-            <div className="flex gap-4 mb-4">
-              {weekTabs.map((tab, idx) => (
+        {/* Tabs */}
+        <div className="flex gap-4 mb-8 justify-center lg:justify-start">
+          {weekTabs.map((tab, idx) => (
+            <button
+              key={tab.title}
+              onClick={() => handleTabChange(idx)}
+              className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === idx
+                  ? "bg-[#A5D2B0] text-black"
+                  : "bg-gray-100 text-gray-600"
+              }`}
+            >
+              {tab.title}
+            </button>
+          ))}
+        </div>
+
+        {/* Mobile Carousel (visible on small screens) */}
+        <div className="lg:hidden mb-12">
+          {/* Description */}
+          <div className="text-white mb-6 text-center">
+            <div className="text-sm uppercase tracking-wider opacity-70 mb-2">
+              Curriculum
+            </div>
+            <h3 className="text-2xl font-bold mb-3">
+              {weekTabs[activeTab].subtitle}
+            </h3>
+            <p className="text-base">{weekTabs[activeTab].description}</p>
+          </div>
+
+          {/* Carousel Container */}
+          <div className="relative">
+            <div className="overflow-hidden rounded-2xl">
+              <div 
+                className="flex transition-transform duration-300 ease-in-out"
+                style={{
+                  transform: `translateX(-${currentSlide * 100}%)`
+                }}
+              >
+                {weekTabs[activeTab].schedule.map((item, index) => (
+                  <div key={index} className="w-full flex-shrink-0 p-4">
+                    <div className="bg-white rounded-2xl p-4">
+                      <div className="flex gap-4">
+                        <div className="w-24 h-32 bg-[#d0f2d8] rounded-lg flex flex-col items-center justify-center text-black p-2 flex-shrink-0">
+                          <div className="text-center">
+                            <h4 className="font-bold text-sm leading-tight">
+                              {item.person}
+                            </h4>
+                            <span className="font-medium text-xs text-gray-600">
+                              {item.designation}
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="flex-grow flex flex-col justify-center rounded-lg bg-cover bg-center relative min-h-[128px]"
+                          style={{
+                            backgroundImage: "url('/assets/classroom.jpg')",
+                          }}
+                        >
+                          <div className="absolute inset-0 bg-black/50 rounded-lg"></div>
+                          <div className="relative z-10 text-white p-3">
+                            <span className="font-medium text-xs uppercase">
+                              {item.day}
+                            </span>
+                            <h4 className="font-bold text-sm leading-tight mb-1">
+                              {item.title}
+                            </h4>
+                            <p className="text-xs">{item.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors z-10"
+              aria-label="Previous slide"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors z-10"
+              aria-label="Next slide"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center mt-4 space-x-2">
+              {weekTabs[activeTab].schedule.map((_, index) => (
                 <button
-                  key={tab.title}
-                  onClick={() => setActiveTab(idx)}
-                  className={`px-6 py-2 rounded-lg font-medium transition-colors ${
-                    activeTab === idx
-                      ? "bg-[#A5D2B0] text-black"
-                      : "bg-gray-100 text-gray-600"
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    currentSlide === index ? "bg-[#A5D2B0]" : "bg-gray-400"
                   }`}
-                >
-                  {tab.title}
-                </button>
+                  aria-label={`Go to slide ${index + 1}`}
+                />
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Desktop Layout (hidden on small screens) */}
+        <div className="hidden lg:flex lg:flex-row lg:items-stretch gap-6 lg:gap-20 mb-12 rounded-2xl">
+          {/* Tabs & Description (LEFT) - REDUCED WIDTH */}
+          <div className="flex flex-col gap-8 w-full lg:w-[35%] lg:px-8 lg:py-10 justify-center">
             {/* Description */}
             <div className="text-white">
-              <div className="text-sm  uppercase tracking-wider opacity-70 mb-2">
+              <div className="text-sm uppercase tracking-wider opacity-70 mb-2">
                 Curriculum
               </div>
               <h3 className="text-[1.625rem] lg:text-3xl font-bold mb-3">
-                {weekTabs[activeTab].title}: {weekTabs[activeTab].subtitle}
+                {weekTabs[activeTab].subtitle}
               </h3>
               <p className="text-base">{weekTabs[activeTab].description}</p>
             </div>
           </div>
           {/* Weekly Schedule (RIGHT) - INCREASED WIDTH */}
-          <div className="w-full p-6 rounded-2xl ">
+          <div className="w-full p-6 rounded-2xl">
             <div className="space-y-4 bg-white p-4 rounded-2xl">
               {getGroupedSchedule(weekTabs[activeTab].schedule).map(
                 (group, groupIdx) => (
@@ -191,23 +312,23 @@ const ThreeStep = () => {
                             <h4 className="font-bold leading-tight">
                               {group[0].person}
                             </h4>
-                            <span className=" font-medium text-xs text-gray-600">
+                            <span className="font-medium text-xs text-gray-600">
                               {group[0].designation}
                             </span>
                           </div>
                         </div>
                         <div
-                          className="flex-grow flex flex-col justify-center bg-[#f5f5f5] rounded-lg   bg-cover bg-center relative"
+                          className="flex-grow flex flex-col justify-center bg-[#f5f5f5] rounded-lg bg-cover bg-center relative"
                           style={{
                             backgroundImage: "url('/assets/classroom.jpg')",
                           }}
                         >
                           <div className="absolute inset-0 bg-black/50 rounded-lg"></div>
                           <div className="text-md z-10 text-white leading-relaxed p-4">
-                            <span className=" font-medium text-xs   uppercase">
+                            <span className="font-medium text-xs uppercase">
                               {group[0].day}
                             </span>
-                            <h4 className="font-bold  leading-tight">
+                            <h4 className="font-bold leading-tight">
                               {group[0].title}
                             </h4>
                             <div className="text-sm">
@@ -226,7 +347,7 @@ const ThreeStep = () => {
                                 <h4 className="font-bold leading-tight mt-1">
                                   {item.person}
                                 </h4>
-                                <span className="font-medium text-xs text-gray-600 ">
+                                <span className="font-medium text-xs text-gray-600">
                                   {item.designation}
                                 </span>
                               </div>
@@ -268,25 +389,25 @@ const ThreeStep = () => {
               id={section.id}
               className={`flex flex-col lg:flex-row ${
                 index % 2 === 0 ? "lg:flex-row-reverse" : ""
-              } lg:items-stretch gap-6 lg:gap-20 items-center rounded-2xl`}
+              } lg:items-stretch gap-6 lg:gap-20 items-center rounded-2xl mb-12`}
             >
               {/* Content Section - REDUCED WIDTH like LEFT section with fixed height */}
-              <div className="flex flex-col gap-8 w-full lg:w-[35%] lg:px-8 lg:py-10 justify-center h-[400px]">
+              <div className="flex flex-col gap-8 w-full lg:w-[35%] lg:px-8 lg:py-10 justify-center lg:h-[400px]">
                 <div className="lg:flex lg:flex-col lg:justify-center lg:flex-1">
-                  <div className="text-sm uppercase tracking-wider opacity-70 mb-2">
+                  <div className="text-sm uppercase tracking-wider opacity-70 mb-2 text-white">
                     Curriculum
                   </div>
-                  <h3 className="text-[1.625rem] lg:text-3xl font-bold mb-3">
+                  <h3 className="text-[1.625rem] lg:text-3xl font-bold mb-3 text-white">
                     {section.title}
                   </h3>
-                  <div className="text-base">
+                  <div className="text-base text-white">
                     <p>{section.description}</p>
                   </div>
                 </div>
               </div>
               {/* Image Section - INCREASED WIDTH like RIGHT section with fixed dimensions */}
               <div className="w-full p-6 rounded-2xl">
-                <div className="bg-white p-4 rounded-2xl h-[400px] w-full">
+                <div className="bg-white p-4 rounded-2xl h-[300px] lg:h-[400px] w-full">
                   <div className="h-full w-full overflow-hidden">
                     <figure className="relative h-full w-full">
                       <Image

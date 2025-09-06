@@ -38,7 +38,7 @@ const AdmissionScholarshipFees = () => {
 
   return (
     <section className="bg-black border-b broder-gray-800 ">
-      <div className="px-4 lg:pt-[50px] mx-auto max-w-[1272px]">
+      <div className="px-4 pt-8 lg:pt-[50px] mx-auto max-w-[1272px] ">
         {/* Header Section */}
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
@@ -54,20 +54,20 @@ const AdmissionScholarshipFees = () => {
             </span>{" "}
             & Fees
           </h2>
-          <p className="text-lg text-white mt-4">
+          <p className="lg:text-lg text-white mt-4">
             Making world-class finance education accessible
           </p>
         </div>
 
         {/* Two Cards Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8">
           {/* Card 1: Admission Process */}
-          <div className="p-8">
+          <div className="lg:p-8">
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold text-white mb-3">
                 Admission Process
               </h3>
-              <p className="text-white text-sm">
+              <p className="text-white text-sm px-1">
                 A streamlined three-step process designed to identify and
                 welcome the most promising candidates.
               </p>

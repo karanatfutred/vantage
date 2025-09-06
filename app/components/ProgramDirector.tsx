@@ -4,7 +4,7 @@ const ProgramDirector = () => {
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-50">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
-            About the{" "}
+            Programme{" "}
             <span
               className="italic"
               style={{
@@ -12,7 +12,7 @@ const ProgramDirector = () => {
                 color: "#568c65",
               }}
             >
-              Programme Director
+              Director
             </span>
           </h2>
         </div>
@@ -22,11 +22,11 @@ const ProgramDirector = () => {
             <img
               src="assets/syed.png"
               alt="Programme Director"
-              className="w-100 h-100 object-cover rounded-lg shadow-2xl"
+              className="w-50  lg:w-100 lg:h-100 object-cover rounded-lg shadow-2xl"
             />
           </div>
           {/* Right column text */}
-          <div className="flex-1 text-lg sm:text-xl text-white leading-relaxed">
+          <div className="flex-1 lg:text-lg text-sm text-white leading-relaxed">
             <p className="mb-6">
               Under his guidance, participants gain direct access to the decision-making
               frameworks used by global financial institutions. The program's curriculum

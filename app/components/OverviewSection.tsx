@@ -15,12 +15,9 @@ const OverviewSection = () => {
               Programme
             </span>
           </h2>
-          <p className="text-base md:text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-            Comprehensive finance education for the modern professional
-          </p>
         </div>
 
-        <p className="text-lg sm:text-xl text-white leading-relaxed text-center mb-12">
+        <p className="text-sm lg:text-lg text-white leading-relaxed text-center mb-12">
           Designed and delivered by global finance CXOs, The Global Fellowship
           In High Finance is India's most selective program in modern finance.
           Over two weeks, you move beyond theory into the boardrooms of CXOs,
@@ -29,7 +26,7 @@ const OverviewSection = () => {
         </p>
 
         {/* Video Container */}
-        <div className="relative w-full max-w-2xl mx-auto">
+        <div className="relative w-full max-w-2xl mx-auto mb-4 ">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <video
               className="w-full h-auto"

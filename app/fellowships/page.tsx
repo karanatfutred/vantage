@@ -21,12 +21,12 @@ export default function Fellowship() {
       <FellowshipHero />
       <CourseInfoComponent />
       <OverviewSection />
-      <ProgramDirector />
       <LearningHighlightsSection />
-      <AdmissionScholarshipFees/>
-      <BuiltFor />
+      <ProgramDirector />
       <MentorsSection />
       <ThreeStep />
+      <BuiltFor />
+      <AdmissionScholarshipFees/>
       <FAQSection />
       <CallToActionSection />
       <Footer />
