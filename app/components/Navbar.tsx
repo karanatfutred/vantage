@@ -2,55 +2,68 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <nav className="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-primary/30 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center bg-gray-700">
+            <Link href="/" className="flex items-center">
               <Image
-                src="/assets/logo.png"
+                src="/assets/vantage-logo-light.png"
                 alt="Vantage Logo"
-                width={180}
-                height={60}
-                className="h-16 w-auto"
+                width={150}
+                height={50}
                 priority
               />
             </Link>
           </div>
 
-          {/* Navigation Items */}
+          {/* Navigation Items (Desktop) */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <Link
-                href="/about"
-                className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
-              >
-                About Us
-              </Link>
+            <div
+              className="ml-10 flex items-baseline space-x-8"
+              style={{
+                fontFamily: '"Sofia Pro Light", serif',
+              }}
+            >
               <Link
                 href="/fellowships"
                 className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
               >
-                Fellowships
+                B&F Fellowship
               </Link>
               <Link
                 href="#"
                 className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
                 onClick={(e) => e.preventDefault()}
               >
-                PGP{" "}
-                <span className="text-[#a5d2b1] font-semibold">
+                PG Programme{" "}
+                <span
+                  className="text-[#a5d2b1] font-semibold"
+                  style={{
+                    fontFamily: '"Chronicle Display Black", serif',
+                  }}
+                >
                   ( Coming Soon )
                 </span>
+              </Link>
+              <Link
+                href="#"
+                className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
+                onClick={(e) => e.preventDefault()}
+              >
+                Team & Learning
               </Link>
             </div>
           </div>
 
-          {/* Apply Now Button */}
+          {/* Apply Now Button (Desktop) */}
           <div className="hidden md:block">
             <button className="bg-[#a5d2b1] text-black px-6 py-2 rounded-md text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200">
               Apply Now
@@ -59,7 +72,11 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button className="text-white hover:text-accent p-2">
+            <button
+              className="text-white hover:text-accent p-2"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open mobile menu"
+            >
               <svg
                 className="h-6 w-6"
                 fill="none"
@@ -77,6 +94,64 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="h-80 fixed inset-0 z-50 bg-black flex flex-col items-center justify-start pt-5 space-y-8 md:hidden transition-all">
+          <div className="w-full flex justify-between items-center border-b border-primary/30 z-50 shadow-lg pb-4 px-[24px]">
+            <button className="bg-[#a5d2b1] text-black px-4 py-1 rounded-sm text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200">
+              Apply Now
+            </button>
+
+            <button
+              className=" text-white hover:text-accent"
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close mobile menu"
+            >
+              <svg
+                className="h-7 w-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <Link
+            href="/fellowships"
+            className="text-white text-lg font-light hover:text-accent"
+            onClick={() => setMobileOpen(false)}
+          >
+            B&F Fellowship
+          </Link>
+
+          <div className="text-white text-lg font-light">
+            PG Programme{" "}
+            <p
+              className="text-[#a5d2b1] font-semibold"
+              style={{
+                fontFamily: '"Chronicle Display Black", serif',
+              }}
+            >
+              ( Coming Soon )
+            </p>
+          </div>
+          <Link
+            href="/fellowships"
+            className="text-white text-lg font-light hover:text-accent"
+            onClick={() => setMobileOpen(false)}
+          >
+            Team & Learning
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }

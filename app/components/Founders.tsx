@@ -45,9 +45,10 @@ const Founders = () => {
                 Founders
               </span>
             </h2>
-            {/* <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-              Leadership that drives innovation and excellence
-            </p> */}
+            <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              From building institutions to shaping global markets, now{" "}
+              <b> reimagining</b> what education was meant to be
+            </p>
           </div>
         </div>
 
@@ -55,7 +56,7 @@ const Founders = () => {
       </div>
 
       <div
-        className="mt-8 w-full"
+        className="mt-8 w-full pt-5"
         style={{
           backgroundColor: "#f7f7f7",
         }}
@@ -98,7 +99,7 @@ const Founders = () => {
                     <span
                       style={{
                         fontFamily: '"Chronicle Display Black", serif',
-                        color: "#4B5563",
+                        color: "#568c65",
                         fontStyle: "italic",
                       }}
                     >
@@ -118,15 +119,16 @@ const Founders = () => {
                   </span>
                 </div>
               </div>
-              <div className="w-[295px] flex flex-col justify- mt-10 gap-2">
+              <div className="w-[295px] flex flex-col justify- mt-4">
                 <p
-                  className="text-sm sm:text-sm leading-snug tracking-wide mb-4"
+                  className="text-sm sm:text-sm leading-snug tracking-wide"
                   style={{
                     fontFamily: '"Sofia Pro Bold Az", sans-serif',
                     color: "#1a1a1a",
                   }}
                 >
                   <span
+                    className="text-[1rem]"
                     style={{
                       fontStyle: "italic",
                       color: "#568C65",
@@ -137,6 +139,7 @@ const Founders = () => {
                     fintech ventures,
                   </span>{" "}
                   <span
+                    className="text-[1rem]"
                     style={{
                       color: "#4B5563",
                       fontStyle: "italic",
@@ -144,12 +147,12 @@ const Founders = () => {
                       fontWeight: 300,
                     }}
                   >
-                    now opening access to the world of high finance once guarded
+                    now opening doors to the world of high finance once guarded
                     by Ivy League halls and global boardrooms.
                   </span>
                 </p>
                 {/* Company Logos with Designations */}
-                <div className="flex flex-col items-start gap-2">
+                <div className="flex flex-col items-start gap-2 mt-auto pb-2">
                   <div className="flex items-center gap-0 w-full">
                     <div className="w-9 flex-shrink-0">
                       <Image
@@ -232,7 +235,7 @@ const Founders = () => {
                     <span
                       style={{
                         fontFamily: '"Chronicle Display Black", serif',
-                        color: "#4B5563",
+                        color: "#568c65",
                         fontStyle: "italic",
                       }}
                     >
@@ -252,9 +255,9 @@ const Founders = () => {
                   </span>
                 </div>
               </div>
-              <div className="w-[295px] flex flex-col justify- mt-10 gap-2">
+              <div className="w-[295px] flex flex-col justify- mt-4">
                 <p
-                  className="text-sm sm:text-sm leading-snug tracking-wide mb-4"
+                  className="text-sm sm:text-sm leading-snug tracking-wide"
                   style={{
                     fontFamily: '"Sofia Pro Bold Az", sans-serif',
                     color: "#1a1a1a",
@@ -270,16 +273,18 @@ const Founders = () => {
                     "
                   </span> */}
                   <span
+                    className="text-[1rem]"
                     style={{
                       fontStyle: "italic",
                       color: "#568C65",
                       fontFamily: '"Chronicle Display Black", serif',
                     }}
                   >
-                    From scaling and exiting multi-million-dollar ventures
+                    From scaling & exiting multi-million-dollar ventures
                     worldwide,
                   </span>{" "}
                   <span
+                    className="text-[1rem]"
                     style={{
                       color: "#4B5563",
                       fontStyle: "italic",
@@ -287,9 +292,8 @@ const Founders = () => {
                       fontWeight: 300,
                     }}
                   >
-                    now building what learning should have always been where
-                    students learn to go from zero to one hundred and create at
-                    scale from day one.
+                    now building what learning should’ve always been where
+                    students go from zero to one hundred & create at scale.
                   </span>
                   {/* <span
                     style={{
@@ -302,7 +306,7 @@ const Founders = () => {
                   </span> */}
                 </p>
                 {/* Company Logos with Designations */}
-                <div className="flex flex-col items-start gap-2">
+                <div className="flex flex-col items-start gap-2 mt-auto pb-2">
                   <div className="flex items-center gap-0 w-full">
                     <div className="w-16 flex-shrink-0">
                       <Image

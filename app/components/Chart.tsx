@@ -151,7 +151,10 @@ const FinanceCompensationChart: React.FC = () => {
   };
 
   return (
-    <section id="whats-at-stake" className="pt-10  bg-white border-b border-gray-200">
+    <section
+      id="whats-at-stake"
+      className="pt-10  bg-white border-b border-gray-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12 text-center">
@@ -169,7 +172,7 @@ const FinanceCompensationChart: React.FC = () => {
           </h2>
 
           <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-            High Finance Vs. Standard Finance | Massive pay gap over 5 years
+            High Finance vs Standard Finance: A ₹1.15 Crore Gap
           </p>
         </div>
 

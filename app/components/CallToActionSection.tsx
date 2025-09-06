@@ -16,19 +16,13 @@ const CallToActionSection = () => {
               Finance Career?
             </span>
           </h2>
-          
-          {/* Subheading */}
-          <p className="text-base md:text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Join India's most selective program in modern finance and learn from the leaders who shaped trillion-dollar industries.
-          </p>
 
           {/* CTA Button */}
-          <div className="flex justify-center">
-            <button className="bg-black text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-colors font-section-heading shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+          <div className="flex justify-center mt-10">
+            <button className="bg-[#a5d2b1] text-black px-10 py-4 rounded-lg font-semibold text-lg font-section-heading shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
               Apply Now
             </button>
           </div>
-
         </div>
       </div>
     </section>

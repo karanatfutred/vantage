@@ -57,47 +57,33 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="flex flex-col items-center justify-center bg-black text-center pt-32 overflow-hidden pb-8"
+      className="relative min-h-[20vh] flex flex-col items-center justify-center bg-black text-center pt-24 sm:pt-32 overflow-hidden pb-8"
     >
-
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        {/* Main heading */}
-        <h1 className="mb-2 leading-tight">
-          <div
-            className="text-[4.6rem] md:text-[7.2rem] font-bold text-white drop-shadow-lg hover:drop-shadow-xl transition-all duration-500 hover:scale-105 whitespace-nowrap"
+        <h1
+          className="font-light w-full text-8xl sm:text-[155px] text-white"
+          style={{
+            fontFamily: "Sofia Pro, sans-serif",
+            letterSpacing: "-0.03em",
+            lineHeight: "1.05", // Tighter line spacing
+          }}
+        >
+          The
+          <span
+            className="italic font-normal text-[#a5d2b1]"
             style={{
-              fontFamily: "Trajan Pro Regular, serif",
+              fontFamily: "Instrument Serif, serif",
+              letterSpacing: "-0.03em",
             }}
           >
-            <span
-              style={{
-                fontFamily: '"Trajan Pro Regular", serif',
-              }}
-            >
-              The
-            </span>{" "}
-            <span
-              style={{
-                fontFamily: '"Trajan Pro Regular", serif',
-                color: "#ffffff",
-              }}
-            >
-              Finance
-            </span>{" "}
-            <span
-              className="text-white"
-              style={{
-                fontFamily: '"Trajan Pro Regular", serif',
-              }}
-            >
-              School
-            </span>
-          </div>
+            {" "}
+            Finance School
+          </span>{" "}
         </h1>
 
         {/* Description */}
-        <p className="text-base md:text-lg lg:text-2xl text-white mb-10 font-light max-w-4xl mx-auto">
+        <p className="text-base mt-3 sm:mt-0 md:text-lg lg:text-[35px] text-white mb-10 font-light max-w-4xl mx-auto">
           Taught by the leaders who shaped trillion-dollar finance
         </p>
 
@@ -105,7 +91,7 @@ export default function Hero() {
         <div className="mb-8">
           <p
             className="text-center text-base md:text-lg font-light"
-            style={{ color: "#c8e6d3" }}
+            style={{ color: "#ffffff" }}
           >
             <span>Investment Banking </span>
             <span className="text-white" aria-hidden="true">
@@ -127,10 +113,17 @@ export default function Hero() {
           </p>
         </div>
 
+        {/* Only visible in mobile */}
+        <div className="sm:hidden">
+          <button className="bg-[#a5d2b1] text-black px-6 py-2 rounded-md text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200">
+            Apply Now
+          </button>
+        </div>
+
         {/* Image Grid - 3 Different Sizes with Equal Mouse Tracking */}
         <div
           ref={gridRef}
-          className="flex justify-center pb-10 mt-16 cursor-none"
+          className="hidden sm:flex justify-center   pb-10 mt-16 cursor-none"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onMouseEnter={handleMouseEnter}
