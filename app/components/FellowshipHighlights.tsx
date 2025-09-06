@@ -12,7 +12,7 @@ const CourseInfoComponent = () => {
 
   const statsData = [
     {
-      number: "06th Oct 2025",
+      number: "06th October 2025",
       label: "Starts On",
     },
     {
@@ -31,11 +31,11 @@ const CourseInfoComponent = () => {
 
   return (
     <section className="bg-white">
-      <div className="lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 ">
+      <div className="lg:max-w-7xl px-2 lg:px-16 ">
         {/* Statistics Section */}
-        <div className="flex flex-row text-left py-8">
+        <div className="flex flex-row text-left py-4 lg:py-8 ">
           {statsData.map((stat, index) => (
-            <div key={index} className="relative px-3 lg:px-10">
+            <div key={index} className="relative px-1 lg:px-10 ">
               {/* Heading/Label on top */}
               <p
                 className="text-gray-600 font-semibold text-sm lg:text-2xl italic"
@@ -46,7 +46,7 @@ const CourseInfoComponent = () => {
                 {stat.label}
               </p>
               {/* Value below - Added consistent mt-2 for uniform gap */}
-              <h2 className="mt-2 lg:mt-4 font-normal text-gray-800 text-xs lg:text-xl ">
+              <h2 className="mt-4 font-normal text-gray-800 text-xs lg:text-xl ">
                 <span>{stat.number}</span>
               </h2>
               {/* Divider line */}

@@ -22,22 +22,23 @@ const ProgramDirector = () => {
             <img
               src="assets/syed.png"
               alt="Programme Director"
-              className="w-50  lg:w-100 lg:h-100 object-cover rounded-lg shadow-2xl"
+              className="w-50 lg:w-100 lg:h-100 object-cover rounded-lg shadow-2xl"
             />
           </div>
           {/* Right column text */}
-          <div className="flex-1 lg:text-lg text-sm text-white leading-relaxed">
+          <div className="flex-1 lg:text-lg text-sm text-white leading-relaxed text-justify">
             <p className="mb-6">
-              Under his guidance, participants gain direct access to the decision-making
-              frameworks used by global financial institutions. The program's curriculum
-              reflects real-world scenarios from boardroom negotiations to multi-billion
-              dollar transactions.
+              Under his guidance, participants gain direct access to the
+              decision-making frameworks used by global financial institutions.
+              The program's curriculum reflects real-world scenarios from
+              boardroom negotiations to multi-billion dollar transactions.
             </p>
             <p className="mb-6">
-              Syed's network of industry leaders serves as guest faculty, ensuring
-              participants learn from active practitioners who shape the global financial
-              landscape. This unique approach transforms theoretical knowledge into
-              actionable expertise that drives career advancement.
+              Syed's network of industry leaders serves as guest faculty,
+              ensuring participants learn from active practitioners who shape
+              the global financial landscape. This unique approach transforms
+              theoretical knowledge into actionable expertise that drives career
+              advancement.
             </p>
           </div>
         </div>

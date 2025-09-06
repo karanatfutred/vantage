@@ -20,12 +20,12 @@ const BuiltFor = () => {
         
         {/* Three Cards Container */}
         <div className="flex justify-center items-center py-10">
-          {/* Mobile: Horizontal Scroll Container */}
+          {/* Mobile: Horizontal Scroll Container with peek */}
           <div className="lg:hidden w-full">
             <div className="overflow-x-auto scrollbar-hide">
-              <div className="flex space-x-4 px-4 pb-4 min-w-max">
+              <div className="flex space-x-4 pl-4 pr-12 pb-4 min-w-max">
                 {/* Card 1 - Mobile */}
-                <div className="flex-shrink-0 w-80 bg-black rounded-2xl">
+                <div className="flex-shrink-0 w-72 bg-black rounded-2xl">
                   <div className="w-full h-40 shadow-lg transition-all duration-1000 ease-in-out hover:bg-white hover:border-gray-300 group">
                     <div className="p-6 h-full flex flex-col justify-between">
                       <div>
@@ -44,7 +44,7 @@ const BuiltFor = () => {
                 </div>
                 
                 {/* Card 2 - Mobile */}
-                <div className="flex-shrink-0 w-80 bg-black rounded-2xl">
+                <div className="flex-shrink-0 w-72 bg-black rounded-2xl">
                   <div className="w-full h-40 shadow-lg transition-all duration-1000 ease-in-out hover:bg-white hover:border-gray-300 group">
                     <div className="p-6 h-full flex flex-col justify-between">
                       <div>
@@ -63,7 +63,7 @@ const BuiltFor = () => {
                 </div>
                 
                 {/* Card 3 - Mobile */}
-                <div className="flex-shrink-0 w-80 bg-black rounded-2xl">
+                <div className="flex-shrink-0 w-72 bg-black rounded-2xl">
                   <div className="w-full h-40 shadow-lg transition-all duration-1000 ease-in-out hover:bg-white hover:border-gray-300 group">
                     <div className="p-6 h-full flex flex-col justify-between">
                       <div>
@@ -85,7 +85,7 @@ const BuiltFor = () => {
             
             {/* Scroll indicator dots for mobile */}
             <div className="flex justify-center mt-4 space-x-2">
-              <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+              <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
               <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
               <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
             </div>
