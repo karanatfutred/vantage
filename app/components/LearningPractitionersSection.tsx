@@ -27,9 +27,9 @@ export default function CustomerTestimonials() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-10 xl:gap-6">
           {/* First Row */}
-          <div className="flex flex-col xl:flex-row gap-6">
+          <div className="flex flex-col-reverse xl:flex-row gap-3 xl:gap-6">
             {/* Customer Story Card with Background Image */}
             <div
               className="p-8 rounded-2xl flex flex-col justify-between relative bg-cover bg-center bg-no-repeat h-80 xl:h-auto xl:flex-1"
@@ -49,15 +49,20 @@ export default function CustomerTestimonials() {
               </div>
             </div>
 
-            {/* Stats Card - Solid Color */}
-            <div className="flex flex-col justify-between gap-16 xl:max-w-sm bg-[#dcf5e3] rounded-2xl p-8 min-h-80">
-              <div>
-                <span className="uppercase text-sm font-medium text-black">
-                  .
-                </span>
-              </div>
-              <div className="flex flex-col gap-1">
+            {/* Desktop Stats Card - Solid Color */}
+            <div className="hidden xl:flex flex-col justify-between gap-16 xl:max-w-sm bg-[#dcf5e3] rounded-2xl p-8 min-h-80">
+              <div className="flex flex-col gap-1 mt-auto">
                 <h2 className="text-7xl font-bold text-black">50%</h2>
+                <h4 className="text-black text-2xl font-light">
+                  Industry Practitioners
+                </h4>
+              </div>
+            </div>
+
+            {/* Mobile Stats Card - Solid Color */}
+            <div className="flex xl:hidden flex-col justify-between gap-16 xl:max-w-sm rounded-2xl">
+              <div className="flex flex-col gap-1 mt-auto">
+                <h2 className="text-5xl font-bold text-black">50%</h2>
                 <h4 className="text-black text-2xl font-light">
                   Industry Practitioners
                 </h4>
@@ -66,16 +71,21 @@ export default function CustomerTestimonials() {
           </div>
 
           {/* Second Row - Reordered: Small card first, then large card */}
-          <div className="flex flex-col xl:flex-row gap-6">
+          <div className="flex flex-col xl:flex-row gap-3 xl:gap-6">
             {/* Stats Card - Solid Color */}
-            <div className="flex flex-col justify-between gap-16 xl:max-w-sm bg-gray-200 rounded-2xl p-8 min-h-80">
-              <div>
-                <span className="uppercase text-sm font-medium text-white/60">
-                  .
-                </span>
-              </div>
-              <div className="flex flex-col gap-1">
+            <div className="hidden xl:flex flex-col justify-between gap-16 xl:max-w-sm bg-gray-200 rounded-2xl p-8 min-h-80">
+              <div className="flex flex-col gap-1 mt-auto">
                 <h2 className="text-7xl font-bold text-black">50%</h2>
+                <h4 className="text-black text-2xl font-light">
+                  In-house & Visiting Academics
+                </h4>
+              </div>
+            </div>
+
+            {/* Mobile Stats Card - Solid Color */}
+            <div className="flex xl:hidden flex-col justify-between gap-16 xl:max-w-sm rounded-2xl">
+              <div className="flex flex-col gap-1 mt-auto">
+                <h2 className="text-5xl font-bold text-black">50%</h2>
                 <h4 className="text-black text-2xl font-light">
                   In-house & Visiting Academics
                 </h4>

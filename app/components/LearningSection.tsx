@@ -96,7 +96,7 @@ export default function LearningSection() {
         </div>
 
         {/* Full Width Banner with Tabs */}
-        <div className="w-full h-[800px] relative overflow-hidden">
+        <div className="w-full h-[500px] sm:h-[800px] relative overflow-hidden">
           {/* Background Images with Opacity Transitions */}
           {tabs.map((tab, index) => (
             <div key={tab.id} className="absolute inset-0">
@@ -125,10 +125,10 @@ export default function LearningSection() {
           {/* Content Overlay */}
           <div className="absolute inset-0 z-20">
             {/* Tab Content with Smooth Transitions */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center">
               <div
                 key={activeTab}
-                className="text-5xl text-white/90 max-w-4xl leading-relaxed text-center transition-all duration-700 ease-in-out transform"
+                className="text-xl sm:text-5xl mb-24 sm:mb-0 text-white/90 max-w-4xl leading-relaxed text-center transition-all duration-700 ease-in-out transform px-2"
                 style={{
                   animation: "fadeInUp 0.7s ease-out",
                 }}
@@ -138,13 +138,13 @@ export default function LearningSection() {
             </div>
 
             {/* Tabs */}
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <div className="flex gap-2 justify-center">
+            <div className="absolute bottom-0 left-0 right-0 pb-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row gap-2 justify-center">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => handleTabClick(tab.id)}
-                    className={`px-6 py-3 font-semibold transition-all duration-500 ease-in-out text-white border-b-2 ${
+                    className={`pb-2 sm:px-6 sm:py-3 font-semibold transition-all duration-500 ease-in-out text-white border-b-1 sm:border-b-2 ${
                       activeTab === tab.id
                         ? "text-white border-white transform scale-105"
                         : "text-white/60 border-white/30 hover:text-white/80 hover:border-white/50 hover:scale-105"

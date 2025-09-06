@@ -1,5 +1,7 @@
 "use client";
 
+import { Fragment } from "react";
+
 export default function ProjectsSection() {
   const projectCards = [
     {
@@ -62,20 +64,26 @@ export default function ProjectsSection() {
           {/* Project Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
             {projectCards.map((card, index) => (
-              <div key={index} className="relative">
-                <div className="p-6 text-white">
-                  <h3 className="text-lg font-semibold mb-4 text-white font-section-heading">
-                    {card.title}
-                  </h3>
-                  <p className="text-base leading-relaxed text-white">
-                    {card.description}
-                  </p>
+              <Fragment key={index}>
+                <div key={index} className="relative">
+                  <div className="p-6 text-white">
+                    <h3 className="text-lg font-semibold mb-4 text-white font-section-heading">
+                      {card.title}
+                    </h3>
+                    <p className="text-base leading-relaxed text-white">
+                      {card.description}
+                    </p>
+                  </div>
+                  {/* Right border line */}
+                  {index < projectCards.length - 1 && (
+                    <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+                  )}
                 </div>
-                {/* Right border line */}
+                {/* Bottom border line for mobile */}
                 {index < projectCards.length - 1 && (
-                  <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
+                  <div className="block sm:hidden w-full h-px bg-gray-300 opacity-50"></div>
                 )}
-              </div>
+              </Fragment>
             ))}
           </div>
         </div>

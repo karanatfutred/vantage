@@ -19,12 +19,12 @@ export default function Home() {
       <Hero />
       <Founders />
       <Admissions />
-      <LearningSection />
-      <ProjectsSection />
-      <LearningPractitionersSection />
       <HighFinance />
       <FinanceCompensationChart />
       <MentorsSection />
+      <LearningPractitionersSection />
+      <LearningSection />
+      <ProjectsSection />
       <ScholarshipsSection />
       <CallToActionSection />
       <Footer />

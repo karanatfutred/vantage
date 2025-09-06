@@ -88,7 +88,7 @@ export default function Hero() {
         </p>
 
         {/* Program Offerings */}
-        <div className="mb-8">
+        <div className="mb-8 hidden sm:block">
           <p
             className="text-center text-base md:text-lg font-light"
             style={{ color: "#ffffff" }}

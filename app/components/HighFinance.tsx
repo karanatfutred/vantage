@@ -23,27 +23,26 @@ const HighFinance = () => {
       label: "Students Placed in Startups",
     },
   ];
-
   const highFinanceCards = [
     {
-      title: "Roles",
+      title: "Step into the most competitive roles in global finance",
       description:
-        "Master the art of financial decision-making with real-world case studies from global institutions.",
+        "Break into investment banking, venture capital, wealth management, and leadership tracks at the world’s top institutions. These are the roles that define careers — fast-tracked, high-responsibility, and designed to put you at the center of global markets.",
     },
     {
-      title: "Companies",
+      title: "Learn directly from the boardrooms of global finance",
       description:
-        "Master the art of financial decision-making with real-world case studies from global institutions.",
+        "Your classes are led by MDs, CEOs, and senior practitioners who have steered Barclays, Lloyds, Goldman Sachs, and leading VC firms. They don’t just teach you finance — they bring the strategies and decisions that have moved markets.",
     },
     {
-      title: "Batch",
+      title: "Earn the world’s most recognized finance credentials",
       description:
-        "Master the art of financial decision-making with real-world case studies from global institutions.",
+        "Every course is mapped to certifications like CFA, FRM, and Fintech credentials, ensuring your learning carries global credibility. These aren’t just add-ons — they’re the same benchmarks top recruiters look for when hiring future leaders.",
     },
     {
-      title: "Team",
+      title: "Stay ahead of the curve with frontier topics",
       description:
-        "Master the art of financial decision-making with real-world case studies from global institutions.",
+        "Go beyond traditional finance and master areas reshaping the industry: AI in finance, digital assets, ESG investing, and global regulatory shifts. These are the conversations shaping boardrooms today — and the opportunities you’ll be prepared to lead tomorrow.",
     },
   ];
 
@@ -57,7 +56,7 @@ const HighFinance = () => {
         <div>
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
-              High{" "}
+              India’s{" "}
               <span
                 className="italic"
                 style={{
@@ -65,14 +64,15 @@ const HighFinance = () => {
                   color: "#568c65",
                 }}
               >
-                Finance
-              </span>
+                First Finance-Focused
+              </span>{" "}
+              Institute
             </h2>
           </div>
         </div>
       </div>
 
-      <div
+      {/* <div
         className="mt-8 w-full border-b border-gray-800 py-7"
         style={{
           backgroundColor: "#000000",
@@ -82,8 +82,6 @@ const HighFinance = () => {
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10">
             {stats.map((s, i) => (
               <div key={i} className="relative isolate flex items-start gap-3">
-                {/* Decorative dotted circle behind the number */}
-
                 <div className="relative">
                   <div className="leading-none text-[64px] font-semibold tracking-tight text-white sm:text-[72px]">
                     <span className="tabular-nums">{s.value}</span>
@@ -101,23 +99,22 @@ const HighFinance = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="border-b border-gray-600">
-        <div className="flex justify-center items-center min-h-[400px] overflow-x-auto">
-          <div className="flex items-center space-x-8 w-full max-w-7xl">
+        <div className="flex justify-center items-stretch min-h-[400px] overflow-x-auto py-8 pl-4">
+          <div className="flex items-stretch space-x-4 w-full max-w-7xl">
             {/* Cards */}
-
             {highFinanceCards.map((card, index) => (
               <div
                 key={index}
-                className="flex-1 basis-1/4 min-w-[250px] h-64 rounded-lg shadow-2xl border border-gray-700"
+                className="flex-1 basis-1/4 min-w-[300px] rounded-lg shadow-2xl border border-gray-700 flex"
               >
                 <div className="p-6 h-full flex flex-col justify-between">
                   <div>
                     <h3 className="text-lg font-bold text-black mb-3 font-section-heading">
                       <span
-                        className="text-white text-4xl "
+                        className="text-white text-2xl"
                         style={{
                           fontFamily: '"Chronicle Display Black", serif',
                         }}
