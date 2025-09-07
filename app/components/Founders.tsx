@@ -47,7 +47,7 @@ const Founders = () => {
             </h2>
             <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
               From building institutions to shaping global markets, now{" "}
-              <b> reimagining</b> what education was meant to be
+              <b> reimagining what education was meant to be</b>
             </p>
           </div>
         </div>
@@ -106,7 +106,7 @@ const Founders = () => {
                   </span>
                 </div>
               </div>
-              <div className="w-[295px] flex flex-col justify- mt-4">
+              <div className="w-[295px] flex flex-col mt-4">
                 <p
                   className="text-sm sm:text-sm leading-snug tracking-wide"
                   style={{
@@ -139,7 +139,7 @@ const Founders = () => {
                   </span>
                 </p>
                 {/* Company Logos with Designations */}
-                <div className="flex flex-col items-start gap-2 mt-8 sm:mt-auto pb-2">
+                <div className="flex flex-col gap-2 mt-8 pb-2">
                   <div className="flex items-center gap-0 w-full">
                     <div className="w-9 flex-shrink-0">
                       <Image
@@ -234,7 +234,7 @@ const Founders = () => {
                   </span>
                 </div>
               </div>
-              <div className="w-[295px] flex flex-col justify- mt-4">
+              <div className="w-[295px] flex flex-col mt-4">
                 <p
                   className="text-sm sm:text-sm leading-snug tracking-wide"
                   style={{
@@ -285,7 +285,7 @@ const Founders = () => {
                   </span> */}
                 </p>
                 {/* Company Logos with Designations */}
-                <div className="flex flex-col items-start gap-2 mt-8 sm:mt-auto pb-2">
+                <div className="flex flex-col items-start gap-2 mt-8 pb-2">
                   <div className="flex items-center gap-0 w-full">
                     <div className="w-16 flex-shrink-0">
                       <Image
