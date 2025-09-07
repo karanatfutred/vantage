@@ -4,7 +4,7 @@ const OverviewSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
-            About the{" "}
+            Step Into the{" "}
             <span
               className="italic"
               style={{
@@ -12,17 +12,17 @@ const OverviewSection = () => {
                 color: "#568c65",
               }}
             >
-              Programme
+              Fellowship
             </span>
           </h2>
         </div>
 
         <p className="text-sm lg:text-lg text-white leading-relaxed text-center mb-12">
-          Designed and delivered by global finance CXOs, The Global Fellowship
-          In High Finance is India's most selective program in modern finance.
-          Over two weeks, you move beyond theory into the boardrooms of CXOs,
-          learning how fintech, venture capital, wealth & private banking,
-          credit, and risk operate at the highest level.
+          Led by MDs and CEOs from top investment banks, wealth firms, and VC
+          funds, this fellowship gives a select cohort a closed-door view of how
+          leaders think and strategize in ESG, fintech, credit, private banking,
+          and risk, while building the networks and edge to break into the most
+          competitive roles in finance
         </p>
 
         {/* Video Container */}

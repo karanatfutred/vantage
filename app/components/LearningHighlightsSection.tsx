@@ -4,22 +4,22 @@ const LearningHighlightsSection = () => {
     {
       title: "Venture Capital & Startups",
       description:
-        "Scaling breakthrough companies through proven investment playbooks.",
+        "Learn how investors back and scale breakthrough companies through proven venture playbooks.",
     },
     {
       title: "Fintech & Innovation",
       description:
-        "Unpacking digital banking, payments, and technology-driven disruption in finance.",
+        "Explore digital banking, payments, and the technologies transforming global finance.",
     },
     {
       title: "Global Banking & Wealth",
       description:
-        "Mastering private banking, lending, markets, and investment banking fundamentals.",
+        "Master private banking, lending, markets, and core investment banking fundamentals.",
     },
     {
       title: "Career Acceleration",
       description:
-        "CV crafting, LinkedIn optimisation, and mock interviews with global recruiters.",
+        "Prepare for competitive finance roles with CV reviews, LinkedIn optimisation, recruiter-led mock interviews, and a strong peer network.",
     },
   ];
 
@@ -51,12 +51,12 @@ const LearningHighlightsSection = () => {
             {highlights.map((highlight, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-72 bg-gray-50 rounded-lg border border-gray-200 p-4"
+                className="flex-shrink-0 w-72 bg-gray-50 rounded-lg border border-gray-200 p-2 lg:p-4"
               >
-                <h3 className="text-lg font-semibold mb-3 text-black font-section-heading">
+                <h3 className=" text-md lg:text-lg font-semibold mb-3 text-black font-section-heading">
                   {highlight.title}
                 </h3>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                   {highlight.description}
                 </p>
               </div>
