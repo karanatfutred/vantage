@@ -51,12 +51,13 @@ const LearningHighlightsSection = () => {
             {highlights.map((highlight, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-72 bg-gray-50 rounded-lg border border-gray-200 p-2 lg:p-4"
+                className="flex-shrink-0 w-72 bg-black rounded-lg border border-gray-200 p-2 lg:p-4"
               >
-                <h3 className=" text-md lg:text-lg font-semibold mb-3 text-black font-section-heading">
+                <h3 className=" text-md lg:text-lg font-semibold mb-3 text-white font-section-heading">
                   {highlight.title}
+                  <hr/>
                 </h3>
-                <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
+                <p className="text-xs lg:text-sm text-white leading-relaxed">
                   {highlight.description}
                 </p>
               </div>

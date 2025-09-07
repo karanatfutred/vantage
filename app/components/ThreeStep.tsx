@@ -4,7 +4,6 @@ import Image from "next/image";
 
 const ThreeStep = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const weekTabs = [
     {
@@ -107,15 +106,6 @@ const ThreeStep = () => {
       buttonLink: "/augment-mba-program",
       image: "/assets/classroom.jpg",
     },
-    {
-      id: "why-augment-3",
-      title: "Connect With Fellow Founders",
-      description:
-        "Get support from your peers through online masterminds and real-world networking events.",
-      buttonText: "Explore Community",
-      buttonLink: "https://augment.org/students",
-      image: "/assets/classroom.jpg",
-    },
   ];
 
   // Function to group schedule items for desktop
@@ -125,29 +115,6 @@ const ThreeStep = () => {
       [schedule[2]], // Wednesday
       [schedule[3], schedule[4]], // Thursday & Friday
     ];
-  };
-
-  // Navigation functions for mobile carousel
-  const nextSlide = () => {
-    setCurrentSlide((prev) => 
-      prev === weekTabs[activeTab].schedule.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => 
-      prev === 0 ? weekTabs[activeTab].schedule.length - 1 : prev - 1
-    );
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
-  // Reset carousel when tab changes
-  const handleTabChange = (index: number) => {
-    setActiveTab(index);
-    setCurrentSlide(0);
   };
 
   return (
@@ -175,7 +142,7 @@ const ThreeStep = () => {
           {weekTabs.map((tab, idx) => (
             <button
               key={tab.title}
-              onClick={() => handleTabChange(idx)}
+              onClick={() => setActiveTab(idx)}
               className={`px-6 py-2 rounded-lg font-medium transition-colors ${
                 activeTab === idx
                   ? "bg-[#A5D2B0] text-black"
@@ -187,7 +154,7 @@ const ThreeStep = () => {
           ))}
         </div>
 
-        {/* Mobile Carousel (visible on small screens) */}
+        {/* Mobile Single Card Layout (visible on small screens) */}
         <div className="lg:hidden mb-12">
           {/* Description */}
           <div className="text-white mb-6 text-center">
@@ -200,84 +167,39 @@ const ThreeStep = () => {
             <p className="text-base">{weekTabs[activeTab].description}</p>
           </div>
 
-          {/* Carousel Container */}
-          <div className="relative">
-            <div className="overflow-hidden rounded-2xl">
-              <div 
-                className="flex transition-transform duration-300 ease-in-out"
-                style={{
-                  transform: `translateX(-${currentSlide * 100}%)`
-                }}
-              >
-                {weekTabs[activeTab].schedule.map((item, index) => (
-                  <div key={index} className="w-full flex-shrink-0 p-4">
-                    <div className="bg-white rounded-2xl p-4">
-                      <div className="flex gap-4">
-                        <div className="w-24 h-32 bg-[#d0f2d8] rounded-lg flex flex-col items-center justify-center text-black p-2 flex-shrink-0">
-                          <div className="text-center">
-                            <h4 className="font-bold text-sm leading-tight">
-                              {item.person}
-                            </h4>
-                            <span className="font-medium text-xs text-gray-600">
-                              {item.designation}
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          className="flex-grow flex flex-col justify-center rounded-lg bg-cover bg-center relative min-h-[128px]"
-                          style={{
-                            backgroundImage: "url('/assets/classroom.jpg')",
-                          }}
-                        >
-                          <div className="absolute inset-0 bg-black/50 rounded-lg"></div>
-                          <div className="relative z-10 text-white p-3">
-                            <span className="font-medium text-xs uppercase">
-                              {item.day}
-                            </span>
-                            <h4 className="font-bold text-sm leading-tight mb-1">
-                              {item.title}
-                            </h4>
-                            <p className="text-xs">{item.description}</p>
-                          </div>
-                        </div>
-                      </div>
+          {/* Single Card with All Schedule Items */}
+          <div className="bg-white rounded-2xl p-4">
+            <div className="space-y-4">
+              {weekTabs[activeTab].schedule.map((item, index) => (
+                <div key={index} className="flex gap-3">
+                  <div className="w-20 h-28 bg-[#d0f2d8] rounded-lg flex flex-col items-center justify-center text-black p-2 flex-shrink-0">
+                    <div className="text-center">
+                      <h4 className="font-bold text-xs leading-tight">
+                        {item.person}
+                      </h4>
+                      <span className="font-medium text-xs text-gray-600 mt-1 block">
+                        {item.designation}
+                      </span>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors z-10"
-              aria-label="Previous slide"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors z-10"
-              aria-label="Next slide"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-
-            {/* Dots Indicator */}
-            <div className="flex justify-center mt-4 space-x-2">
-              {weekTabs[activeTab].schedule.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    currentSlide === index ? "bg-[#A5D2B0]" : "bg-gray-400"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
+                  <div
+                    className="flex-grow flex flex-col justify-center rounded-lg bg-cover bg-center relative min-h-[96px]"
+                    style={{
+                      backgroundImage: "url('/assets/classroom.jpg')",
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-black/50 rounded-lg"></div>
+                    <div className="relative z-10 text-white p-3">
+                      <span className="font-medium text-xs uppercase text-[#A5D2B0]">
+                        {item.day}
+                      </span>
+                      <h4 className="font-bold text-xs leading-tight mb-1">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>

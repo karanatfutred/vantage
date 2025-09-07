@@ -31,7 +31,7 @@ const CourseInfoComponent = () => {
 
   return (
     <section className="bg-white">
-      <div className="lg:max-w-7xl px-2 lg:px-16 ">
+      <div className="mx-auto lg:max-w-7xl px-2 lg:px-16 ">
         {/* Statistics Section */}
         <div className="flex flex-row text-left py-4 lg:py-8 ">
           {statsData.map((stat, index) => (
