@@ -50,7 +50,7 @@ export default function CustomerTestimonials() {
             </div>
 
             {/* Desktop Stats Card - Solid Color */}
-            <div className="hidden xl:flex flex-col justify-between gap-16 xl:max-w-sm bg-[#dcf5e3] rounded-2xl p-8 min-h-80">
+            <div className="hidden sm:w-sm xl:flex flex-col justify-between gap-16 bg-[#dcf5e3] rounded-2xl p-8 min-h-80">
               <div className="flex flex-col gap-1 mt-auto">
                 <h2 className="text-7xl font-bold text-black">50%</h2>
                 <h4 className="text-black text-2xl font-light">
@@ -71,9 +71,9 @@ export default function CustomerTestimonials() {
           </div>
 
           {/* Second Row - Reordered: Small card first, then large card */}
-          <div className="flex flex-col xl:flex-row gap-3 xl:gap-6">
+          <div className="w-full flex flex-col xl:flex-row gap-3 xl:gap-6">
             {/* Stats Card - Solid Color */}
-            <div className="hidden xl:flex flex-col justify-between gap-16 xl:max-w-sm bg-gray-200 rounded-2xl p-8 min-h-80">
+            <div className="hidden sm:w-sm xl:flex flex-col justify-between gap-16 bg-gray-200 rounded-2xl p-8 min-h-80">
               <div className="flex flex-col gap-1 mt-auto">
                 <h2 className="text-7xl font-bold text-black">50%</h2>
                 <h4 className="text-black text-2xl font-light">

@@ -282,13 +282,6 @@ const FinanceCompensationChart: React.FC = () => {
               </div>
             </div>
           </div>
-
-          {/* Bottom Title */}
-          <div className="text-center pt-4">
-            <p className="text-lg font-semibold text-gray-900">
-              {formatCurrency(totalDifference)}+ in lost income in just 5 years
-            </p>
-          </div>
         </div>
       </div>
     </section>

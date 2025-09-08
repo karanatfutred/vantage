@@ -18,10 +18,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Founders />
+      <MentorsSection />
       <Admissions />
       <HighFinance />
       <FinanceCompensationChart />
-      <MentorsSection />
       <LearningPractitionersSection />
       <LearningSection />
       <ProjectsSection />

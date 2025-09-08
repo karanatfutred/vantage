@@ -33,27 +33,6 @@ export default function Navbar() {
               }}
             >
               <Link
-                href="/fellowships"
-                className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
-              >
-                B&F Fellowship
-              </Link>
-              <Link
-                href="#"
-                className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
-                onClick={(e) => e.preventDefault()}
-              >
-                PG Programme
-                <span
-                  className="text-[#a5d2b1] font-semibold"
-                  style={{
-                    fontFamily: '"Chronicle Display Black", serif',
-                  }}
-                >
-                  ( Coming Soon )
-                </span>
-              </Link>
-              <Link
                 href="#"
                 className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
                 onClick={(e) => e.preventDefault()}
@@ -66,6 +45,30 @@ export default function Navbar() {
                 onClick={(e) => e.preventDefault()}
               >
                 Learning
+              </Link>
+              <Link
+                href="/fellowships"
+                className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
+              >
+                B&F Fellowship
+              </Link>
+
+              <Link
+                href="#"
+                className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
+                onClick={(e) => e.preventDefault()}
+              >
+                PG Programme{" "}
+                <span
+                  className="text-[#a5d2b1] font-semibold"
+                  style={{
+                    fontFamily: '"Chronicle Display Black", serif',
+                    fontStyle: "italic",
+                    fontSize: "14px",
+                  }}
+                >
+                  (Coming Soon)
+                </span>
               </Link>
             </div>
           </div>
@@ -132,6 +135,21 @@ export default function Navbar() {
           </div>
 
           <Link
+            href="#"
+            className="text-white text-lg font-light hover:text-accent py-2"
+            onClick={() => setMobileOpen(false)}
+          >
+            Team
+          </Link>
+          <Link
+            href="#"
+            className="text-white text-lg font-light hover:text-accent py-2"
+            onClick={() => setMobileOpen(false)}
+          >
+            Learning
+          </Link>
+
+          <Link
             href="/fellowships"
             className="text-white text-lg font-light hover:text-accent py-2"
             onClick={() => setMobileOpen(false)}
@@ -145,24 +163,12 @@ export default function Navbar() {
               className="text-[#a5d2b1] font-semibold"
               style={{
                 fontFamily: '"Chronicle Display Black", serif',
+                fontStyle: "italic",
+                fontSize: "14px",
               }}
             >
-              ( Coming Soon )
+              (Coming Soon)
             </p>
-          </Link>
-          <Link
-            href="#"
-            className="text-white text-lg font-light hover:text-accent py-2"
-            onClick={() => setMobileOpen(false)}
-          >
-            Team
-          </Link>
-          <Link
-            href="#"
-            className="text-white text-lg font-light hover:text-accent py-2"
-            onClick={() => setMobileOpen(false)}
-          >
-            Learning
           </Link>
         </div>
       )}
