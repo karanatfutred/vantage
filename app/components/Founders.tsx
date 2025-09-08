@@ -2,13 +2,12 @@ import React from "react";
 import Image from "next/image";
 
 const Founders = () => {
-
   return (
     <section
       id="meet-founders"
-      className="pt-10 bg-white border-b border-gray-200"
+      className="pt-10 bg-white border-b border-gray-200 relative"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 ">
         {/* Founders Title */}
         <div>
           <div className="text-center">
