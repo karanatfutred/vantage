@@ -46,7 +46,7 @@ const compensationData = [
 ];
 
 // Updated formatter function to handle ReactNode types
-const formatLakhs = (value: any): string => {
+const formatLakhs = (value: number): string => {
   if (typeof value === "number") {
     return `${Math.round(value / 100000)}L`;
   }

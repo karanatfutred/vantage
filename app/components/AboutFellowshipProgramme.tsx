@@ -73,7 +73,7 @@ const AboutProgramme = () => {
                 <span className="font-bold text-[#083254]">
                   global finance CXOs
                 </span>
-                , The Global Fellowship In High Finance is India's most
+                , The Global Fellowship In High Finance is India&apos;s most
                 selective program in modern finance. Over two weeks, you move
                 beyond theory into the{" "}
                 <span className="relative">
