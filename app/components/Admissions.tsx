@@ -121,7 +121,7 @@ export default function Admissions() {
                   {/* <Image
                     src="/assets/pgp-strategic-finance- analytics.jpg"
                     alt="PGP Strategic Finance & Analytics"
-                    quality={100}
+                    // quality={100}
                     className="w-full h-full object-cover"
                     fill
                   /> */}
