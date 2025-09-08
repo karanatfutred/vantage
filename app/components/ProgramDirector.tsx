@@ -4,9 +4,9 @@ const ProgramDirector = () => {
   return (
     // lg:pt-16
     <section className="pt-4 bg-white border-b border-gray-600">
-      <div className="mb-8 text-center pb-16">
+      <div className="text-center pb-5">
         <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
-          Meet The Program{" "}
+          Meet the Program{" "}
           <span
             className="italic"
             style={{
@@ -24,7 +24,7 @@ const ProgramDirector = () => {
       </div>
       <div className="flex justify-center px-10 pt-5 pb-5 5xl:pb-0 5xl:pt-10 w-full h-auto mx-auto  bg-black relative ">
         <div className="hidden 5xl:flex max-w-[76rem] h-full  ">
-          <div className="text-white h-full flex-1">
+          <div className="text-white h-full flex-1 pb-5">
             <p className="text-[17px] sofia-pro-light">
               Syed Raza commanded a $1 trillion balance sheet at Barclays and
               earned recognition among the Financial Times Top 100 Banking
@@ -43,9 +43,6 @@ const ProgramDirector = () => {
               <span className="block text-md">
                 Former C-level Managing Director, Barclays
               </span>
-              {/* <span className="block text-sm">
-                Co-founder & Lead Instructor
-              </span> */}
             </div>
           </div>
 
@@ -53,7 +50,7 @@ const ProgramDirector = () => {
             <img
               src="assets/syed-full.jpeg"
               alt="Programme Director"
-              className="w-[350px] min-h-[400px] object-cover absolute right-0 bottom-0 z-10"
+              className="w-[350px] min-h-[380px] object-cover absolute right-0 bottom-0 z-10"
             />
 
             <div className="w-full h-[76px] relative top-[153px] mt-8 px-6 py-2 bg-[#A5D2B1] text-black flex flex-col"></div>
@@ -109,7 +106,7 @@ const ProgramDirector = () => {
             </div>
           </div>
           <div className="flex flex-col ">
-            <p className="text-sm break-all text-white sofia-pro-light">
+            <p className="text-sm text-white sofia-pro-light text-center">
               Syed Raza commanded a $1 trillion balance sheet at Barclays and
               earned recognition among the Financial Times Top 100 Banking
               Executives. He architected the Early Career Programme that became
