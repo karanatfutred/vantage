@@ -1,37 +1,16 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 
 const CertificateSection = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // Array of certificate images
-  const certificateImages = [
-    "/assets/certificate.png",
-    "/assets/classroom.jpg",
-    "/assets/hero-image-1.jpg",
-    "/assets/hero-image-2.jpg",
-  ];
-
-  // Auto-advance carousel every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === certificateImages.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [certificateImages.length]);
-
   return (
     <section className="bg-black">
-      <div className="px-4 py-[40px] lg:pb-[60px] mx-auto max-w-[1272px] ">
-        <div className="rounded-3xl shadow-lg py-[24px] pl-[40px] pr-[-30] grid lg:grid-cols-[32.188rem_1fr] lg:gap-x-[7.375rem] gap-y-6  bg-gray-100">
+      <div className="px-4 py-10 lg:pb-15 mx-auto max-w-7xl">
+        <div className="rounded-3xl shadow-lg py-6 lg:py-8 px-6 lg:pl-10 lg:pr-0 grid lg:grid-cols-[1fr_1fr] lg:gap-x-20 gap-y-6 bg-white">
           {/* Content Section */}
-          <div className="flex flex-col justify-between lg:justify-start items-center text-center lg:text-left lg:items-start ">
-            <div className="text-[1.625rem] leading-[120%] md:text-2xl font-bold text-black font-section-heading">
-              <p className="text-5xl ">
+          <div className="flex flex-col justify-center lg:justify-start items-center lg:text-left lg:items-start text-center">
+            <div className="text-2xl sm:text-3xl lg:text-4xl leading-tight font-bold text-black font-section-heading">
+              <p>
                 Stand out with the{" "}
                 <span
                   className="italic"
@@ -40,62 +19,28 @@ const CertificateSection = () => {
                     color: "#568c65",
                   }}
                 >
-                  Augment
-                </span>{" "}
-                LinkedIn Certificate
+                  Vantage Certificate
+                </span>
               </p>
             </div>
-            <div className="text-lg text-black mt-2.5 lg:mt-5">
+            <div className="text-base sm:text-lg lg:text-xl text-black mt-3 lg:mt-5 tracking-tight leading-relaxed">
               <p>
-                Earn a certificate upon completion and display your business
-                credentials on your resume and LinkedIn.
+                Earn the Vantage Certificate and elevate your profile with a
+                recruiter-reviewed resume, LinkedIn optimisation, and a mock
+                interview from an investment banking recruiter.
               </p>
-            </div>
-            <div className="mt-4 lg:mt-[30px] text-center">
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-[#A5D2B0] text-black px-8 py-3 rounded-lg font-medium transition-colors hover:bg-[#93c4a0] min-w-[195px] lg:min-w-[260px] justify-center"
-              >
-                Enroll Now
-                <div className="fill-current">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="none"
-                  >
-                    <path
-                      d="m8.225 3.168 4.165 4.165H1.333v1.333H12.39l-4.165 4.166.943.942L14.943 8 9.168 2.225l-.943.943Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </div>
-              </a>
             </div>
           </div>
-
-          {/* Carousel Image Section */}
-          <div className=" overflow-hidden">
-            <div
-              className="flex h-full transition-transform duration-500 ease-in-out"
-              style={{
-                transform: `translateX(-${currentImageIndex * 100}%)`,
-              }}
-            >
-              {certificateImages.map((imageSrc, index) => (
-                <div
-                  key={index}
-                  className="w-full h-full flex-shrink-0 relative"
-                >
-                  <Image
-                    alt={`LinkedIn Certificate Preview ${index + 1}`}
-                    src={imageSrc}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              ))}
-            </div>
+          
+          {/* Certificate Image Section */}
+          <div className="relative h-64 sm:h-72 lg:h-70">
+            <Image
+              alt="LinkedIn Certificate Preview"
+              src="/assets/certificate.png"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
         </div>
       </div>

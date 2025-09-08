@@ -19,7 +19,7 @@ const LearningHighlightsSection = () => {
     {
       title: "Career Acceleration",
       description:
-        "Prepare for competitive finance roles with CV reviews, LinkedIn optimisation, recruiter-led mock interviews, and a strong peer network.",
+        "Prepare for competitive finance roles with CV reviews, LinkedIn optimisation, recruiter-led mock interviews, &  peer network.",
     },
   ];
 
@@ -70,7 +70,7 @@ const LearningHighlightsSection = () => {
                 <h3 className="text-sm lg:text-xl font-semibold mb-2 lg:mb-4 font-section-heading">
                   {highlight.title}
                 </h3>
-                <p className="text-xs lg:text-lg leading-relaxed">
+                <p className="text-xs lg:text-base leading-tight">
                   {highlight.description}
                 </p>
               </div>

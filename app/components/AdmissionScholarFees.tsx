@@ -17,14 +17,14 @@ const AdmissionScholarshipFees = () => {
     },
     {
       step: "Step 03",
-      title: "Join Us Receive your decision and secure your Fellowship spot",
+      title: "Join Us Receive your decision & secure your Fellowship spot",
       description:
         "Receive your admission decision and begin your journey with us upon acceptance.",
     },
   ];
 
   const scholarshipInfo = {
-    title: "Merit Scholarship Program",
+    title: "Scholarship",
     description:
       "Up to 100% tuition support for outstanding candidates and those from underrepresented backgrounds.",
     deadline: "Applications due by September 25th",
@@ -57,7 +57,7 @@ const AdmissionScholarshipFees = () => {
             <div className="space-y-4">
               {steps.map((step, index) => (
                 <div key={index} className=" pl-4">
-                  <h4 className="font-bold text-xl text-[#568c65] mb-1">
+                  <h4 className="font-bold text-lg text-[#568c65] mb-1">
                     <span
                       className="italic p-2"
                       style={{
@@ -68,41 +68,47 @@ const AdmissionScholarshipFees = () => {
                       {step.step}
                     </span>
                   </h4>
-                  <div className=" text-white rounded-lg p-2 text-2xl">
-                    <h2 className="font-light mb-2">{step.title}</h2>
-                    {/* <p className="text-sm">{step.description}</p> */}
+                  <hr />
+                  <div className=" text-white rounded-lg p-2 text-xl">
+                    <h2 className="font-light mb-2 tracking-tight">
+                      {step.title}
+                    </h2>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Card 2: Merged Scholarship Program & Program Fees */}
-          <div className=" rounded-2xl p-6">
-            {/* Scholarship Card */}
-            <div className="mb-2">
-              <div className="bg-white text-black rounded-2xl pt-4 text-center">
-                <h3 className="text-2xl font-bold mb-2">
-                  {scholarshipInfo.title}
-                </h3>
-                <p className=" text-lg px-3 mb-4">
-                  {scholarshipInfo.description}
-                </p>
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
-                  <p className="text-lg font-medium">
-                    {scholarshipInfo.deadline}
-                  </p>
-                </div>
-                <div className="text-2xl text-gray-900 pb-4 mb-4">
-                  <span className="font-bold">INR 14,999</span> (All inclusive)
-                </div>
-              </div>
-            </div>
+          {/* Scholarship Card */}
 
-            {/* Program Fee Card */}
-
+          <div className="mt-10 mb-10 lg:h-[295] rounded-2xl bg-[#a5d2b0] text-black px-6 pt-6 pb-4 ">
+            <h3 className="text-3xl font-bold ">
+              <span
+                className="italic"
+                style={{
+                  fontFamily: '"Chronicle Display Black", serif',
+                }}
+              >
+                {scholarshipInfo.title}
+              </span>
+            </h3>
+            <p className="text-xl mt-4 mb-12">{scholarshipInfo.description}</p>
+            <span
+              className="font-bold text-4xl italic "
+              style={{
+                fontFamily: '"Chronicle Display Black", serif',
+              }}
+            >
+              INR 14,999{" "}
+            </span>
+            (All inclusive)
+            <p className="text-xl mt-5 pb-2 italic">
+              {scholarshipInfo.deadline} <sup>*</sup>
+            </p>
           </div>
         </div>
+
+        {/* Program Fee Card */}
       </div>
     </section>
   );

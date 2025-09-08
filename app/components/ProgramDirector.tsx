@@ -2,20 +2,6 @@ const ProgramDirector = () => {
   return (
     <section className="pt-10 lg:pt-10 bg-black border-b border-gray-600">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-50">
-        {/* <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
-            Programme{" "}
-            <span
-              className="italic"
-              style={{
-                fontFamily: '"Chronicle Display Black", serif',
-                color: "#568c65",
-              }}
-            >
-              Director
-            </span>
-          </h2>
-        </div> */}
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pb-4">
           {/* Center image */}
           <div className="flex flex-col mx-4">

@@ -46,7 +46,7 @@ const CourseInfoComponent = () => {
                 {stat.label}
               </p>
               {/* Value below - Added consistent mt-2 for uniform gap */}
-              <h2 className="mt-4 font-normal text-gray-800 text-xs lg:text-xl ">
+              <h2 className="mt-4 font-normal text-gray-800 text-xs lg:text-lg ">
                 <span>{stat.number}</span>
               </h2>
               {/* Divider line */}

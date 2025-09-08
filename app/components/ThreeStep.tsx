@@ -99,9 +99,9 @@ const ThreeStep = () => {
   const sections = [
     {
       id: "why-augment-2",
-      title: "Week 2",
+      title: "Join a select global network of finance enthusiasts. ",
       description:
-        "Flexible, self-paced education for entrepreneurs. Access the best alternative MBA—anywhere, anytime, on any device.",
+        "Build lasting connections, collaborate across borders, and grow through exclusive events and learning sessions hosted year-round.",
       buttonText: "Explore Courses",
       buttonLink: "/augment-mba-program",
       image: "/assets/community.jpg",
@@ -119,25 +119,26 @@ const ThreeStep = () => {
 
   return (
     <section className="bg-black">
-      <div className="px-4 lg:pt-[50px] mx-auto max-w-[1272px]">
+      <div className="px-4 pt-10 lg:pt-[50px] mx-auto max-w-[1272px]">
         {/* Header Section */}
         <div className="mb-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
+            Inside the Fellowship: A{" "}
             <span
               className="italic"
               style={{
                 fontFamily: '"Chronicle Display Black", serif',
-                color: "#568c65",
+                color: "#a5d2b0",
               }}
             >
-              Vantage{" "}
-            </span>
-            Week
+              Day-to-Day
+            </span>{" "}
+            Experience
           </h2>
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-4 mb-8 justify-center lg:justify-start">
+        <div className="lg:hidden flex gap-4 mb-8 justify-center lg:justify-start">
           {weekTabs.map((tab, idx) => (
             <button
               key={tab.title}
@@ -210,15 +211,30 @@ const ThreeStep = () => {
         <div className="hidden lg:flex lg:flex-row lg:items-stretch gap-6 lg:gap-20 mb-12 rounded-2xl">
           {/* Tabs & Description (LEFT) - REDUCED WIDTH */}
           <div className="flex flex-col gap-8 w-full lg:w-[35%] lg:px-8 lg:py-10 justify-center">
+            <div className="flex gap-4 mb-8 justify-center lg:justify-start">
+              {weekTabs.map((tab, idx) => (
+                <button
+                  key={tab.title}
+                  onClick={() => setActiveTab(idx)}
+                  className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+                    activeTab === idx
+                      ? "bg-[#A5D2B0] text-black"
+                      : "bg-gray-100 text-gray-600"
+                  }`}
+                >
+                  {tab.title}
+                </button>
+              ))}
+            </div>
             {/* Description */}
             <div className="text-white">
               <div className="text-sm uppercase tracking-wider opacity-70 mb-2">
                 Curriculum
               </div>
-              <h3 className="text-[1.625rem] lg:text-3xl font-bold mb-3">
+              <h3 className="text-[1.625rem] lg:text-2xl font-bold mb-3">
                 {weekTabs[activeTab].subtitle}
               </h3>
-              <p className="text-base">{weekTabs[activeTab].description}</p>
+              <p className="text-lg">{weekTabs[activeTab].description}</p>
             </div>
           </div>
           {/* Weekly Schedule (RIGHT) - INCREASED WIDTH */}
@@ -318,12 +334,12 @@ const ThreeStep = () => {
               <div className="flex flex-col gap-8 w-full lg:w-[35%] lg:px-8 lg:py-10 justify-center lg:h-[400px]">
                 <div className="lg:flex lg:flex-col lg:justify-center lg:flex-1">
                   <div className="text-sm uppercase tracking-wider opacity-70 mb-2 text-white">
-                    Curriculum
+                  Vantage Community
                   </div>
-                  <h3 className="text-[1.625rem] lg:text-3xl font-bold mb-3 text-white">
+                  <h3 className="text-2xl lg:text-2xl font-bold mb-3 text-white">
                     {section.title}
                   </h3>
-                  <div className="text-base text-white">
+                  <div className="text-lg text-white">
                     <p>{section.description}</p>
                   </div>
                 </div>

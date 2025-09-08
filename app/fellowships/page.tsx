@@ -7,11 +7,9 @@ import MentorsSection from "../components/MentorsSection";
 import ThreeStep from "../components/ThreeStep";
 import ProgramDirector from "../components/ProgramDirector";
 import BuiltFor from "../components/BuiltFor";
-
 import FAQSection from "../components/FAQSection";
 import CallToActionSection from "../components/CallToActionSection";
 import Footer from "../components/Footer";
-
 import AdmissionScholarshipFees from "../components/AdmissionScholarFees";
 import CertificateSection from "../components/Certificate";
 
@@ -23,14 +21,14 @@ export default function Fellowship() {
       <CourseInfoComponent />
       <OverviewSection />
       <LearningHighlightsSection />
-      <ProgramDirector />
+      {/* <ProgramDirector /> */}
       <MentorsSection />
       <ThreeStep />
       <BuiltFor />
       <AdmissionScholarshipFees/>
       <CertificateSection/>
-      <FAQSection />
       <CallToActionSection />
+      <FAQSection />
       <Footer />
     </div>
   );
