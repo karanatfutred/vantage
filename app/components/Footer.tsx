@@ -78,20 +78,10 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Contact Us</h3>
             <ul className="space-y-2">
               <li>mandip@thevantageinstitute.com</li>
-              <li className="flex space-x-4 mt-2">
-                <a
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                >
-                  <Instagram size={22} />
-                </a>
-              </li>
+
               <li>
                 <a
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/company/vantage-institute-official/about/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
