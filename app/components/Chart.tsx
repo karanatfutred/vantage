@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
   LabelList,
 } from "recharts";
+import { BarProps } from "recharts";
 
 // Updated data with your provided values and difference calculations
 const compensationData = [
@@ -45,35 +46,13 @@ const compensationData = [
   },
 ];
 
-type FinanceBar = {
-  fill: string;
-  year: string;
-  standardFinance: number;
-  highFinance: number;
-  difference: number;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  value: number;
-  payload: {
+type FinanceBar = BarProps & {
+  payload?: {
     year: string;
     standardFinance: number;
     highFinance: number;
     difference: number;
   };
-  background: {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-  };
-  tooltipPosition: {
-    x: number;
-    y: number;
-  };
-  index: number;
-  dataKey: string;
 };
 
 // Updated formatter function to handle ReactNode types
@@ -104,7 +83,7 @@ const FinanceCompensationChart: React.FC = () => {
 
   // Custom component to render difference lines
   const CustomizedDifference = (props: FinanceBar) => {
-    const { payload, x, width } = props;
+    const { payload, x = 0, width = 0 } = props;
     if (!payload) return null;
 
     const standardFinance = payload.standardFinance;
@@ -119,9 +98,8 @@ const FinanceCompensationChart: React.FC = () => {
     const standardTop = chartHeight - standardHeight + 20; // +20 for margin
     const highFinanceTop = chartHeight - highFinanceHeight + 20;
 
-    const centerX = x + width / 2;
-    const lineX = centerX + width * 0.6; // Position line to the right of bars
-
+    const centerX = Number(x) + Number(width) / 2;
+    const lineX = centerX + Number(width) * 0.6;
     return (
       <g>
         {/* Vertical dashed line */}
