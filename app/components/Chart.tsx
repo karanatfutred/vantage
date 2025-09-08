@@ -45,8 +45,39 @@ const compensationData = [
   },
 ];
 
+type FinanceBar = {
+  fill: string;
+  year: string;
+  standardFinance: number;
+  highFinance: number;
+  difference: number;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  value: number;
+  payload: {
+    year: string;
+    standardFinance: number;
+    highFinance: number;
+    difference: number;
+  };
+  background: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  };
+  tooltipPosition: {
+    x: number;
+    y: number;
+  };
+  index: number;
+  dataKey: string;
+};
+
 // Updated formatter function to handle ReactNode types
-const formatLakhs = (value: number): string => {
+const formatLakhs = (value: React.ReactNode): React.ReactNode => {
   if (typeof value === "number") {
     return `${Math.round(value / 100000)}L`;
   }
@@ -63,17 +94,6 @@ const FinanceCompensationChart: React.FC = () => {
     }).format(value);
   };
 
-  // Calculate total difference over 5 years
-  const totalStandardFinance = compensationData.reduce(
-    (sum, item) => sum + item.standardFinance,
-    0
-  );
-  const totalHighFinance = compensationData.reduce(
-    (sum, item) => sum + item.highFinance,
-    0
-  );
-  const totalDifference = totalHighFinance - totalStandardFinance;
-
   // Find the maximum value for Y-axis domain
   const maxValue = Math.max(
     ...compensationData.map((item) =>
@@ -83,8 +103,8 @@ const FinanceCompensationChart: React.FC = () => {
   const yAxisMax = Math.ceil(maxValue * 1.1);
 
   // Custom component to render difference lines
-  const CustomizedDifference = (props: any) => {
-    const { payload, x, y, width, height } = props;
+  const CustomizedDifference = (props: FinanceBar) => {
+    const { payload, x, width } = props;
     if (!payload) return null;
 
     const standardFinance = payload.standardFinance;
