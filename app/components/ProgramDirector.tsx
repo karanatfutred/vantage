@@ -1,6 +1,6 @@
 const ProgramDirector = () => {
   return (
-    <section className="pt-10 lg:pt-0 bg-black border-b border-gray-600">
+    <section className="pt-10 lg:pt-10 bg-black border-b border-gray-600">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-50">
         {/* <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
@@ -18,19 +18,21 @@ const ProgramDirector = () => {
         </div> */}
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pb-4">
           {/* Center image */}
-          <div className="flex-shrink-0 mx-4">
+          <div className="flex flex-col mx-4">
             <img
               src="assets/syed-full.jpeg"
               alt="Programme Director"
               className="w-200 object-cover rounded-lg shadow-2xl"
             />
+            <div>
+              <h2 className="mb-6 w-150 bg-black text-mg lg:text-2xl mt-[-20] p-4 border-2 rounded-2xl">
+                Syed Raza Former C-level Managing Director, Barclays |
+                Co-founder & Lead Instructor, Vantage
+              </h2>
+            </div>
           </div>
           {/* Right column text */}
-          <div className="lg:w-200  bg-white flex-1 lg:text-2xl text-sm text-black leading-relaxed text-justify rounded-lg p-6 lg:ml-[-150px] lg:mt-[250] mt-[-50]">
-            <h2 className="mb-6 text-mg lg:text-4xl">
-              Syed Raza Former C-level Managing Director, Barclays | Co-founder
-              & Lead Instructor, Vantage
-            </h2>
+          <div className="lg:w-200  bg-black border-2 flex-1 lg:text-xl text-sm text-white leading-relaxed text-justify rounded-lg p-6 lg:ml-[-150px] lg:mt-[250] mt-[-50]">
             <p className="">
               Syed Raza commanded a $1 trillion balance sheet at Barclays and
               earned recognition among the Financial Times Top 100 Banking

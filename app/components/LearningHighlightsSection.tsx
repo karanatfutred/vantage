@@ -1,4 +1,4 @@
-'use client';
+"use client";
 const LearningHighlightsSection = () => {
   const highlights = [
     {
@@ -27,7 +27,7 @@ const LearningHighlightsSection = () => {
     <section className="pt-10 bg-white border-b border-gray-600">
       <div className="max-w-7xl mx-auto px-2 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-4 lg:mb-16">
+        <div className="text-center mb-4 lg:mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
             Learning{" "}
             <span
@@ -40,9 +40,6 @@ const LearningHighlightsSection = () => {
               Highlights
             </span>
           </h2>
-          <p className="text-sm md:text-lg text-black max-w-4xl mx-auto leading-relaxed">
-            Key features that make our program exceptional
-          </p>
         </div>
 
         {/* Mobile: Horizontal Scrollable Cards */}
@@ -55,7 +52,7 @@ const LearningHighlightsSection = () => {
               >
                 <h3 className=" text-md lg:text-lg font-semibold mb-3 text-white font-section-heading">
                   {highlight.title}
-                  <hr/>
+                  <hr />
                 </h3>
                 <p className="text-xs lg:text-sm text-white leading-relaxed">
                   {highlight.description}
@@ -70,10 +67,10 @@ const LearningHighlightsSection = () => {
           {highlights.map((highlight, index) => (
             <div key={index} className="relative">
               <div className="p-2 lg:p-6 text-black">
-                <h3 className="text-sm lg:text-lg font-semibold mb-2 lg:mb-4 font-section-heading">
+                <h3 className="text-sm lg:text-xl font-semibold mb-2 lg:mb-4 font-section-heading">
                   {highlight.title}
                 </h3>
-                <p className="text-xs leading-relaxed">
+                <p className="text-xs lg:text-lg leading-relaxed">
                   {highlight.description}
                 </p>
               </div>

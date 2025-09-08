@@ -104,7 +104,7 @@ const ThreeStep = () => {
         "Flexible, self-paced education for entrepreneurs. Access the best alternative MBA—anywhere, anytime, on any device.",
       buttonText: "Explore Courses",
       buttonLink: "/augment-mba-program",
-      image: "/assets/classroom.jpg",
+      image: "/assets/community.jpg",
     },
   ];
 
@@ -123,7 +123,6 @@ const ThreeStep = () => {
         {/* Header Section */}
         <div className="mb-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
-            Meet Your{" "}
             <span
               className="italic"
               style={{
@@ -131,10 +130,10 @@ const ThreeStep = () => {
                 color: "#568c65",
               }}
             >
-              Mentors
+              Vantage{" "}
             </span>
+            Week
           </h2>
-          <p className="text-lg text-white mt-4">Your mentors comes from</p>
         </div>
 
         {/* Tabs */}
@@ -196,7 +195,9 @@ const ThreeStep = () => {
                       <h4 className="font-bold text-xs leading-tight mb-1">
                         {item.title}
                       </h4>
-                      <p className="text-xs leading-relaxed">{item.description}</p>
+                      <p className="text-xs leading-relaxed">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -336,7 +337,7 @@ const ThreeStep = () => {
                         alt="Entrepreneurship illustration"
                         src={section.image}
                         fill
-                        className="object-cover rounded-2xl"
+                        className="object-cover object-top rounded-2xl"
                         sizes="(max-width: 1024px) 100vw, 50vw"
                       />
                     </figure>
