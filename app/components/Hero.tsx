@@ -3,12 +3,6 @@
 import Image from "next/image";
 import { useState, useRef } from "react";
 
-// Add Trajan Pro Regular font
-const trajanPro = {
-  fontFamily: "Trajan Pro Regular, serif",
-  src: 'url(/fonts/Trajan Pro Regular.ttf) format("truetype")',
-};
-
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isOnGrid, setIsOnGrid] = useState(false);
@@ -36,6 +30,7 @@ export default function Hero() {
 
   // Calculate transform values based on mouse position - ALL IMAGES MOVE EQUALLY
   const getTransformValue = (index: number) => {
+    index;
     if (!isOnGrid) return "translateX(0px)";
 
     const gridWidth = gridRef.current?.offsetWidth || 0;

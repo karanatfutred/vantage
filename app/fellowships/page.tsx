@@ -21,7 +21,7 @@ export default function Fellowship() {
       <CourseInfoComponent />
       <OverviewSection />
       <LearningHighlightsSection />
-      {/* <ProgramDirector /> */}
+      <ProgramDirector />
       <MentorsSection />
       <ThreeStep />
       <BuiltFor />

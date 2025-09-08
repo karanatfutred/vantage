@@ -1,28 +1,6 @@
 import React from "react";
 
 const HighFinance = () => {
-  const stats = [
-    {
-      value: "26.5",
-      unit: "LPA",
-      label: "Average CTC",
-    },
-    {
-      value: "2.5",
-      unit: "x",
-      label: "Average CTC Jump",
-    },
-    {
-      value: "16.5",
-      unit: "LPA",
-      label: "CTC Salary Range",
-    },
-    {
-      value: "100",
-      unit: "%",
-      label: "Students Placed in Startups",
-    },
-  ];
   const highFinanceCards = [
     {
       title: "Step into the most competitive roles in global finance",

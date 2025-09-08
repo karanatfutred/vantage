@@ -37,33 +37,6 @@ export default function LearningSection() {
     },
   ];
 
-  const cards = [
-    {
-      title: "Live Mandates",
-      description:
-        "Apply learning to real challenges from top global institutions, designing solutions with the potential for adoption.",
-      decorationImage: "/assets/live-mandate.jpg",
-    },
-    {
-      title: "Industry Internships",
-      description:
-        "Domestic and international internships at leading institutions, consulting firms, and ventures in high-growth roles",
-      decorationImage: "/assets/industry-internships.jpg",
-    },
-    {
-      title: "Launch a Business",
-      description:
-        "From concept to MVP to revenue, students build real businesses and pitch them to investors.",
-      decorationImage: "/assets/launch-a-business.jpg",
-    },
-    {
-      title: "Startup Fund",
-      description:
-        "Promising student ventures receive up to $200,000 in investment, with mentorship and infrastructure support",
-      decorationImage: "/assets/startup-fund.jpg",
-    },
-  ];
-
   const handleTabClick = (tabId: number) => {
     setActiveTab(tabId);
   };

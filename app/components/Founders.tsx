@@ -2,27 +2,6 @@ import React from "react";
 import Image from "next/image";
 
 const Founders = () => {
-  const testimonials = [
-    {
-      id: 1,
-      image: "/assets/manish.png",
-      content:
-        "Ex-Chairman, ATMC Group | Ex-Founder & CEO (Employability.life)",
-      name: "Dr. Manish Malhotra",
-      logo: "/assets/atmc-logo.png",
-      logo2: "/assets/employability-logo.png",
-      logo3: "/assets/rmit-university.svg",
-    },
-    {
-      id: 2,
-      image: "/assets/syed.png",
-      content: "Former CEO (Lamaa) | Former MD & CEO, Barclays (UK & Americas)",
-      name: "Syed Raza",
-      logo: "/assets/lamaa.png",
-      logo2: "/assets/barclays.png",
-      logo3: "/assets/business-school.png",
-    },
-  ];
 
   return (
     <section

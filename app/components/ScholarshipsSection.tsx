@@ -76,7 +76,7 @@ export default function ScholarshipsSection() {
                 </h3>
                 <p className="text-base leading-relaxed text-black">
                   Need-conscious support ensures that financial constraints
-                  don't limit admission
+                  don&apos;t limit admission
                 </p>
               </div>
               {/* Right border line */}

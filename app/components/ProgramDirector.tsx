@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ProgramDirector = () => {
   return (
-    // lg:pt-16
+
     <section className="pt-4 bg-white border-b border-gray-600">
       <div className="text-center pb-5">
         <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">

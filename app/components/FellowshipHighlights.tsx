@@ -1,14 +1,6 @@
 import React from "react";
 
 const CourseInfoComponent = () => {
-  const courseData = {
-    startDate: "06th Oct 2025",
-    duration: "02 Weeks",
-    schedule: "8-10 hrs/week | Daily live sessions + Online Material",
-    eligibility:
-      "Final-year undergraduates, postgraduates, and early-career professionals",
-    price: "INR 14,999",
-  };
 
   const statsData = [
     {

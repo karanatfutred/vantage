@@ -50,7 +50,7 @@ export default function ProjectsSection() {
 
           <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
             From idea to execution, students transform challenges into solutions
-            adopted by the world's top organizations
+            adopted by the world&apos;s top organizations
           </p>
         </div>
       </div>

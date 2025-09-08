@@ -14,7 +14,7 @@ const VideoSection = () => {
     setIsVideoModalOpen(false);
   };
 
-  const handleModalClick = (e: { target: any; currentTarget: any }) => {
+  const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
     // Close modal if clicking on the backdrop (not on the video container)
     if (e.target === e.currentTarget) {
       closeVideoModal();
@@ -53,7 +53,7 @@ const VideoSection = () => {
           <div className="flex justify-center">
             <div className="w-full max-w-4xl">
               <div
-                className="relative w-full h-[200px] md:h-[3500px] lg:h-[500px] cursor-pointer group overflow-hidden rounded-2xl"
+                className="relative w-full h-[200px] md:h-[350px] lg:h-[500px] cursor-pointer group overflow-hidden rounded-2xl"
                 onClick={openVideoModal}
               >
                 <Image

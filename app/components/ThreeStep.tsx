@@ -2,6 +2,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
+interface ScheduleItem {
+  day: string;
+  title: string;
+  person: string;
+  description: string;
+  designation: string;
+}
+
 const ThreeStep = () => {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -109,7 +117,7 @@ const ThreeStep = () => {
   ];
 
   // Function to group schedule items for desktop
-  const getGroupedSchedule = (schedule: any[]) => {
+  const getGroupedSchedule = (schedule: ScheduleItem[]) => {
     return [
       [schedule[0], schedule[1]], // Monday & Tuesday
       [schedule[2]], // Wednesday
@@ -334,7 +342,7 @@ const ThreeStep = () => {
               <div className="flex flex-col gap-8 w-full lg:w-[35%] lg:px-8 lg:py-10 justify-center lg:h-[400px]">
                 <div className="lg:flex lg:flex-col lg:justify-center lg:flex-1">
                   <div className="text-sm uppercase tracking-wider opacity-70 mb-2 text-white">
-                  Vantage Community
+                    Vantage Community
                   </div>
                   <h3 className="text-2xl lg:text-2xl font-bold mb-3 text-white">
                     {section.title}
