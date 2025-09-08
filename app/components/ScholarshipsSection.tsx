@@ -46,12 +46,12 @@ export default function ScholarshipsSection() {
 
       {/* Full width background div for scholarship cards */}
       <div
-        className="w-full border-t border-gray-300"
+        className="w-full border-t border-gray-300 overflow-x-auto"
         style={{ backgroundColor: "#F7F7F7" }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Bottom Section - Four Scholarship Types */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
+          <div className="grid grid-cols-4 gap-0">
             {/* Academic Merit Scholarships */}
             <div className="relative">
               <div className="p-6 text-black">
@@ -65,7 +65,7 @@ export default function ScholarshipsSection() {
               {/* Right border line */}
               <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
               {/* Bottom line for mobile */}
-              <div className="block sm:hidden w-full h-px bg-gray-400 opacity-50"></div>
+              {/* <div className="block sm:hidden w-full h-px bg-gray-400 opacity-50"></div> */}
             </div>
 
             {/* Need-Based Access Scholarships */}
@@ -82,7 +82,7 @@ export default function ScholarshipsSection() {
               {/* Right border line */}
               <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
               {/* Bottom line for mobile */}
-              <div className="block sm:hidden w-full h-px bg-gray-400 opacity-50"></div>
+              {/* <div className="block sm:hidden w-full h-px bg-gray-400 opacity-50"></div> */}
             </div>
 
             {/* Achievement Scholarships */}
@@ -99,7 +99,7 @@ export default function ScholarshipsSection() {
               {/* Right border line */}
               <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-px bg-gray-300 opacity-50"></div>
               {/* Bottom line for mobile */}
-              <div className="block sm:hidden w-full h-px bg-gray-400 opacity-50"></div>
+              {/* <div className="block sm:hidden w-full h-px bg-gray-400 opacity-50"></div> */}
             </div>
 
             {/* Women in Leadership */}

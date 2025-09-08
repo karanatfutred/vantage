@@ -1,32 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
-const cohorts = [
-  {
-    title: "Global Banking & Finance Fellowship",
-    image: "/assets/global-banking-finance-fellowship.jpg",
-    mode: "Online Live",
-    duration: "2 Weeks",
-    startDate: "06th Oct 2025",
-    description:
-      "Learn the breadth of global finance, from your first break to closing deals, designed and delivered by MDs and CEOs of Barclays, Lloyds Bank, Centrum Wealth, & a top-tier VC firm.",
-    buttonText: "LEARN MORE",
-    buttonLink: "#",
-  },
-  {
-    title: "PGP in Banking & Finance Innovation",
-    image: "/assets/pgp-strategic-finance- analytics.jpg",
-    mode: "On Campus",
-    duration: "15 Months",
-    startDate: "April 2026",
-    description:
-      "Master modern banking and finance with a programme led by MDs, CEOs, and ivy B-school academics, built on the rigor of Wall Street and Canary Wharf.",
-    buttonText: "SHOW INTEREST",
-    buttonLink: "#",
-  },
-];
-
 export default function Admissions() {
   return (
     <section
@@ -56,7 +29,7 @@ export default function Admissions() {
           <div className="w-xl sm:w-7xl bg-white rounded-lg shadow-sm border border-gray-200 p-3 sm:p-4">
             <div className="flex">
               {/* Global Banking & Finance Fellowship */}
-              <div className="h-[30rem] sm:h-48 flex flex-col sm:flex-row flex-1 gap-4 sm:gap-6">
+              <div className="h-[28rem] sm:h-48 flex flex-col sm:flex-row flex-1 gap-4 sm:gap-6">
                 {/* Image */}
                 <div className="w-full sm:w-1/3 bg-white relative overflow-hidden rounded-lg">
                   {/* fill attribute adds position absolute and that was causing some problem in mobile that's why using normal img tag */}
@@ -77,7 +50,7 @@ export default function Admissions() {
 
                 {/* Content */}
                 <div className="flex-1 flex flex-col">
-                  <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+                  <h2 className="text-sm sm:text-xl font-bold text-gray-900 mb-2">
                     Global Banking & Finance Fellowship
                   </h2>
 
@@ -115,7 +88,7 @@ export default function Admissions() {
                           Starts On - 06th Oct 2025
                         </span>
                       </div>
-                      <div className="sm:block mt-2 sm:mt-0 flex justify-center bg-gray-900 w-full sm:w-auto text-white px-3 lg:px-4 py-1 sm:-ml-2 relative z-10">
+                      <div className="sm:block mt-2 sm:mt-0 flex justify-center bg-gray-900 w-full sm:w-auto text-white px-3 lg:px-4 py-2 sm:-ml-2 relative z-10">
                         <button className="inline-flex items-center gap-2 text-xs font-medium">
                           <span>LEARN MORE</span>
                           <svg
@@ -141,7 +114,7 @@ export default function Admissions() {
               <div className="w-[1px] bg-gray-300 mx-3 sm:mx-5"></div>
 
               {/* PGP Strategic Finance & Analytics */}
-              <div className="h-[30rem] sm:h-48 flex flex-col sm:flex-row flex-1 gap-4 sm:gap-6">
+              <div className="h-[28rem] sm:h-48 flex flex-col sm:flex-row flex-1 gap-4 sm:gap-6">
                 {/* Image */}
                 <div className="w-full sm:w-1/3 bg-white relative overflow-hidden rounded-lg">
                   {/* fill attribute adds position absolute and that was causing some problem in mobile that's why using normal img tag */}
@@ -162,7 +135,7 @@ export default function Admissions() {
 
                 {/* Content */}
                 <div className="flex-1 flex flex-col">
-                  <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+                  <h2 className="text-sm sm:text-xl font-bold text-gray-900 mb-2">
                     PGP in Banking & Finance Innovation
                   </h2>
 
@@ -200,7 +173,7 @@ export default function Admissions() {
                           Starts On - April 2026
                         </span>
                       </div>
-                      <div className="sm:block mt-2 sm:mt-0 flex justify-center bg-gray-900 text-white w-full sm:w-auto px-3 lg:px-4 py-1 sm:-ml-2 relative z-10">
+                      <div className="sm:block mt-2 sm:mt-0 flex justify-center bg-gray-900 text-white w-full sm:w-auto px-3 lg:px-4 py-2 sm:-ml-2 relative z-10">
                         <button className="inline-flex items-center gap-2 text-xs font-medium">
                           <span>SHOW INTEREST</span>
                           <svg

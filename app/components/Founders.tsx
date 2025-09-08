@@ -146,8 +146,8 @@ const Founders = () => {
                         src="/assets/barclays-short-logo.png"
                         alt="Barclays logo"
                         width={25}
-                        height={16}
-                        className="h-3 sm:h-4 lg:h-5 object-contain transition-opacity duration-200"
+                        height={20}
+                        className="h-5 sm:h-4 lg:h-5 object-contain transition-opacity duration-200"
                         quality={100}
                       />
                     </div>
@@ -162,7 +162,7 @@ const Founders = () => {
                         alt="Lamaa logo"
                         width={25}
                         height={36}
-                        className="h-3 sm:h-4 lg:h-5 object-contain transition-opacity duration-200"
+                        className="h-5 sm:h-4 lg:h-5 object-contain transition-opacity duration-200"
                         quality={100}
                       />
                     </div>
@@ -176,7 +176,7 @@ const Founders = () => {
                       alt="Oxford logo"
                       width={80} // increase width
                       height={22} // adjust height proportionally
-                      className="h-3 sm:h-5 lg:h-7 w-auto object-contain transition-opacity duration-200 flex-shrink-0"
+                      className="h-6 sm:h-5 lg:h-7 w-auto object-contain transition-opacity duration-200 flex-shrink-0"
                       unoptimized
                       quality={100}
                     />
@@ -293,7 +293,7 @@ const Founders = () => {
                         alt="ATMC logo"
                         width={50}
                         height={18}
-                        className="h-3 sm:h-4 lg:h-5 object-contain transition-opacity duration-200"
+                        className="h-5 sm:h-5 lg:h-5 object-contain transition-opacity duration-200"
                         quality={100}
                       />
                     </div>
@@ -308,7 +308,7 @@ const Founders = () => {
                         alt="Employability logo"
                         width={22}
                         height={36}
-                        className="h-3 sm:h-4 lg:h-5 object-contain transition-opacity duration-200"
+                        className="h-5 sm:h-5 lg:h-5 object-contain transition-opacity duration-200"
                         quality={100}
                       />
                     </div>
@@ -322,7 +322,7 @@ const Founders = () => {
                       alt="RMIT University logo"
                       width={60}
                       height={18}
-                      className="h-3 sm:h-4 lg:h-5 w-auto object-contain transition-opacity duration-200 flex-shrink-0"
+                      className="h-5 sm:h-6 lg:h-5 w-auto object-contain transition-opacity duration-200 flex-shrink-0"
                       quality={100}
                     />
                   </div>

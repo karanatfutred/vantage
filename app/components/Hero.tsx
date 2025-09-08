@@ -90,26 +90,32 @@ export default function Hero() {
         {/* Program Offerings */}
         <div className="mb-8 hidden sm:block">
           <p
-            className="text-center text-base md:text-lg font-light"
-            style={{ color: "#ffffff" }}
+            className="text-center text-base md:text-xl font-light text-green-400"
+            style={{
+              color: "#ffffff",
+            }}
           >
-            <span>Investment Banking </span>
+            <span className="text-white">IB </span>
             <span className="text-white" aria-hidden="true">
               |
             </span>
-            <span> Private Equity & Venture Capital </span>
+            <span className="text-white"> PE & VC </span>
+
             <span className="text-white" aria-hidden="true">
               |
             </span>
-            <span> Capital Markets </span>
+            <span className="text-white"> Capital Markets </span>
             <span className="text-white" aria-hidden="true">
               |
             </span>
-            <span> Wealth, Asset & Risk Management </span>
+            <span className="text-white">
+              {" "}
+              Wealth, Asset & Risk Management{" "}
+            </span>
             <span className="text-white" aria-hidden="true">
               |
             </span>
-            <span> Fintech & Digital Finance</span>
+            <span className="text-white"> Fintech</span>
           </p>
         </div>
 
@@ -137,7 +143,7 @@ export default function Hero() {
               style={{ transform: getTransformValue(0) }}
             >
               <Image
-                src="/assets/hero-image-1.jpg"
+                src="/assets/homepage-hero-images/hero-image-1.jpg"
                 alt="Finance Program 1"
                 width={224}
                 height={160}
@@ -153,7 +159,7 @@ export default function Hero() {
               style={{ transform: getTransformValue(1) }}
             >
               <Image
-                src="/assets/hero-image-2.jpg"
+                src="/assets/homepage-hero-images/hero-image-2.jpg"
                 alt="Finance Program 2"
                 width={256}
                 height={256}
@@ -168,7 +174,7 @@ export default function Hero() {
               style={{ transform: getTransformValue(2) }}
             >
               <Image
-                src="/assets/hero-image-3.jpg"
+                src="/assets/homepage-hero-images/hero-image-3.jpg"
                 alt="Finance Program 3"
                 width={224}
                 height={160}
@@ -183,7 +189,7 @@ export default function Hero() {
               style={{ transform: getTransformValue(3) }}
             >
               <Image
-                src="/assets/hero-image-4.jpg"
+                src="/assets/homepage-hero-images/hero-image-4.jpg"
                 alt="Finance Program 4 - Center"
                 width={320}
                 height={288}
@@ -198,7 +204,7 @@ export default function Hero() {
               style={{ transform: getTransformValue(4) }}
             >
               <Image
-                src="/assets/hero-image-5.jpg"
+                src="/assets/homepage-hero-images/hero-image-5.jpg"
                 alt="Finance Program 5"
                 width={224}
                 height={160}
@@ -213,7 +219,7 @@ export default function Hero() {
               style={{ transform: getTransformValue(5) }}
             >
               <Image
-                src="/assets/hero-image-6.jpg"
+                src="/assets/homepage-hero-images/hero-image-6.jpg"
                 alt="Finance Program 6"
                 width={256}
                 height={256}
@@ -228,7 +234,7 @@ export default function Hero() {
               style={{ transform: getTransformValue(6) }}
             >
               <Image
-                src="/assets/hero-image-7.jpg"
+                src="/assets/homepage-hero-images/hero-image-7.jpg"
                 alt="Finance Program 7"
                 width={224}
                 height={160}
