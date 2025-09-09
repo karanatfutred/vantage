@@ -1,6 +1,8 @@
-import React from "react";
+"use client";
 
-const HighFinance = () => {
+import { Fragment } from "react";
+
+export default function HighFinance() {
   const highFinanceCards = [
     {
       title: "Step into the most competitive roles in global finance",
@@ -27,91 +29,64 @@ const HighFinance = () => {
   return (
     <section
       id="meet-founders"
-      className="pt-10 bg-black border-b border-gray-200"
+      className="pt-10 border-b border-gray-200"
+      // className="pt-10 bg-black border-b border-gray-200"
     >
+      {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Founders Title */}
-        <div>
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
-              India’s{" "}
-              <span
-                className="italic"
-                style={{
-                  fontFamily: '"Chronicle Display Black", serif',
-                  color: "#568c65",
-                }}
-              >
-                First Finance-Focused
-              </span>{" "}
-              Institute
-            </h2>
-          </div>
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
+            India’s{" "}
+            <span
+              className="italic"
+              style={{
+                fontFamily: '"Chronicle Display Black", serif',
+                color: "#568c65",
+              }}
+            >
+              First Finance-Focused
+            </span>{" "}
+            Institute
+          </h2>
         </div>
       </div>
 
-      {/* <div
-        className="mt-8 w-full border-b border-gray-800 py-7"
-        style={{
-          backgroundColor: "#000000",
-        }}
+      {/* Full-width strip for cards (mirrors ProjectsSection layout) */}
+      <div
+        className="w-full border-t border-gray-200 mt-8 overflow-x-auto"
+        // style={{ backgroundColor: "#000000" }}
       >
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10">
-            {stats.map((s, i) => (
-              <div key={i} className="relative isolate flex items-start gap-3">
-                <div className="relative">
-                  <div className="leading-none text-[64px] font-semibold tracking-tight text-white sm:text-[72px]">
-                    <span className="tabular-nums">{s.value}</span>
-                    {s.unit ? (
-                      <span className="align-top pl-2 text-2xl font-medium text-white sm:text-3xl">
-                        {s.unit}
-                      </span>
-                    ) : null}
-                  </div>
-                  <div className="mt-3 text-lg font-medium text-white">
-                    {s.label}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
-
-      <div className="border-b border-gray-600">
-        <div className="flex justify-center items-stretch min-h-[400px] overflow-x-auto py-8 pl-4">
-          <div className="flex items-stretch space-x-4 w-full max-w-7xl">
-            {/* Cards */}
+        <div className="w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-4">
             {highFinanceCards.map((card, index) => (
-              <div
-                key={index}
-                className="flex-1 basis-1/4 min-w-[300px] rounded-lg shadow-2xl border border-gray-700 flex"
-              >
-                <div className="p-6 h-full flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-lg font-bold text-black mb-3 font-section-heading">
+              <Fragment key={index}>
+                <div className="relative">
+                  <div className="p-6 text-black h-full">
+                    <h3 className="text-xl md:text-lg font-bold mb-3 font-section-heading w-full">
                       <span
-                        className="text-white text-2xl"
-                        style={{
-                          fontFamily: '"Chronicle Display Black", serif',
-                        }}
+                        className="text-[#568C65] italic"
+                        // style={{
+                        //   fontFamily: '"Chronicle Display Black", serif',
+                        // }}
                       >
                         {card.title}
                       </span>
                     </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed transition-all duration-300">
+                    <p className="text-sm leading-relaxed text-black">
                       {card.description}
                     </p>
                   </div>
+
+                  {/* Right divider for desktop */}
+                  {index < highFinanceCards.length - 1 && (
+                    <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-200" />
+                  )}
                 </div>
-              </div>
+              </Fragment>
             ))}
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default HighFinance;
+}

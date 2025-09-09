@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react"; // <-- add useEffect
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -49,22 +49,61 @@ export default function Hero() {
     return `translateX(${movement}px)`;
   };
 
+  const badges = [
+    "Investment Banking",
+    "Private Equity & Venture Capital",
+    "Capital Markets",
+    "Wealth, Asset & Risk Management",
+    "Fintech",
+  ];
+
+  const [currentBadge, setCurrentBadge] = useState(0);
+
+  // Add this useEffect for animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBadge((prev) => (prev + 1) % badges.length);
+    }, 1800); // Change badge every 1.8 seconds
+    return () => clearInterval(interval);
+  }, [badges.length]);
+
   return (
     <section
       id="hero"
-      className="relative min-h-[20vh] flex flex-col items-center justify-center bg-black text-center pt-24 sm:pt-32 overflow-hidden pb-8"
+      className="relative h-[70vh]  sm:min-h-[80vh] flex flex-col items-center justify-center text-left pt-24 sm:pt-32 overflow-hidden pb-8"
     >
+      {/* Video Background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="assets/hero-vid.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Black Gradient Overlay: left (dark) to right (transparent) */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 via-50% to-transparent to-90%" /> */}
+          <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-black/95 via-black/80 via-50% to-transparent to-90%" />
+
+          {/* ALTERNATIVE MOBILE GRADIENT FROM TOP TO BOTTOM */}
+          {/* <div className="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-r from-black/95 via-black/80 to-transparent" /> */}
+        </div>
+      </div>
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left mb-10">
         <h1
-          className="font-light w-full text-8xl sm:text-[155px] text-white"
+          className="font-light w-full text-8xl sm:text-[140px] text-white text-left leading-tight"
           style={{
             fontFamily: "Sofia Pro, sans-serif",
             letterSpacing: "-0.03em",
-            lineHeight: "1.05", // Tighter line spacing
+            lineHeight: "1.05",
           }}
         >
-          The
+          The{" "}
           <span
             className="italic font-normal text-[#a5d2b1]"
             style={{
@@ -72,20 +111,28 @@ export default function Hero() {
               letterSpacing: "-0.03em",
             }}
           >
-            {" "}
-            Finance School
-          </span>{" "}
+            Finance{" "}
+          </span>
+          <span
+            className="italic font-normal text-[#a5d2b1]"
+            style={{
+              fontFamily: "Instrument Serif, serif",
+              letterSpacing: "-0.03em",
+            }}
+          >
+            School
+          </span>
         </h1>
 
         {/* Description */}
-        <p className="text-base mt-3 sm:mt-0 md:text-lg lg:text-[35px] text-white mb-10 font-light max-w-4xl mx-auto">
+        <p className="text-base mt-3 sm:mt-0 md:text-lg lg:text-[35px] text-white mb-10 font-light max-w-4xl mx-auto sm:mx-0 text-left">
           Taught by the leaders who shaped trillion-dollar finance
         </p>
 
         {/* Program Offerings */}
-        <div className="mb-8 hidden sm:block">
+        <div className="mb-8 hidden sm:block text-left">
           <p
-            className="text-center text-base md:text-xl font-light text-green-400"
+            className="text-base md:text-xl font-light text-green-400 text-left"
             style={{
               color: "#ffffff",
             }}
@@ -115,130 +162,36 @@ export default function Hero() {
         </div>
 
         {/* Only visible in mobile */}
-        <div className="sm:hidden">
+        <div className="sm:hidden text-center">
           <button className="bg-[#a5d2b1] text-black px-6 py-2 rounded-md text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200">
             Apply Now
           </button>
         </div>
 
-        {/* Image Grid - 3 Different Sizes with Equal Mouse Tracking */}
-        <div
-          ref={gridRef}
-          className="hidden sm:flex justify-center   pb-10 mt-16 cursor-none"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          onMouseEnter={handleMouseEnter}
-        >
-          <div className="flex gap-6 items-center">
-            {/* Pattern: Small | Medium | Small | Large | Small | Medium | Small (7 images, large truly centered) */}
-
-            {/* 1. Small Image */}
-            <div
-              className="w-56 h-40 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 cursor-pointer group"
-              style={{ transform: getTransformValue(0) }}
+        {/* Animated Badge Text */}
+        {/*
+        <div className="mt-32 min-h-[60px] h-[60px] relative overflow-hidden flex justify-center items-center">
+          {badges.map((label, idx) => (
+            <span
+              key={label}
+              className={`absolute left-1/2 top-1/2 w-full text-center text-2xl sm:text-4xl font-normal transition-opacity duration-700 ease-in-out
+                ${idx === currentBadge ? "opacity-80" : "opacity-0"}
+              `}
+              style={{
+                transform: "translate(-50%, -50%)",
+                fontFamily: "'Montserrat', Arial, sans-serif",
+                color: "#fff",
+                textShadow: "0 2px 8px rgba(0,0,0,0.5)",
+                transitionProperty: "opacity",
+              }}
             >
-              <Image
-                src="/assets/homepage-hero-images/hero-image-1.jpg"
-                alt="Finance Program 1"
-                width={224}
-                height={160}
-                className="w-full h-full object-cover transition-transform duration-300"
-                priority
-                quality={90}
-              />
-            </div>
-
-            {/* 2. Medium Image */}
-            <div
-              className="w-64 h-64 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300 cursor-pointer group"
-              style={{ transform: getTransformValue(1) }}
-            >
-              <Image
-                src="/assets/homepage-hero-images/hero-image-2.jpg"
-                alt="Finance Program 2"
-                width={256}
-                height={256}
-                className="w-full h-full object-cover transition-transform duration-300"
-                quality={90}
-              />
-            </div>
-
-            {/* 3. Small Image */}
-            <div
-              className="w-56 h-40 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 cursor-pointer group"
-              style={{ transform: getTransformValue(2) }}
-            >
-              <Image
-                src="/assets/homepage-hero-images/hero-image-3.jpg"
-                alt="Finance Program 3"
-                width={224}
-                height={160}
-                className="w-full h-full object-cover transition-transform duration-300"
-                quality={90}
-              />
-            </div>
-
-            {/* 4. Large Image (Center) */}
-            <div
-              className="w-80 h-72 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300 cursor-pointer group"
-              style={{ transform: getTransformValue(3) }}
-            >
-              <Image
-                src="/assets/homepage-hero-images/hero-image-4.jpg"
-                alt="Finance Program 4 - Center"
-                width={320}
-                height={288}
-                className="w-full h-full object-cover transition-transform duration-300"
-                quality={90}
-              />
-            </div>
-
-            {/* 5. Small Image */}
-            <div
-              className="w-56 h-40 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 cursor-pointer group"
-              style={{ transform: getTransformValue(4) }}
-            >
-              <Image
-                src="/assets/homepage-hero-images/hero-image-5.jpg"
-                alt="Finance Program 5"
-                width={224}
-                height={160}
-                className="w-full h-full object-cover transition-transform duration-300"
-                quality={90}
-              />
-            </div>
-
-            {/* 6. Medium Image */}
-            <div
-              className="w-64 h-64 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300 cursor-pointer group"
-              style={{ transform: getTransformValue(5) }}
-            >
-              <Image
-                src="/assets/homepage-hero-images/hero-image-6.jpg"
-                alt="Finance Program 6"
-                width={256}
-                height={256}
-                className="w-full h-full object-cover transition-transform duration-300"
-                quality={90}
-              />
-            </div>
-
-            {/* 7. Small Image */}
-            <div
-              className="w-56 h-40 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 cursor-pointer group"
-              style={{ transform: getTransformValue(6) }}
-            >
-              <Image
-                src="/assets/homepage-hero-images/hero-image-7.jpg"
-                alt="Finance Program 7"
-                width={224}
-                height={160}
-                className="w-full h-full object-cover transition-transform duration-300"
-                quality={90}
-              />
-            </div>
-          </div>
+              {label}
+            </span>
+          ))}
         </div>
+        */}
+
+        {/* Image Grid - commented out */}
       </div>
     </section>
   );

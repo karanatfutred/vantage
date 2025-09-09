@@ -4,11 +4,11 @@ export default function Admissions() {
   return (
     <section
       id="open-admissions"
-      className="pt-10 bg-white border-b border-gray-200"
+      className="pt-10 bg-black border-b border-gray-200"
     >
       {/* Section Header */}
       <div className="text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-section-heading">
+        <h2 className="text-3xl md:text-4xl font-bold text-white font-section-heading">
           Upcoming{" "}
           <span
             className="italic"
@@ -23,7 +23,7 @@ export default function Admissions() {
       </div>
 
       {/* Program Cards - Side by Side */}
-      <div className="bg-black mt-8 mx-auto py-8 pl-4">
+      <div className="mt-2 mx-auto py-8 pl-4">
         <div className="max-w-7xl mx-auto overflow-x-auto">
           {/* Top White Section with Course Details */}
           <div className="w-xl sm:w-7xl bg-white rounded-lg shadow-sm border border-gray-200 p-3 sm:p-4">
@@ -31,7 +31,7 @@ export default function Admissions() {
               {/* Global Banking & Finance Fellowship */}
               <div className="h-[28rem] sm:h-48 flex flex-col sm:flex-row flex-1 gap-4 sm:gap-6">
                 {/* Image */}
-                <div className="w-full sm:w-1/3 bg-white relative overflow-hidden rounded-lg">
+                <div className="w-full h-[35%] sm:h-auto sm:w-1/3 bg-white relative overflow-hidden rounded-lg">
                   {/* fill attribute adds position absolute and that was causing some problem in mobile that's why using normal img tag */}
                   {/* <Image
                     src="/assets/global-banking-finance-fellowship.jpg"
@@ -116,7 +116,7 @@ export default function Admissions() {
               {/* PGP Strategic Finance & Analytics */}
               <div className="h-[28rem] sm:h-48 flex flex-col sm:flex-row flex-1 gap-4 sm:gap-6">
                 {/* Image */}
-                <div className="w-full sm:w-1/3 bg-white relative overflow-hidden rounded-lg">
+                <div className="w-full h-[35%] sm:h-auto sm:w-1/3 bg-white relative overflow-hidden rounded-lg">
                   {/* fill attribute adds position absolute and that was causing some problem in mobile that's why using normal img tag */}
                   {/* <Image
                     src="/assets/pgp-strategic-finance- analytics.jpg"
