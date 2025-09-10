@@ -1,47 +1,59 @@
 "use client";
 import React, { useRef, useEffect } from "react";
+import Image from "next/image";
 
 export default function MentorsSection() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const lowerRowRef = useRef<HTMLDivElement>(null);
 
-  const mentors = [
-    { image: "assets/mentors/adam.jpeg" },
-    { image: "assets/mentors/rakesh.jpeg" },
-    { image: "assets/mentors/satya.jpeg" },
-    { image: "assets/mentors/sandeep.jpeg" },
-    { image: "assets/mentors/lisa.jpeg" },
-    { image: "assets/mentors/syed.jpeg" }
+  const bottomBrands = [
+    "/assets/mentors-companies/7fiftytwo.jpeg",
+    "/assets/mentors-companies/ANZ-Logo-2009.svg.png",
+    "/assets/mentors-companies/barclays (1).png",
+    "/assets/mentors-companies/blue ashva.png",
+    "/assets/mentors-companies/bny-logo---2024-brand-update.png",
+    "/assets/mentors-companies/centrum wealth .jpg",
+    "/assets/mentors-companies/Llyods Bank.png",
+    "/assets/mentors-companies/oliver.png",
+    "/assets/mentors-companies/Standard_Chartered_(2021).svg.png",
   ];
 
-  // Auto-scroll functionality
+  // Logo animation functionality
   useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-    if (!scrollContainer) return;
+    const lowerRow = lowerRowRef.current;
+    if (!lowerRow) return;
 
-    const cardWidth = 256; // w-64 = 256px
-    const gap = 24; // gap-6 = 24px
-    const totalWidth = (cardWidth + gap) * mentors.length;
-    let scrollPosition = 0;
+    let animationId: number;
+    let translateX = 0;
+    const speed = 0.5; // pixels per frame
+    const logoWidth = 77;
+    const gap = 64;
+    const totalWidth = (logoWidth + gap) * bottomBrands.length;
 
-    const autoScroll = () => {
-      scrollPosition += 1;
-      if (scrollPosition >= totalWidth) {
-        scrollPosition = 0;
+    const animate = () => {
+      translateX -= speed;
+      // Reset position when we've moved exactly one set of logos
+      // This ensures seamless loop since we have duplicate logos
+      if (Math.abs(translateX) >= totalWidth) {
+        translateX = 0;
       }
-      scrollContainer.scrollLeft = scrollPosition;
+      lowerRow.style.transform = `translateX(${translateX}px)`;
+      animationId = requestAnimationFrame(animate);
     };
 
-    const interval = setInterval(autoScroll, 20);
-    return () => clearInterval(interval);
-  }, [mentors.length]);
+    animationId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationId);
+  }, [bottomBrands.length]);
 
   return (
-    <section className="py-12 bg-white">
+    <section
+      id="meet-mentors"
+      className="pt-10  bg-white border-b border-gray-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-8 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
-            Meet Your{" "}
+        <div className="text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-black font-section-heading">
+            Learn from{" "}
             <span
               className="italic"
               style={{
@@ -49,40 +61,83 @@ export default function MentorsSection() {
                 color: "#568c65",
               }}
             >
-              Mentors
-            </span>
+              MDs, CEOs,
+            </span>{" "}
+            and seasoned leaders across global banks, wealth firms, and venture
+            capital.
           </h2>
+          {/* <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            Your mentors comes from
+          </p> */}
         </div>
 
-        {/* Auto-scrolling Mentor Cards */}
-        <div className="overflow-hidden">
-          <div
-            ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto pb-8 scrollbar-hide"
-          >
-            {mentors.concat(mentors).map((mentor, index) => (
-              <div key={index} className="flex-shrink-0 w-64">
-                <div className="rounded-4xl border border-gray-300 shadow-md overflow-hidden">
-                  <img
-                    src={mentor.image}
-                    alt={`Mentor ${index}`}
-                    className="w-90% h-90% object-cover"
+        {/* Company Logos Animation */}
+        <div className="mt-10">
+          <div className="bg-white py-6 overflow-hidden">
+            <div
+              ref={lowerRowRef}
+              className="flex space-x-16 will-change-transform"
+              style={{
+                width: `${(77 + 64) * bottomBrands.length * 3}px`,
+                transform: "translateX(0px)",
+              }}
+            >
+              {/* First set of logos */}
+              {bottomBrands.map((brand, index) => (
+                <div
+                  key={`lower-${index}`}
+                  className="flex-shrink-0 h-[38px] flex items-center"
+                >
+                  <Image
+                    src={brand}
+                    alt={`Company ${index + 1}`}
+                    width={77}
+                    height={38}
+                    className="max-h-[38px] w-auto brightness-[1.1]"
+                    style={{ objectFit: "contain" }}
                   />
                 </div>
-              </div>
-            ))}
+              ))}
+              {/* Second set for seamless loop */}
+              {bottomBrands.map((brand, index) => (
+                <div
+                  key={`lower-dup-${index}`}
+                  className="flex-shrink-0 h-[38px] flex items-center"
+                >
+                  <Image
+                    src={brand}
+                    alt={`Company ${index + 1}`}
+                    width={77}
+                    height={38}
+                    className="max-h-[38px] w-auto brightness-[1.1]"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+              ))}
+              {/* Third set for extra coverage */}
+              {bottomBrands.map((brand, index) => (
+                <div
+                  key={`lower-dup2-${index}`}
+                  className="flex-shrink-0 h-[38px] flex items-center"
+                >
+                  <Image
+                    src={brand}
+                    alt={`Company ${index + 1}`}
+                    width={77}
+                    height={38}
+                    className="max-h-[38px] w-auto brightness-[1.1]"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
+        .will-change-transform {
+          will-change: transform;
         }
       `}</style>
     </section>

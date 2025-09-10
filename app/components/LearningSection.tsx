@@ -37,43 +37,19 @@ export default function LearningSection() {
     },
   ];
 
-  const cards = [
-    {
-      title: "Live Mandates",
-      description:
-        "Apply learning to real challenges from top global institutions, designing solutions with the potential for adoption.",
-      decorationImage: "/assets/live-mandate.jpg",
-    },
-    {
-      title: "Industry Internships",
-      description:
-        "Domestic and international internships at leading institutions, consulting firms, and ventures in high-growth roles",
-      decorationImage: "/assets/industry-internships.jpg",
-    },
-    {
-      title: "Launch a Business",
-      description:
-        "From concept to MVP to revenue, students build real businesses and pitch them to investors.",
-      decorationImage: "/assets/launch-a-business.jpg",
-    },
-    {
-      title: "Startup Fund",
-      description:
-        "Promising student ventures receive up to $200,000 in investment, with mentorship and infrastructure support",
-      decorationImage: "/assets/startup-fund.jpg",
-    },
-  ];
-
   const handleTabClick = (tabId: number) => {
     setActiveTab(tabId);
   };
 
   return (
-    <section className="py-12 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="learning-beyond-classroom"
+      className="pt-10  bg-white border-b border-gray-200"
+    >
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="mb-8 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
             Learning{" "}
             <span
               className="italic"
@@ -86,10 +62,14 @@ export default function LearningSection() {
             </span>{" "}
             the Classroom
           </h2>
+          {/* <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            Immersive learning experiences that prepare you for real-world
+            challenges
+          </p> */}
         </div>
 
         {/* Full Width Banner with Tabs */}
-        <div className="w-full h-[600px] mb-16 relative overflow-hidden rounded-lg">
+        <div className="w-full h-[500px] sm:h-[800px] relative overflow-hidden">
           {/* Background Images with Opacity Transitions */}
           {tabs.map((tab, index) => (
             <div key={tab.id} className="absolute inset-0">
@@ -118,10 +98,10 @@ export default function LearningSection() {
           {/* Content Overlay */}
           <div className="absolute inset-0 z-20">
             {/* Tab Content with Smooth Transitions */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center">
               <div
                 key={activeTab}
-                className="text-4xl text-white/90 max-w-4xl leading-relaxed text-center transition-all duration-700 ease-in-out transform"
+                className="text-xl sm:text-5xl mb-24 sm:mb-0 text-white/90 max-w-4xl leading-relaxed text-center transition-all duration-700 ease-in-out transform px-2"
                 style={{
                   animation: "fadeInUp 0.7s ease-out",
                 }}
@@ -131,13 +111,13 @@ export default function LearningSection() {
             </div>
 
             {/* Tabs */}
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <div className="flex gap-2 justify-center">
+            <div className="absolute bottom-0 left-0 right-0 pb-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row gap-2 justify-center">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => handleTabClick(tab.id)}
-                    className={`px-6 py-3 font-semibold transition-all duration-500 ease-in-out text-white border-b-2 ${
+                    className={`pb-2 sm:px-6 sm:py-3 font-semibold transition-all duration-500 ease-in-out text-white border-b-1 sm:border-b-2 ${
                       activeTab === tab.id
                         ? "text-white border-white transform scale-105"
                         : "text-white/60 border-white/30 hover:text-white/80 hover:border-white/50 hover:scale-105"

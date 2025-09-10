@@ -51,10 +51,13 @@ const AboutProgramme = () => {
     <div className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 font-section-heading">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 font-section-heading">
             About the <span className="text-[#083254]">Programme</span>
           </h2>
+          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            Comprehensive curriculum designed for finance professionals
+          </p>
         </div>
 
         {/* Main Description with Creative Layout */}
@@ -70,7 +73,7 @@ const AboutProgramme = () => {
                 <span className="font-bold text-[#083254]">
                   global finance CXOs
                 </span>
-                , The Global Fellowship In High Finance is India's most
+                , The Global Fellowship In High Finance is India&apos;s most
                 selective program in modern finance. Over two weeks, you move
                 beyond theory into the{" "}
                 <span className="relative">
@@ -87,8 +90,8 @@ const AboutProgramme = () => {
 
         {/* Learning Highlights Section */}
         <div className="mb-12">
-          <div className="text-center mb-12">
-            <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-section-heading">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-section-heading">
               Learning <span className="text-[#083254]">Highlights</span>
             </h3>
             <div className="w-24 h-1 bg-[#083254] rounded-full mx-auto"></div>

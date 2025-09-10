@@ -4,13 +4,16 @@ import React from "react";
 
 export default function AchievementsSection() {
   return (
-    <section className="py-12 bg-black">
+    <section className="pt-10  bg-black border-b border-gray-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold text-black font-section-heading">
+          <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
             Student Achievements
           </h2>
+          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            Success stories from our exceptional graduates
+          </p>
         </div>
 
         {/* Five Column Achievements Grid */}

@@ -1,166 +1,94 @@
 "use client";
 
 import React from "react";
+import { Linkedin } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Column 1: About Vantage */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-8">
+          {/* Column 1: Home */}
           <div>
-            <h3 className="text-lg font-bold mb-4">About Vantage</h3>
+            <h3 className="text-lg font-bold mb-4">Home</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/#meet-founders"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Our Story"
+                  aria-label="Team"
                 >
-                  Our Story
-                </a>
+                  Team
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/#open-admissions"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Meet the Founders"
+                  aria-label="Upcoming Cohorts"
                 >
-                  Meet the Founders
-                </a>
+                  Upcoming Cohorts
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/#learning-practitioners"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="Careers"
+                  aria-label="Learning"
                 >
-                  Careers
-                </a>
+                  Learning
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 2: Programs */}
+          {/* Column 2: Fellowships */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Programs</h3>
+            <h3 className="text-lg font-bold mb-4">Fellowship</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/fellowships#overview"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="Global Banking & Finance Fellowship"
                 >
-                  Global Banking & Finance Fellowship
-                </a>
+                  About
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/fellowships#learning-highlights"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
-                  aria-label="PGP Strategic Finance & Analytics"
+                  aria-label="Learning"
                 >
-                  PGP Strategic Finance & Analytics
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Executive Education"
-                >
-                  Executive Education
-                </a>
+                  Learning
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Learning & Innovation */}
+          {/* Column 3: Contact Us */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Learning & Innovation</h3>
+            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
             <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Real Mandates"
-                >
-                  Real Mandates
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Student Achievements"
-                >
-                  Student Achievements
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Industry Partnerships"
-                >
-                  Industry Partnerships
-                </a>
-              </li>
-            </ul>
-          </div>
+              <li>mandip@thevantageinstitute.com</li>
 
-          {/* Column 4: Resources & Support */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Resources & Support</h3>
-            <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/vantage-institute-official/about/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Scholarships"
                 >
-                  Scholarships
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Admissions"
-                >
-                  Admissions
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Contact Us"
-                >
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                  tabIndex={0}
-                  aria-label="Privacy Policy"
-                >
-                  Privacy Policy
+                  <Linkedin size={22} />
                 </a>
               </li>
             </ul>
@@ -173,7 +101,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="text-center">
           <div className="text-gray-400 text-sm">
-            © 2024 Vantage. All rights reserved.
+            © 2025 Vantage. All rights reserved.
           </div>
         </div>
       </div>
