@@ -25,7 +25,7 @@ const ProgramDirector = () => {
       <div className="flex justify-center px-10 pt-5 pb-5 5xl:pb-0 5xl:pt-10 w-full h-auto mx-auto  bg-black relative ">
         <div className="hidden 5xl:flex max-w-[76rem] h-full  ">
           <div className="text-white h-full flex-1 pb-5">
-            <p className="text-[17px] sofia-pro-light">
+            <p className="text-2xl sofia-pro-light">
               Syed Raza commanded a $1 trillion balance sheet at Barclays and
               earned recognition among the Financial Times Top 100 Banking
               Executives. He architected the Early Career Programme that became
@@ -53,7 +53,7 @@ const ProgramDirector = () => {
               className="w-[350px] min-h-[380px] object-cover absolute right-0 bottom-0 z-10"
             />
 
-            <div className="w-full h-[76px] relative top-[153px] mt-8 px-6 py-2 bg-[#A5D2B1] text-black flex flex-col"></div>
+            <div className="w-full h-[76px] relative top-[256px] mt-8 px-6 py-2 bg-[#A5D2B1] text-black flex flex-col"></div>
           </div>
         </div>
 

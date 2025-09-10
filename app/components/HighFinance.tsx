@@ -36,7 +36,7 @@ export default function HighFinance() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
-            India’s{" "}
+            Born of Wall Street and Canary Wharf, rooted in Dalal Street,{" "}
             <span
               className="italic"
               style={{
@@ -44,7 +44,7 @@ export default function HighFinance() {
                 color: "#568c65",
               }}
             >
-              First Finance-Focused
+              India's First Global Finance Institute
             </span>{" "}
             Institute
           </h2>

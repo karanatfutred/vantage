@@ -24,7 +24,7 @@ const VideoSection = () => {
   return (
     <>
       {/* Video Section */}
-      <section className="bg-black py-16">
+      <section className="bg-black py-16" id="overview">
         <div className="px-4 mx-auto max-w-[1272px]">
           {/* Header Section */}
           <div className="text-center mb-4">

@@ -10,10 +10,10 @@ import {
   ResponsiveContainer,
   LabelList,
 } from "recharts";
-import { BarProps } from "recharts";
+import type { BarProps } from "recharts";
 
-// Updated data with your provided values and difference calculations
-const compensationData = [
+// Original INR data (unchanged)
+const compensationDataINR = [
   {
     year: "Year 1",
     standardFinance: 800000,
@@ -30,7 +30,7 @@ const compensationData = [
     year: "Year 3",
     standardFinance: 1100000,
     highFinance: 3300000,
-    difference: 1200000,
+    difference: 2200000,
   },
   {
     year: "Year 4",
@@ -46,6 +46,19 @@ const compensationData = [
   },
 ];
 
+// --- Conversion helpers (₹85 = $1) ---
+const INR_PER_USD = 85;
+const toUSD = (inr: number) => inr / INR_PER_USD;
+
+// Data converted to USD
+const compensationDataUSD = compensationDataINR.map((d) => ({
+  year: d.year,
+  standardFinance: toUSD(d.standardFinance),
+  highFinance: toUSD(d.highFinance),
+  // Recompute difference in USD for safety
+  difference: toUSD(d.highFinance - d.standardFinance),
+}));
+
 type FinanceBar = BarProps & {
   payload?: {
     year: string;
@@ -55,33 +68,32 @@ type FinanceBar = BarProps & {
   };
 };
 
-// Updated formatter function to handle ReactNode types
-const formatLakhs = (value: React.ReactNode): React.ReactNode => {
+// Label formatter inside bars: $k
+const formatDollarsShort = (value: React.ReactNode): React.ReactNode => {
   if (typeof value === "number") {
-    return `${Math.round(value / 100000)}L`;
+    return `$${Math.round(value / 1000)}k`;
   }
   return "";
 };
 
 const FinanceCompensationChart: React.FC = () => {
-  const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat("en-IN", {
+  const formatCurrencyUSD = (value: number) =>
+    new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "INR",
+      currency: "USD",
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);
-  };
 
-  // Find the maximum value for Y-axis domain
-  const maxValue = Math.max(
-    ...compensationData.map((item) =>
+  // Y-axis domain based on USD values
+  const maxValueUSD = Math.max(
+    ...compensationDataUSD.map((item) =>
       Math.max(item.standardFinance, item.highFinance)
     )
   );
-  const yAxisMax = Math.ceil(maxValue * 1.1);
+  const yAxisMax = Math.ceil(maxValueUSD * 1.1);
 
-  // Custom component to render difference lines
+  // Custom component to render difference lines (uses USD values)
   const CustomizedDifference = (props: FinanceBar) => {
     const { payload, x = 0, width = 0 } = props;
     if (!payload) return null;
@@ -90,7 +102,7 @@ const FinanceCompensationChart: React.FC = () => {
     const highFinance = payload.highFinance;
     const difference = highFinance - standardFinance;
 
-    // Calculate positions for the bars
+    // Positions for the bars (approximate same geometry as before)
     const chartHeight = 320; // Approximate chart height
     const standardHeight = (standardFinance / yAxisMax) * chartHeight;
     const highFinanceHeight = (highFinance / yAxisMax) * chartHeight;
@@ -100,6 +112,7 @@ const FinanceCompensationChart: React.FC = () => {
 
     const centerX = Number(x) + Number(width) / 2;
     const lineX = centerX + Number(width) * 0.6;
+
     return (
       <g>
         {/* Vertical dashed line */}
@@ -133,7 +146,7 @@ const FinanceCompensationChart: React.FC = () => {
           strokeWidth={2}
         />
 
-        {/* Difference label */}
+        {/* Difference label in $k */}
         <text
           x={lineX + 8}
           y={(standardTop + highFinanceTop) / 2 + 4}
@@ -142,7 +155,7 @@ const FinanceCompensationChart: React.FC = () => {
           fontWeight="600"
           textAnchor="start"
         >
-          +{Math.round(difference / 100000)}L
+          +${Math.round(difference / 1000)}k
         </text>
       </g>
     );
@@ -151,7 +164,7 @@ const FinanceCompensationChart: React.FC = () => {
   return (
     <section
       id="whats-at-stake"
-      className="pt-10  bg-white border-b border-gray-200"
+      className="pt-10 bg-white border-b border-gray-200"
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto">
         {/* Section Header */}
@@ -165,28 +178,24 @@ const FinanceCompensationChart: React.FC = () => {
                 color: "#568c65",
               }}
             >
-              ₹1 Crore
+              {/* ₹1 Crore ≈ $117,647 → ~$118k */}
+              ~$118k
             </span>{" "}
             Opportunity Gap in Just 5 Years
           </h2>
 
           <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-            High Finance vs. Regular Finance Roles
+            High Finance vs. Regular Finance Roles (All figures shown in USD)
           </p>
         </div>
 
         {/* Chart Container */}
-        <div className="max-w-7xl h-96 mx-auto mb-6 overflow-x-auto ">
+        <div className="max-w-7xl h-96 mx-auto mb-6 overflow-x-auto">
           <div className="w-7xl h-96">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
-                data={compensationData}
-                margin={{
-                  top: 20,
-                  right: 100,
-                  left: 20,
-                  bottom: 5,
-                }}
+                data={compensationDataUSD}
+                margin={{ top: 20, right: 100, left: 20, bottom: 5 }}
                 barCategoryGap="20%"
               >
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -197,7 +206,7 @@ const FinanceCompensationChart: React.FC = () => {
                   tick={{ fontSize: 12, fill: "#666" }}
                 />
                 <YAxis
-                  tickFormatter={formatCurrency}
+                  tickFormatter={formatCurrencyUSD}
                   axisLine={false}
                   tickLine={false}
                   tick={{ fontSize: 12, fill: "#666" }}
@@ -213,10 +222,11 @@ const FinanceCompensationChart: React.FC = () => {
                   <LabelList
                     dataKey="highFinance"
                     position="insideTop"
-                    formatter={formatLakhs}
+                    formatter={formatDollarsShort}
                     style={{ fill: "#fff", fontWeight: 600, fontSize: 14 }}
                   />
                 </Bar>
+
                 <Bar
                   dataKey="standardFinance"
                   fill="#000000"
@@ -226,12 +236,8 @@ const FinanceCompensationChart: React.FC = () => {
                   <LabelList
                     dataKey="standardFinance"
                     position="insideTop"
-                    formatter={formatLakhs}
-                    style={{
-                      fill: "#fff",
-                      fontWeight: 600,
-                      fontSize: 14,
-                    }}
+                    formatter={formatDollarsShort}
+                    style={{ fill: "#fff", fontWeight: 600, fontSize: 14 }}
                   />
                 </Bar>
 
@@ -250,35 +256,41 @@ const FinanceCompensationChart: React.FC = () => {
         <div className="mx-auto max-w-7xl space-y-4">
           {/* Legends */}
           <div className="space-y-3">
+            {" "}
             <div className="flex items-center space-x-3 ">
+              {" "}
               <div className="text-sm text-gray-700">
+                {" "}
                 <p>
+                  {" "}
                   <span
                     className="inline-block w-3 h-3 rounded mr-2"
                     style={{ backgroundColor: "#000000" }}
-                  ></span>
+                  ></span>{" "}
                   Standard Finance pay estimates are based on post-MBA
                   compensation at top banks and financial institutions, assuming
                   roles such as Financial Analyst and Relationship Manager, etc,
                   with a standard progression to Senior Manager within 4–5
                   years, using data from Glassdoor, AmbitionBox, and similar
-                  sources. pay
-                </p>
-              </div>
-            </div>
-
+                  sources. pay{" "}
+                </p>{" "}
+              </div>{" "}
+            </div>{" "}
             <div className="flex items-center space-x-3">
+              {" "}
               <div className="text-sm text-gray-700">
+                {" "}
                 <p>
-                  <span className="inline-block w-3 h-3 bg-[#639b72] rounded mr-2"></span>
+                  {" "}
+                  <span className="inline-block w-3 h-3 bg-[#639b72] rounded mr-2"></span>{" "}
                   High Finance pay estimates are based on post-MBA compensation
                   at top investment banks (such as JP Morgan and Goldman Sachs)
                   and leading VC funds, assuming a standard progression from
                   Associate to VP within 3–5 years, using data from Glassdoor,
-                  AmbitionBox, and similar sources.
-                </p>
-              </div>
-            </div>
+                  AmbitionBox, and similar sources.{" "}
+                </p>{" "}
+              </div>{" "}
+            </div>{" "}
           </div>
         </div>
       </div>

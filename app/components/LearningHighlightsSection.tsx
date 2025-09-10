@@ -24,7 +24,10 @@ const LearningHighlightsSection = () => {
   ];
 
   return (
-    <section className="pt-10 bg-white border-b border-gray-600">
+    <section
+      className="pt-16 bg-white border-b border-gray-600"
+      id="learning-highlights"
+    >
       <div className="max-w-7xl mx-auto px-2 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-4 lg:mb-8">
@@ -52,7 +55,6 @@ const LearningHighlightsSection = () => {
               >
                 <h3 className=" text-md lg:text-lg font-semibold mb-3 text-black font-section-heading">
                   {highlight.title}
-         
                 </h3>
                 <p className="text-xs lg:text-sm text-black leading-relaxed">
                   {highlight.description}

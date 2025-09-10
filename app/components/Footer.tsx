@@ -15,7 +15,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#meet-founders"
+                  href="/#meet-founders"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="Team"
@@ -25,7 +25,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#open-admissions"
+                  href="/#open-admissions"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="Upcoming Cohorts"
@@ -35,7 +35,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#learning-beyond-classroom"
+                  href="/#learning-practitioners"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="Learning"
@@ -52,7 +52,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#global-banking-fellowship"
+                  href="/fellowships#overview"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="Global Banking & Finance Fellowship"
@@ -62,7 +62,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#pgp-strategic-finance"
+                  href="/fellowships#learning-highlights"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="Learning"
