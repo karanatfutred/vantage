@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Linkedin } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -14,34 +15,34 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Home</h3>
             <ul className="space-y-2">
               <li>
-                <a
+                <Link
                   href="/#meet-founders"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="Team"
                 >
                   Team
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#open-admissions"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="Upcoming Cohorts"
                 >
                   Upcoming Cohorts
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#learning-practitioners"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="Learning"
                 >
                   Learning
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -51,24 +52,24 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Fellowship</h3>
             <ul className="space-y-2">
               <li>
-                <a
+                <Link
                   href="/fellowships#overview"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="Global Banking & Finance Fellowship"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/fellowships#learning-highlights"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                   tabIndex={0}
                   aria-label="Learning"
                 >
                   Learning
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

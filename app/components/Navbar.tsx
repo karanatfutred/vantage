@@ -40,7 +40,7 @@ export default function Navbar() {
                 Team
               </Link>
               <Link
-                href="#learning-practitioners"
+                href="/#learning-practitioners"
                 className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
                 // onClick={(e) => e.preventDefault()}
               >
