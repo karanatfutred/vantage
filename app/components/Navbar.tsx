@@ -54,9 +54,10 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="#"
+                href="https://forms.gle/Q8sXzoUZ7Sh3KHyR6"
+                target="_blank"
                 className="text-white px-6 py-2 text-base font-light transition-all duration-200 hover:text-accent hover:underline decoration-2 underline-offset-4"
-                onClick={(e) => e.preventDefault()}
+                // onClick={(e) => e.preventDefault()}
               >
                 PG Programme{" "}
                 <span
@@ -75,9 +76,13 @@ export default function Navbar() {
 
           {/* Apply Now Button (Desktop) */}
           <div className="hidden md:block">
-            <button className="bg-[#a5d2b1] text-black px-6 py-2 rounded-md text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200">
+            <Link
+              href="https://forms.gle/Q8sXzoUZ7Sh3KHyR6"
+              target="_blank"
+              className="bg-[#a5d2b1] text-black px-6 py-2 rounded-md text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200"
+            >
               Apply Now
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -109,9 +114,13 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="h-80 fixed inset-0 z-50 bg-black flex flex-col items-center justify-start pt-5 md:hidden transition-all">
           <div className="w-full flex justify-between items-center border-b border-primary/30 z-50 shadow-lg pb-4 px-[24px]">
-            <button className="bg-[#a5d2b1] text-black px-4 py-1 rounded-sm text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200">
+            <Link
+              href="https://forms.gle/Q8sXzoUZ7Sh3KHyR6"
+              target="_blank"
+              className="bg-[#a5d2b1] text-black px-4 py-1 rounded-sm text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200"
+            >
               Apply Now
-            </button>
+            </Link>
 
             <button
               className=" text-white hover:text-accent"
@@ -157,7 +166,11 @@ export default function Navbar() {
             B&F Fellowship
           </Link>
 
-          <Link href="#" className="text-white text-lg font-light py-2">
+          <Link
+            href="https://forms.gle/Q8sXzoUZ7Sh3KHyR6"
+            target="_blank"
+            className="text-white text-lg font-light py-2"
+          >
             PG Programme{" "}
             <p
               className="text-[#a5d2b1] font-semibold"

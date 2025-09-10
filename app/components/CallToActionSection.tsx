@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const CallToActionSection = () => {
   return (
     <section className="bg-white py-20 border-b border-gray-200">
@@ -19,9 +21,13 @@ const CallToActionSection = () => {
 
           {/* CTA Button */}
           <div className="flex justify-center mt-10">
-            <button className="bg-[#a5d2b1] text-black px-10 py-4 rounded-lg font-semibold text-lg font-section-heading shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+            <Link
+              href="https://forms.gle/Q8sXzoUZ7Sh3KHyR6"
+              target="_blank"
+              className="bg-[#a5d2b1] text-black px-10 py-4 rounded-lg font-semibold text-lg font-section-heading shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+            >
               Apply Now
-            </button>
+            </Link>
           </div>
         </div>
       </div>

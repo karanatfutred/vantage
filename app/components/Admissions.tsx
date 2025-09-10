@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Admissions() {
   return (
     <section
@@ -89,7 +91,10 @@ export default function Admissions() {
                         </span>
                       </div>
                       <div className="sm:block mt-2 sm:mt-0 flex justify-center bg-gray-900 w-full sm:w-auto text-white px-3 lg:px-4 py-2 sm:-ml-2 relative z-10">
-                        <button className="inline-flex items-center gap-2 text-xs font-medium">
+                        <Link
+                          href="/fellowships"
+                          className="inline-flex items-center gap-2 text-xs font-medium"
+                        >
                           <span>LEARN MORE</span>
                           <svg
                             className="w-3 h-3"
@@ -104,7 +109,7 @@ export default function Admissions() {
                               d="M17 8l4 4m0 0l-4 4m4-4H3"
                             />
                           </svg>
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -174,7 +179,11 @@ export default function Admissions() {
                         </span>
                       </div>
                       <div className="sm:block mt-2 sm:mt-0 flex justify-center bg-gray-900 text-white w-full sm:w-auto px-3 lg:px-4 py-2 sm:-ml-2 relative z-10">
-                        <button className="inline-flex items-center gap-2 text-xs font-medium">
+                        <Link
+                          href="https://forms.gle/Q8sXzoUZ7Sh3KHyR6"
+                          target="_blank"
+                          className="inline-flex items-center gap-2 text-xs font-medium"
+                        >
                           <span>SHOW INTEREST</span>
                           <svg
                             className="w-3 h-3"
@@ -189,7 +198,7 @@ export default function Admissions() {
                               d="M17 8l4 4m0 0l-4 4m4-4H3"
                             />
                           </svg>
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>

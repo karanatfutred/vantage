@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useRef, useEffect } from "react"; // <-- add useEffect
 
 export default function Hero() {
@@ -163,9 +164,13 @@ export default function Hero() {
 
         {/* Only visible in mobile */}
         <div className="sm:hidden text-center">
-          <button className="bg-[#a5d2b1] text-black px-6 py-2 rounded-md text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200">
+          <Link
+            href="https://forms.gle/Q8sXzoUZ7Sh3KHyR6"
+            target="_blank"
+            className="bg-[#a5d2b1] text-black px-6 py-2 rounded-md text-sm font-semibold hover:bg-yellow-600 transition-colors duration-200"
+          >
             Apply Now
-          </button>
+          </Link>
         </div>
 
         {/* Animated Badge Text */}
