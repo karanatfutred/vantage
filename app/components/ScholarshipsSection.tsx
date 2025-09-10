@@ -12,7 +12,7 @@ export default function ScholarshipsSection() {
           <div className="w-full">
             <div className="bg-black px-6 sm:px-16 py-5 sm:py-12 w-full h-72 sm:h-[450px] relative">
               <div className="text-left">
-                <div className="text-xl md:text-4xl text-white leading-tight max-w-3xl">
+                <div className="text-xl md:text-5xl text-white leading-tight max-w-3xl">
                   1 in every 5 seats is reserved as a full scholarship, awarded
                   only to the most outstanding candidates
                 </div>

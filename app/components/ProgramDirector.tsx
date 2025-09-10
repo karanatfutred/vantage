@@ -2,7 +2,6 @@ import Image from "next/image";
 
 const ProgramDirector = () => {
   return (
-
     <section className="pt-4 bg-white border-b border-gray-600">
       <div className="text-center pb-5">
         <h2 className="text-3xl md:text-4xl font-bold text-black font-section-heading">
@@ -50,7 +49,7 @@ const ProgramDirector = () => {
             <img
               src="assets/syed-full.jpeg"
               alt="Programme Director"
-              className="w-[350px] min-h-[380px] object-cover absolute right-0 bottom-0 z-10"
+              className="w-[400px] min-h-[480px] object-cover absolute right-0 bottom-0 z-10"
             />
 
             <div className="w-full h-[76px] relative top-[256px] mt-8 px-6 py-2 bg-[#A5D2B1] text-black flex flex-col"></div>

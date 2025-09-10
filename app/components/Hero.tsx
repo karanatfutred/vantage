@@ -71,7 +71,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-[70vh]  sm:min-h-[80vh] flex flex-col items-center justify-center text-left pt-24 sm:pt-32 overflow-hidden pb-8"
+      className="relative h-[88vh]  sm:min-h-[85vh] flex flex-col items-center justify-center text-left pt-24 sm:pt-32 overflow-hidden pb-8"
     >
       {/* Video Background */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
