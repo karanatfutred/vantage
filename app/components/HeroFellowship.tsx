@@ -36,15 +36,14 @@ const HeroSection = () => {
               Taught by the leaders who shaped trillion-dollar finance
             </p>
             <Link
-              href="https://forms.gle/Q8sXzoUZ7Sh3KHyR6"
-              target="_blank"
+              href="/checkout?programId=global-banking-finance-fellowship"
               className="inline-flex items-center justify-center px-4 py-1 lg:px-12 lg:py-4 lg:text-xl font-medium text-black bg-[#a5d2b1] rounded-lg lg:rounded-2xl"
               style={{
                 fontFamily: "Sofia Pro, sans-serif",
                 letterSpacing: "-0.01em",
               }}
             >
-              Apply Now
+              Enroll Now
             </Link>
           </div>
         </div>

@@ -92,10 +92,10 @@ export default function Admissions() {
                       </div>
                       <div className="sm:block mt-2 sm:mt-0 flex justify-center bg-gray-900 w-full sm:w-auto text-white px-3 lg:px-4 py-2 sm:-ml-2 relative z-10">
                         <Link
-                          href="/fellowships"
+                          href={`/checkout?programId=global-banking-finance-fellowship`}
                           className="inline-flex items-center gap-2 text-xs font-medium"
                         >
-                          <span>LEARN MORE</span>
+                          <span>ENROLL NOW</span>
                           <svg
                             className="w-3 h-3"
                             fill="none"

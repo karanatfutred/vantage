@@ -22,11 +22,10 @@ const CallToActionSection = () => {
           {/* CTA Button */}
           <div className="flex justify-center mt-10">
             <Link
-              href="https://forms.gle/Q8sXzoUZ7Sh3KHyR6"
-              target="_blank"
+              href="/checkout?programId=global-banking-finance-fellowship"
               className="bg-[#a5d2b1] text-black px-10 py-4 rounded-lg font-semibold text-lg font-section-heading shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
             >
-              Apply Now
+              Enroll Now
             </Link>
           </div>
         </div>

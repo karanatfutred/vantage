@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import {
+  AuthProvider,
+  PaymentProvider,
+  ProgramProvider,
+  ToastProvider,
+} from "@/providers";
 
 export const metadata: Metadata = {
   title: "Vantage",
@@ -13,7 +19,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AuthProvider>
+          <PaymentProvider>
+            <ProgramProvider>
+              <ToastProvider>{children}</ToastProvider>
+            </ProgramProvider>
+          </PaymentProvider>
+        </AuthProvider>
+      </body>
     </html>
   );
 }
