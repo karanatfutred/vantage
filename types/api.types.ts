@@ -15,6 +15,20 @@ export interface ApiResponse<T = unknown> {
   details?: Record<string, unknown>;
   timestamp: string;
   requestId?: string;
+  // Auth-specific fields
+  requiresVerification?: boolean;
+  email?: string;
+  token?: string;
+  user?: {
+    id: string;
+    email: string;
+    name: string;
+    phone?: string;
+    userType?: string;
+    role?: string;
+    isActive?: boolean;
+    isVerified?: boolean;
+  };
 }
 
 export interface ApiSuccess<T = unknown> extends ApiResponse<T> {

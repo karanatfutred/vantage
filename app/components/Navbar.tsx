@@ -2,10 +2,27 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useAuth } from "@/providers/AuthProvider";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const userMenuRef = useRef<HTMLDivElement | null>(null);
+  const { user, isAuthenticated, logout } = useAuth();
+
+  useEffect(() => {
+    function onDocClick(e: MouseEvent) {
+      if (
+        userMenuRef.current &&
+        !userMenuRef.current.contains(e.target as Node)
+      ) {
+        setUserMenuOpen(false);
+      }
+    }
+    document.addEventListener("click", onDocClick);
+    return () => document.removeEventListener("click", onDocClick);
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-primary/30 z-50 shadow-lg">
@@ -74,8 +91,8 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Apply Now Button (Desktop) */}
-          <div className="hidden md:block">
+          {/* Right Controls (Desktop) */}
+          <div className="hidden md:flex items-center gap-4">
             <Link
               href="https://forms.gle/Q8sXzoUZ7Sh3KHyR6"
               target="_blank"
@@ -83,6 +100,87 @@ export default function Navbar() {
             >
               Apply Now
             </Link>
+
+            {/* User/Profile Dropdown */}
+            <div className="relative" ref={userMenuRef}>
+              <button
+                aria-label="User menu"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setUserMenuOpen((s) => !s);
+                }}
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              >
+                {isAuthenticated ? (
+                  <span className="text-white text-sm font-semibold">
+                    {user?.name?.charAt(0)?.toUpperCase() || "U"}
+                  </span>
+                ) : (
+                  <svg
+                    className="w-5 h-5 text-white"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                )}
+              </button>
+
+              {userMenuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black/10 py-1 z-50">
+                  {isAuthenticated ? (
+                    <>
+                      <Link
+                        href="/my-orders"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={() => setUserMenuOpen(false)}
+                      >
+                        Orders
+                      </Link>
+                      <Link
+                        href="/profile"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={() => setUserMenuOpen(false)}
+                      >
+                        Profile
+                      </Link>
+                      <button
+                        className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={() => {
+                          setUserMenuOpen(false);
+                          logout();
+                          window.location.href = "/";
+                        }}
+                      >
+                        Sign out
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <Link
+                        href="/signin"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={() => setUserMenuOpen(false)}
+                      >
+                        Sign in
+                      </Link>
+                      <Link
+                        href="/signup"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={() => setUserMenuOpen(false)}
+                      >
+                        Sign up
+                      </Link>
+                    </>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -112,7 +210,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="h-80 fixed inset-0 z-50 bg-black flex flex-col items-center justify-start pt-5 md:hidden transition-all">
+        <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-start pt-5 md:hidden transition-all min-h-screen overflow-y-auto">
           <div className="w-full flex justify-between items-center border-b border-primary/30 z-50 shadow-lg pb-4 px-[24px]">
             <Link
               href="https://forms.gle/Q8sXzoUZ7Sh3KHyR6"
@@ -183,6 +281,56 @@ export default function Navbar() {
               (Coming Soon)
             </p>
           </Link>
+
+          {/* Auth actions (mobile) */}
+          <div className="w-full px-[24px] mt-2">
+            <div className="h-px w-full bg-white/10 my-2" />
+            {isAuthenticated ? (
+              <div className="flex flex-col items-start">
+                <Link
+                  href="/my-orders"
+                  className="text-white text-lg font-light hover:text-accent py-2"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Orders
+                </Link>
+                <Link
+                  href="/profile"
+                  className="text-white text-lg font-light hover:text-accent py-2"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Profile
+                </Link>
+                <button
+                  className="text-white text-lg font-light hover:text-accent py-2"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    logout();
+                    window.location.href = "/";
+                  }}
+                >
+                  Sign out
+                </button>
+              </div>
+            ) : (
+              <div className="flex flex-col items-start">
+                <Link
+                  href="/signin"
+                  className="text-white text-lg font-light hover:text-accent py-2"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Sign in
+                </Link>
+                <Link
+                  href="/signup"
+                  className="text-white text-lg font-light hover:text-accent py-2"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Sign up
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </nav>

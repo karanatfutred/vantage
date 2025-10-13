@@ -34,9 +34,34 @@ const SignInForm: React.FC = () => {
       }
       setError("Sign in failed");
     } catch (err: unknown) {
-      setError(
-        err instanceof Error ? err.message : "An error occurred during sign in"
-      );
+      // Check if this is a verification required error
+      if (err instanceof Error) {
+        try {
+          const errorData = JSON.parse(err.message);
+          if (errorData.requiresVerification) {
+            // Redirect immediately to verification page without showing error
+            const cb = searchParams.get("callbackUrl") || "/";
+            router.push(
+              `/verify-email?email=${encodeURIComponent(
+                errorData.email
+              )}&callbackUrl=${encodeURIComponent(cb)}&fromLogin=true`
+            );
+            return;
+          }
+          // If we successfully parsed JSON but it's not a verification error, show the message
+          setError(errorData.message || err.message);
+        } catch {
+          // Not a JSON error - check if it's a verification message
+          if (err.message.toLowerCase().includes("verify")) {
+            // This is likely a verification error, don't show it - just return
+            // The user should be redirected by the logic above
+            return;
+          }
+          setError(err.message);
+        }
+      } else {
+        setError("An error occurred during sign in");
+      }
     } finally {
       setIsLoading(false);
     }

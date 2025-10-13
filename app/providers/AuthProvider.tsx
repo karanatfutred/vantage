@@ -3,9 +3,14 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 interface User {
-  _id: string;
+  id: string;
   email: string;
   name: string;
+  phone?: string;
+  userType?: string;
+  role?: string;
+  isActive?: boolean;
+  isVerified?: boolean;
 }
 
 interface AuthContextType {
@@ -48,8 +53,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       });
 
       if (response.ok) {
-        const userData = await response.json();
-        setUser(userData.user || userData.data);
+        const responseData = await response.json();
+        // Backend returns: { success: true, user: {...} }
+        // Frontend API wraps it as: { success: true, data: { user: {...} } }
+        const userData =
+          responseData.user || responseData.data?.user || responseData.data;
+
+        if (userData) {
+          setUser(userData);
+        } else {
+          console.error("No user data in response:", responseData);
+          localStorage.removeItem("authToken");
+        }
       } else {
         // Token is invalid, remove it
         localStorage.removeItem("authToken");
@@ -72,18 +87,33 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         body: JSON.stringify({ email, password }),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
-        const data = await response.json();
         const token = data.token || data.data?.token;
 
         localStorage.setItem("authToken", token);
         await fetchUserProfile(token);
         return true;
       }
-      return false;
+
+      // Handle specific error cases
+      if (data.requiresVerification) {
+        // Throw error with email for verification redirect
+        throw new Error(
+          JSON.stringify({
+            requiresVerification: true,
+            email: data.email || email,
+            message: data.error || data.message,
+          })
+        );
+      }
+
+      // Generic error
+      throw new Error(data.error || data.message || "Login failed");
     } catch (error) {
       console.error("Login error:", error);
-      return false;
+      throw error; // Re-throw to let the caller handle it
     }
   };
 

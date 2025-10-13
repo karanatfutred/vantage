@@ -42,10 +42,13 @@ export async function GET(request: NextRequest) {
       );
     }
 
+    // Backend returns { success: true, user: {...} }
+    // We want to preserve the user object at the top level for easier access
     return NextResponse.json({
       success: true,
-      data: data.data || data,
-      message: "User authenticated successfully",
+      user: data.user,
+      data: data.user,
+      message: data.message || "User authenticated successfully",
       timestamp: new Date().toISOString(),
     } as ApiResponse);
   } catch (error: unknown) {

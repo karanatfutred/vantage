@@ -37,7 +37,10 @@ export async function POST(request: NextRequest) {
         {
           success: false,
           error: data.message || "Login failed",
+          message: data.message || "Login failed",
           code: data.code || "AUTHENTICATION_ERROR",
+          requiresVerification: data.requiresVerification,
+          email: data.email,
           timestamp: new Date().toISOString(),
         } as ApiResponse,
         { status: response.status }

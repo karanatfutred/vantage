@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { useAuth } from "@/app/providers";
 
 const EmailVerificationForm: React.FC = () => {
   const [verificationCode, setVerificationCode] = useState("");
@@ -12,8 +13,10 @@ const EmailVerificationForm: React.FC = () => {
 
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { login } = useAuth();
   const email = searchParams.get("email");
   const callbackUrl = searchParams.get("callbackUrl") || "/";
+  const fromLogin = searchParams.get("fromLogin") === "true";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,33 +24,54 @@ const EmailVerificationForm: React.FC = () => {
     setError("");
 
     try {
-      // TODO: Implement actual email verification API call
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/users/auth/verify-email`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            otp: verificationCode,
-          }),
-        }
-      );
+      const response = await fetch("/api/users/auth/verify-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          otp: verificationCode,
+        }),
+      });
 
       if (response.ok) {
+        const data = await response.json();
         setIsVerified(true);
-        setTimeout(() => {
-          router.push(
-            `/signin?email=${encodeURIComponent(
-              email || ""
-            )}&callbackUrl=${encodeURIComponent(callbackUrl)}`
-          );
-        }, 1200);
+
+        // Check if this is a guest user verification
+        const isGuestUser = searchParams.get("isGuest") === "true";
+
+        if (isGuestUser) {
+          // For guest users, redirect directly to my-orders
+          setTimeout(() => {
+            router.push("/my-orders");
+          }, 1200);
+        } else {
+          // For regular users, auto-login with the token from verification
+          const token = data.token || data.data?.token;
+
+          if (token) {
+            // Store token and redirect
+            localStorage.setItem("authToken", token);
+
+            setTimeout(() => {
+              router.push(callbackUrl);
+            }, 1200);
+          } else {
+            // Fallback: redirect to signin if no token
+            setTimeout(() => {
+              router.push(
+                `/signin?email=${encodeURIComponent(
+                  email || ""
+                )}&callbackUrl=${encodeURIComponent(callbackUrl)}`
+              );
+            }, 1200);
+          }
+        }
       } else {
         const data = await response.json();
-        setError(data.message || "Invalid verification code");
+        setError(data.error || data.message || "Invalid verification code");
       }
     } catch {
       setError("An error occurred. Please try again.");
@@ -58,16 +82,13 @@ const EmailVerificationForm: React.FC = () => {
 
   const handleResendCode = async () => {
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/users/auth/resend-verification`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email }),
-        }
-      );
+      const response = await fetch("/api/users/auth/resend-verification", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
 
       if (response.ok) {
         alert("Verification code sent successfully!");
@@ -102,7 +123,7 @@ const EmailVerificationForm: React.FC = () => {
             Email Verified!
           </h2>
           <p className="text-gray-600">
-            Your email has been successfully verified. Redirecting to sign in...
+            Your email has been successfully verified. Redirecting...
           </p>
         </div>
       </div>
@@ -120,6 +141,16 @@ const EmailVerificationForm: React.FC = () => {
           <span className="font-medium text-gray-900">{email}</span>
         </p>
       </div>
+
+      {fromLogin && (
+        <div className="mb-6 bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-md text-sm">
+          <p className="font-medium">Email Verification Required</p>
+          <p className="mt-1">
+            Please verify your email before logging in. We&apos;ve sent a
+            verification code to your email address.
+          </p>
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {error && (

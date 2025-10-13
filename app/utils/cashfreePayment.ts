@@ -58,8 +58,12 @@ export async function openCashfreePayment({
       currency: paymentSession.currency,
     });
 
-    // Configure payment options
-    const paymentOptions = {
+    // Configure payment options with strict typing
+    const paymentOptions: {
+      paymentSessionId: string;
+      redirectTarget?: "_modal" | "_self" | "_blank";
+      returnUrl?: string;
+    } = {
       paymentSessionId: paymentSession.paymentSessionId,
       redirectTarget: "_modal", // Open as popup modal
       returnUrl: `${window.location.origin}/payment-success?orderId=${paymentSession.orderId}`,
