@@ -4,6 +4,8 @@ import {
   CreateRefundResponse,
   ApiResponse,
 } from "@/types";
+import { getBackendHeaders } from "@/app/utils/getHeaders";
+import { createErrorResponse, ErrorCodes } from "@/lib/api-utils";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001";
@@ -26,42 +28,33 @@ export async function POST(request: NextRequest) {
     }
 
     // Get authorization header
-    const authorization = request.headers.get("authorization");
-    if (!authorization) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Authentication required",
-          code: "AUTHENTICATION_ERROR",
-          timestamp: new Date().toISOString(),
-        } as ApiResponse,
-        { status: 401 }
+    const headers = getBackendHeaders(request as unknown as Request);
+    if (!headers.Authorization) {
+      const errorResponse = createErrorResponse(
+        "Authentication required",
+        ErrorCodes.AUTHENTICATION_ERROR,
+        "Authentication required"
       );
+      return NextResponse.json(errorResponse, { status: 401 });
     }
 
     // Forward request to backend
     const response = await fetch(`${BACKEND_URL}/api/payments/refunds/create`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: authorization,
-      },
+      headers,
       body: JSON.stringify(body),
     });
 
     const data = await response.json();
 
     if (!response.ok) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: data.message || "Failed to create refund",
-          code: data.code || "API_ERROR",
-          details: data.details,
-          timestamp: new Date().toISOString(),
-        } as ApiResponse,
-        { status: response.status }
+      const errorResponse = createErrorResponse(
+        data.message || "Failed to create refund",
+        data.code || ErrorCodes.API_ERROR,
+        "Failed to create refund",
+        data.details
       );
+      return NextResponse.json(errorResponse, { status: response.status });
     }
 
     return NextResponse.json({

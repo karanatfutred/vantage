@@ -10,6 +10,7 @@ import {
   ErrorCodes,
   ValidationPatterns,
 } from "@/lib/api-utils";
+import { getBackendHeaders } from "@/app/utils/getHeaders";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001";
@@ -37,9 +38,7 @@ export async function POST(request: NextRequest) {
     // Forward request to backend
     const response = await fetch(`${BACKEND_URL}/api/payments/pricing`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: getBackendHeaders(request as unknown as Request),
       body: JSON.stringify(body),
     });
 

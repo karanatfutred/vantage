@@ -1,54 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { useState, useRef } from "react";
-
 export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isOnGrid, setIsOnGrid] = useState(false);
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!gridRef.current) return;
-
-    const rect = gridRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    setMousePosition({ x, y });
-    setIsOnGrid(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsOnGrid(false);
-    setMousePosition({ x: 0, y: 0 });
-  };
-
-  const handleMouseEnter = () => {
-    setIsOnGrid(true);
-  };
-
-  // Calculate transform values based on mouse position - ALL IMAGES MOVE EQUALLY
-  const getTransformValue = (index: number) => {
-    index;
-    if (!isOnGrid) return "translateX(0px)";
-
-    const gridWidth = gridRef.current?.offsetWidth || 0;
-    const centerX = gridWidth / 2;
-    const mouseX = mousePosition.x;
-
-    // Calculate how far from center the mouse is (normalized -1 to 1)
-    const normalizedDistance = (mouseX - centerX) / centerX;
-
-    // Base movement amount - all images move equally
-    const baseMovement = 200;
-
-    // All images move equally - no different multipliers
-    const movement = -normalizedDistance * baseMovement;
-
-    return `translateX(${movement}px)`;
-  };
-
   return (
     <section
       id="hero"

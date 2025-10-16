@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ApiResponse } from "@/types";
+import { getBackendHeaders } from "@/app/utils/getHeaders";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001";
@@ -26,9 +27,7 @@ export async function POST(request: NextRequest) {
       `${BACKEND_URL}/api/users/auth/verify-reset-otp`,
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: getBackendHeaders(request as unknown as Request),
         body: JSON.stringify(body),
       }
     );

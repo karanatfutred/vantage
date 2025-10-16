@@ -1,31 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ApiResponse } from "@/types";
+import { getBackendHeaders } from "@/app/utils/getHeaders";
+import { createErrorResponse, ErrorCodes } from "@/lib/api-utils";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001";
 
 export async function GET(request: NextRequest) {
   try {
-    const authorization = request.headers.get("authorization");
-
-    if (!authorization) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Authentication required",
-          code: "AUTHENTICATION_ERROR",
-          timestamp: new Date().toISOString(),
-        } as ApiResponse,
-        { status: 401 }
+    const authHeaders = getBackendHeaders(request as unknown as Request);
+    if (!authHeaders.Authorization) {
+      const errorResponse = createErrorResponse(
+        "Authentication required",
+        ErrorCodes.AUTHENTICATION_ERROR,
+        "Authentication required"
       );
+      return NextResponse.json(errorResponse, { status: 401 });
     }
 
     // Forward request to backend
     const response = await fetch(`${BACKEND_URL}/api/users/auth/check`, {
       method: "GET",
-      headers: {
-        Authorization: authorization,
-      },
+      headers: authHeaders,
     });
 
     const data = await response.json();

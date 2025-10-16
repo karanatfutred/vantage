@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 type Step = "email" | "otp" | "password" | "success";
@@ -14,8 +13,6 @@ const ResetPasswordForm: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-
-  const router = useRouter();
 
   // Step 1: Send OTP to email
   const handleSendOTP = async (e: React.FormEvent) => {
@@ -39,7 +36,7 @@ const ResetPasswordForm: React.FC = () => {
       } else {
         setError(data.message || data.error || "Failed to send OTP");
       }
-    } catch (err: unknown) {
+    } catch {
       setError("An error occurred. Please try again.");
     } finally {
       setIsLoading(false);
@@ -68,7 +65,7 @@ const ResetPasswordForm: React.FC = () => {
       } else {
         setError(data.message || data.error || "Invalid or expired OTP");
       }
-    } catch (err: unknown) {
+    } catch {
       setError("An error occurred. Please try again.");
     } finally {
       setIsLoading(false);
@@ -110,7 +107,7 @@ const ResetPasswordForm: React.FC = () => {
       } else {
         setError(data.message || data.error || "Failed to reset password");
       }
-    } catch (err: unknown) {
+    } catch {
       setError("An error occurred. Please try again.");
     } finally {
       setIsLoading(false);
@@ -139,7 +136,7 @@ const ResetPasswordForm: React.FC = () => {
       } else {
         setError(data.message || data.error || "Failed to resend OTP");
       }
-    } catch (err: unknown) {
+    } catch {
       setError("An error occurred. Please try again.");
     } finally {
       setIsLoading(false);

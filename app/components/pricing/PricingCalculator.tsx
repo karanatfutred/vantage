@@ -4,9 +4,23 @@ import React, { useState, useEffect } from "react";
 import { usePricing } from "@/hooks";
 import { CurrencyOption } from "@/types";
 
+interface PricingData {
+  pricing: {
+    tuition: number;
+    currency: string;
+    taxesIncluded: boolean;
+    totalAmount: number;
+  };
+  fx?: {
+    rate: number;
+    conversionDate: string;
+  };
+  programCurrency?: string;
+}
+
 interface PricingCalculatorProps {
   programId: string;
-  onPricingUpdate?: (pricing: any) => void;
+  onPricingUpdate?: (pricing: PricingData) => void;
   className?: string;
 }
 

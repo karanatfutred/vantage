@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { useAuth } from "@/app/providers";
 
 const EmailVerificationForm: React.FC = () => {
   const [verificationCode, setVerificationCode] = useState("");
@@ -13,7 +12,6 @@ const EmailVerificationForm: React.FC = () => {
 
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { login } = useAuth();
   const email = searchParams.get("email");
   const callbackUrl = searchParams.get("callbackUrl") || "/";
   const fromLogin = searchParams.get("fromLogin") === "true";

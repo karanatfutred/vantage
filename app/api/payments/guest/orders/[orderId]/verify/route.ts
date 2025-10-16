@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { VerifyPaymentResponse, ApiResponse } from "@/types";
+import { ApiResponse } from "@/types";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001";
@@ -64,12 +64,9 @@ export async function POST(
       );
     }
 
-    return NextResponse.json({
-      success: true,
-      data: data.data as VerifyPaymentResponse,
-      message: "Payment verified successfully",
-      timestamp: new Date().toISOString(),
-    } as ApiResponse<VerifyPaymentResponse>);
+    // Backend already returns the correct structure: { success, message, data }
+    // Just return it as-is to avoid double-nesting
+    return NextResponse.json(data);
   } catch (error: unknown) {
     console.error("Verify guest payment API error:", error);
     return NextResponse.json(

@@ -433,7 +433,8 @@ export function PaymentProvider({ children }: PaymentProviderProps) {
 
         if (response.success && response.data) {
           showSuccessToast("Payment verified successfully!");
-          return response.data;
+          // Return the full response object, not just response.data
+          return response as VerifyPaymentResponse;
         } else {
           throw new Error(response.error || "Failed to verify payment");
         }

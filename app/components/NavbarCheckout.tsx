@@ -2,11 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 
 export default function NavbarCheckout() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
   return (
     <nav className="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-primary/30 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

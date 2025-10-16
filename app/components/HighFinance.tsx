@@ -44,7 +44,7 @@ export default function HighFinance() {
                 color: "#568c65",
               }}
             >
-              India's First Global Finance Institute
+              India&apos;s First Global Finance Institute
             </span>{" "}
             Institute
           </h2>

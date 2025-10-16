@@ -77,6 +77,24 @@ export interface GetMyOrdersResponse {
   };
 }
 
+// Guest orders use the same shape as authenticated orders
+export type GetGuestOrdersResponse = GetMyOrdersResponse;
+
+// Lightweight order view for list rendering
+export interface OrderListItem {
+  orderId: string;
+  orderNumber: string;
+  orderAmount: number;
+  orderCurrency: string;
+  status: OrderStatus;
+  createdAt: string;
+  paymentsSummary: {
+    totalPayments: number;
+    successfulPayments: number;
+    lastPaymentStatus?: PaymentStatus;
+  };
+}
+
 export interface CheckActiveOrdersRequest {
   programId: string;
   selectedCurrency: string;

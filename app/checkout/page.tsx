@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { GuestCheckoutForm } from "@/components/checkout/GuestCheckoutForm";
 import { AuthenticatedCheckoutForm } from "@/components/checkout/AuthenticatedCheckoutForm";
@@ -17,7 +17,7 @@ interface ProgramData {
   tags?: string[];
 }
 
-const CheckoutPage = () => {
+const CheckoutContent = () => {
   const searchParams = useSearchParams();
   const { isAuthenticated, isLoading } = useAuth();
   const [programData, setProgramData] = useState<ProgramData | null>(null);
@@ -130,6 +130,25 @@ const CheckoutPage = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const CheckoutPage = () => {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-gray-50 py-8">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="text-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading checkout...</p>
+            </div>
+          </div>
+        </div>
+      }
+    >
+      <CheckoutContent />
+    </Suspense>
   );
 };
 

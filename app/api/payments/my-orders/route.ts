@@ -1,83 +1,55 @@
 import { NextRequest, NextResponse } from "next/server";
-import { GetMyOrdersResponse, ApiResponse } from "@/types";
+import { createErrorResponse, ErrorCodes } from "@/lib/api-utils";
+import { getBackendHeaders } from "@/app/utils/getHeaders";
 
-const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001";
-
-export async function GET(request: NextRequest) {
+export async function GET(req: NextRequest) {
   try {
-    // Get query parameters
-    const { searchParams } = new URL(request.url);
-    const page = searchParams.get("page") || "1";
-    const limit = searchParams.get("limit") || "10";
-    const status = searchParams.get("status");
+    const backendUrl =
+      process.env.NEXT_PUBLIC_BACKEND_URL || process.env.BACKEND_URL;
+    if (!backendUrl) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Backend URL not configured",
+          code: "SERVER_ERROR",
+          timestamp: new Date().toISOString(),
+        },
+        { status: 500 }
+      );
+    }
 
     // Get authorization header
-    const authorization = request.headers.get("authorization");
+    const authorization = req.headers.get("authorization");
     if (!authorization) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Authentication required",
-          code: "AUTHENTICATION_ERROR",
-          timestamp: new Date().toISOString(),
-        } as ApiResponse,
-        { status: 401 }
+      const errorResponse = createErrorResponse(
+        "Authentication required",
+        ErrorCodes.AUTHENTICATION_ERROR,
+        "Authentication required"
       );
+      return NextResponse.json(errorResponse, { status: 401 });
     }
+    const url = new URL(`${backendUrl}/api/payments/my-orders`);
+    const status = req.nextUrl.searchParams.get("status");
+    if (status) url.searchParams.set("status", status);
 
-    // Build query string
-    const queryParams = new URLSearchParams({
-      page,
-      limit,
-      ...(status && { status }),
+    const res = await fetch(url.toString(), {
+      method: "GET",
+      headers: getBackendHeaders(req as unknown as Request),
+      // Ensure server-to-server fetch includes credentials
+      cache: "no-store",
     });
 
-    // Forward request to backend
-    const response = await fetch(
-      `${BACKEND_URL}/api/payments/my-orders?${queryParams}`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: authorization,
-        },
-      }
-    );
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: data.message || "Failed to get orders",
-          code: data.code || "API_ERROR",
-          details: data.details,
-          timestamp: new Date().toISOString(),
-        } as ApiResponse,
-        { status: response.status }
-      );
-    }
-
-    return NextResponse.json({
-      success: true,
-      data: data.data as GetMyOrdersResponse,
-      message: "Orders retrieved successfully",
-      timestamp: new Date().toISOString(),
-    } as ApiResponse<GetMyOrdersResponse>);
+    const data = await res.json();
+    return NextResponse.json(data, { status: res.status });
   } catch (error: unknown) {
-    console.error("Get my orders API error:", error);
-
     return NextResponse.json(
       {
         success: false,
-        error: "Internal server error",
-        code: "INTERNAL_ERROR",
-        details: {
-          error: error instanceof Error ? error.message : String(error),
-        },
+        error:
+          error instanceof Error ? error.message : "Failed to fetch orders",
+        code: "SERVER_ERROR",
         timestamp: new Date().toISOString(),
-      } as ApiResponse,
+      },
       { status: 500 }
     );
   }

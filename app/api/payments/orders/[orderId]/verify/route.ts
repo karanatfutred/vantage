@@ -1,89 +1,40 @@
 import { NextRequest, NextResponse } from "next/server";
-import { VerifyPaymentResponse, ApiResponse } from "@/types";
+import { getBackendHeaders } from "@/app/utils/getHeaders";
+import { createErrorResponse, ErrorCodes } from "@/lib/api-utils";
 
-const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001";
+type Params = { params: Promise<{ orderId: string }> };
 
-export async function POST(
-  request: NextRequest,
-  { params }: { params: Promise<{ orderId: string }> }
-) {
+export async function POST(req: NextRequest, { params }: Params) {
   try {
     const { orderId } = await params;
-
-    if (!orderId) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Order ID is required",
-          code: "VALIDATION_ERROR",
-          timestamp: new Date().toISOString(),
-        } as ApiResponse,
-        { status: 400 }
+    const backendUrl =
+      process.env.NEXT_PUBLIC_BACKEND_URL || process.env.BACKEND_URL;
+    if (!backendUrl) {
+      const errorResponse = createErrorResponse(
+        "Backend URL not configured",
+        ErrorCodes.INTERNAL_ERROR,
+        "Server configuration error"
       );
+      return NextResponse.json(errorResponse, { status: 500 });
     }
 
-    // Get authorization header
-    const authorization = request.headers.get("authorization");
-    if (!authorization) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Authentication required",
-          code: "AUTHENTICATION_ERROR",
-          timestamp: new Date().toISOString(),
-        } as ApiResponse,
-        { status: 401 }
-      );
-    }
+    const url = `${backendUrl}/api/payments/orders/${orderId}/verify`;
+    const res = await fetch(url, {
+      method: "POST",
+      headers: getBackendHeaders(req as unknown as Request),
+      cache: "no-store",
+    });
 
-    // Forward request to backend
-    const response = await fetch(
-      `${BACKEND_URL}/api/payments/orders/${orderId}/verify`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: authorization,
-        },
-      }
-    );
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: data.message || "Failed to verify payment",
-          code: data.code || "API_ERROR",
-          details: data.details,
-          timestamp: new Date().toISOString(),
-        } as ApiResponse,
-        { status: response.status }
-      );
-    }
-
-    return NextResponse.json({
-      success: true,
-      data: data.data as VerifyPaymentResponse,
-      message: "Payment verified successfully",
-      timestamp: new Date().toISOString(),
-    } as ApiResponse<VerifyPaymentResponse>);
+    const data = await res.json();
+    return NextResponse.json(data, { status: res.status });
   } catch (error: unknown) {
-    console.error("Verify payment API error:", error);
-
-    return NextResponse.json(
-      {
-        success: false,
-        error: "Internal server error",
-        code: "INTERNAL_ERROR",
-        details: {
-          error: error instanceof Error ? error.message : String(error),
-        },
-        timestamp: new Date().toISOString(),
-      } as ApiResponse,
-      { status: 500 }
+    const errorResponse = createErrorResponse(
+      error instanceof Error ? error.message : "Failed to verify payment",
+      ErrorCodes.API_ERROR,
+      "Failed to verify payment"
     );
+    return NextResponse.json(errorResponse, { status: 500 });
   }
 }
+
+// Removed duplicate POST handler to avoid conflicts. Cookie-forwarding POST above is the single source.

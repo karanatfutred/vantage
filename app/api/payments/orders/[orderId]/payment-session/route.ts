@@ -8,6 +8,7 @@ import {
   logError,
   ErrorCodes,
 } from "@/lib/api-utils";
+import { getBackendHeaders } from "@/app/utils/getHeaders";
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001";
@@ -30,26 +31,12 @@ export async function POST(
       return NextResponse.json(errorResponse, { status: 400 });
     }
 
-    // Get authorization header
-    const authorization = request.headers.get("authorization");
-    if (!authorization) {
-      const errorResponse = createErrorResponse(
-        "Authentication required",
-        ErrorCodes.AUTHENTICATION_ERROR,
-        "Authentication required"
-      );
-      return NextResponse.json(errorResponse, { status: 401 });
-    }
-
     // Forward request to backend
     const response = await fetch(
       `${BACKEND_URL}/api/payments/orders/${orderId}/payment-session`,
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: authorization,
-        },
+        headers: getBackendHeaders(request as unknown as Request),
       }
     );
 
